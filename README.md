@@ -8,6 +8,8 @@
 conda create -n LLMNego python=3.12
 conda activate LLMNego
 pip install openai
+
+pip install -e .
 ```
 
 ## Keys
@@ -22,12 +24,23 @@ DeepSeek
 export OPENAI_API_KEY="sk-7e40f14caf844470968a9cd0cd8b6616"
 ```
 
+Qwen 3.5, China
+```
+"sk-0c2cae48581b452082ecd8ad11041993"
+```
+
+Qwen 3.5, International
+```
+"sk-bc76158be7c447cb875a4a0eedb60db9"
+```
+
 
 
 ---
 
 ## 03-21
 
+Implement some preliminary demos in 0321 of EXP. Looks like Qwen3.5-Flash cannot understand the complex prompt properly! Even without attack, private information keeps leaking out. In commparison, the instruction following ability of deepseek is FAR better!
 
 ---
 

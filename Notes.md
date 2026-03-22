@@ -18,4 +18,10 @@ DeepSeek's serving infrastructure parses the raw model output before sending it 
 - Everything after `</think>` goes into the standard content field.
 - The response object is then serialized with both fields and returned as JSON.
 
+
+Revenue: 收入
+Gross profit: 毛利润
+
+
+
 ---
