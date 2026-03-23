@@ -44,3 +44,27 @@ Implement some preliminary demos in 0321 of EXP. Looks like Qwen3.5-Flash cannot
 
 ---
 
+
+## 03-23
+
+The `negolib_viewer`.
+
+Setup — open a terminal (PowerShell or CMD) and run:
+
+```
+npm create vite@latest viewer-template -- --template react
+cd viewer-template
+npm install
+```
+
+Drop in the file — copy the `negolib_viewer.jsx` file into `src/`, then open `src/App.jsx` and replace its entire contents with:
+
+```
+export { default } from './negolib_viewer.jsx'
+```
+
+Run it
+
+```
+npm run dev
+```

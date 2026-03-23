@@ -350,26 +350,39 @@ If a deal is NOT reached:
 """
 
 
+# ---------------------------------------------------------------------------
+# API call helpers — history-first, instructions-last ordering
+# ---------------------------------------------------------------------------
+
 def Agent_call(client, model: str, system: str, history: list[dict], opening: bool = False) -> str:
     gpt_mode = _is_gpt_model(model)
 
-    effective_system = system + _GPT_THINKING_INSTRUCTION if gpt_mode else system
-
-    messages = [{"role": "system", "content": effective_system}]
     if opening:
-        messages.append({
-            "role": "user",
-            "content": "The negotiation is starting. Make your opening offer.",
-        })
+        # No history yet — system prompt contains all instructions,
+        # user message is just the action directive.
+        effective_system = system
+        user_content = "The negotiation is starting. Make your opening offer."
     else:
-        messages.append({
-            "role": "user",
-            "content": (
-                "Here is the conversation so far:\n\n"
-                + format_history(history)
-                + "\n\nNow provide your response."
-            ),
-        })
+        # Place conversation history at the TOP of the system prompt
+        # so the model reads context first, then instructions last.
+        history_block = (
+            "CONVERSATION HISTORY SO FAR:\n\n"
+            + format_history(history)
+            + "\n\n--- END OF CONVERSATION HISTORY ---\n\n"
+        )
+        effective_system = history_block + system
+        user_content = (
+            "Given the conversation history and your instructions above, "
+            "now provide your next negotiation response."
+        )
+
+    if gpt_mode:
+        effective_system += _GPT_THINKING_INSTRUCTION
+
+    messages = [
+        {"role": "system", "content": effective_system},
+        {"role": "user", "content": user_content},
+    ]
 
     if gpt_mode:
 
@@ -405,20 +418,22 @@ def Agent_call(client, model: str, system: str, history: list[dict], opening: bo
 def Judge_call(client, model: str, system: str, history: list[dict]) -> str:
     gpt_mode = _is_gpt_model(model)
 
-    effective_system = system + _GPT_THINKING_INSTRUCTION if gpt_mode else system
+    # Place conversation history at the TOP of the system prompt,
+    # judge instructions follow after so they're freshest in context.
+    history_block = (
+        "FULL NEGOTIATION TRANSCRIPT:\n\n"
+        + format_history(history)
+        + "\n\n--- END OF TRANSCRIPT ---\n\n"
+    )
+    effective_system = history_block + system
+
+    if gpt_mode:
+        effective_system += _GPT_THINKING_INSTRUCTION
 
     messages = [
         {"role": "system", "content": effective_system},
-        {
-            "role": "user",
-            "content": (
-                "Here is the full negotiation transcript:\n\n"
-                + format_history(history)
-                + "\n\nProvide your judgment."
-            ),
-        },
+        {"role": "user", "content": "Provide your judgment based on the transcript and instructions above."},
     ]
-
 
     if gpt_mode:
 
