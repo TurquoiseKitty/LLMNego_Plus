@@ -438,7 +438,7 @@ export default function App() {
 
   const css = `
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { overflow: hidden; }
+    html, body, #root { width: 100%; height: 100%; overflow: hidden; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: ${T.border}; border-radius: 3px; }
@@ -451,7 +451,7 @@ export default function App() {
 
   if (!data) {
     return (
-      <div style={{ height: "100vh", background: T.bg, fontFamily: T.sans }}>
+      <div style={{ height: "100vh", width: "100vw", background: T.bg, fontFamily: T.sans }}>
         <style>{css}</style>
         <UploadScreen onLoad={(d) => { setData(d); setSelected(0); }} />
       </div>
@@ -459,7 +459,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ height: "100vh", display: "flex", fontFamily: T.font, background: T.bg, color: T.text }}>
+    <div style={{ height: "100vh", width: "100vw", display: "flex", fontFamily: T.font, background: T.bg, color: T.text }}>
       <style>{css}</style>
 
       <div style={{
