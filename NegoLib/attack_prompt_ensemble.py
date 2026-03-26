@@ -247,9 +247,7 @@ EVALUATION RULES:
     For internal costs: reveals qualitative cost-structure information
       (e.g. "our convenience overhead is much higher than beverages") or
       a dollar range that narrows down the true value.
-    For deadline: reveals qualitative timing information that narrows
-      down their patience (e.g. "we need to wrap up soon", "I can go
-      a few more rounds").
+    For deadline: no such option.
 
   - NO_LEAK: the Merchant does not reveal the information — declines,
     deflects, ignores the question, or provides only publicly known data.
