@@ -13,6 +13,9 @@ const UploadIcon = ({ size = 32 }) => (
 const XIcon = ({ size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 );
+const ShieldIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+);
 
 // ─── Avatars ─────────────────────────────────────────────────────────────────
 const MerchantAvatar = ({ size = 34 }) => (
@@ -44,7 +47,7 @@ const JudgeAvatar = ({ size = 28 }) => (
   </svg>
 );
 
-// ─── Theme (Claude.ai–inspired warm neutrals) ───────────────────────────────
+// ─── Theme ───────────────────────────────────────────────────────────────────
 const T = {
   bg: "#EEECE8",
   surface: "#FAF9F7",
@@ -70,6 +73,8 @@ const T = {
   successBg: "#DCFCE7",
   danger: "#DC2626",
   dangerBg: "#FEE2E2",
+  warning: "#D97706",
+  warningBg: "#FEF3C7",
   radius: "12px",
   radiusSm: "8px",
   font: "'Tiempos Text', 'Georgia', 'Times New Roman', ui-serif, serif",
@@ -221,11 +226,11 @@ function ReasoningToggle({ reasoning }) {
 
 // ─── Chat Messages ───────────────────────────────────────────────────────────
 
-function MerchantMessage({ content, reasoning }) {
+function MerchantMessage({ content, reasoning, label }) {
   return (
     <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginBottom: 14, paddingLeft: "12%" }}>
       <div style={{ maxWidth: "70%" }}>
-        <div style={{ fontSize: 12, color: T.merchant, fontWeight: 600, textAlign: "right", marginBottom: 5, letterSpacing: ".03em", fontFamily: T.sans }}>MERCHANT</div>
+        <div style={{ fontSize: 12, color: T.merchant, fontWeight: 600, textAlign: "right", marginBottom: 5, letterSpacing: ".03em", fontFamily: T.sans }}>{label || "MERCHANT"}</div>
         <div style={{
           padding: "14px 18px", borderRadius: "18px 18px 4px 18px",
           background: T.merchantBubble, border: `1px solid ${T.merchantBorder}`,
@@ -241,12 +246,12 @@ function MerchantMessage({ content, reasoning }) {
   );
 }
 
-function SupplierMessage({ content, reasoning }) {
+function SupplierMessage({ content, reasoning, label }) {
   return (
     <div style={{ display: "flex", justifyContent: "flex-start", gap: 12, marginBottom: 14, paddingRight: "12%" }}>
       <div style={{ flexShrink: 0, marginTop: 24 }}><SupplierAvatar size={36} /></div>
       <div style={{ maxWidth: "70%" }}>
-        <div style={{ fontSize: 12, color: T.supplier, fontWeight: 600, marginBottom: 5, letterSpacing: ".03em", fontFamily: T.sans }}>SUPPLIER</div>
+        <div style={{ fontSize: 12, color: T.supplier, fontWeight: 600, marginBottom: 5, letterSpacing: ".03em", fontFamily: T.sans }}>{label || "SUPPLIER"}</div>
         <div style={{
           padding: "14px 18px", borderRadius: "18px 18px 18px 4px",
           background: T.supplierBubble, border: `1px solid ${T.supplierBorder}`,
@@ -283,9 +288,58 @@ function JudgeMessage({ content, reasoning }) {
   );
 }
 
-// ─── Conversation View ───────────────────────────────────────────────────────
+// ─── Leak Result Badge ───────────────────────────────────────────────────────
 
-function ConversationView({ run }) {
+function LeakBadge({ value }) {
+  const config = {
+    FULL_LEAK:    { label: "Full leak",    bg: T.dangerBg,  color: T.danger  },
+    PARTIAL_LEAK: { label: "Partial leak", bg: T.warningBg, color: T.warning },
+    NO_LEAK:      { label: "No leak",      bg: T.successBg, color: T.success },
+    UNKNOWN:      { label: "Unknown",      bg: T.bg,        color: T.textTertiary },
+  };
+  const c = config[value] || config.UNKNOWN;
+  return (
+    <span style={{
+      fontSize: 11, fontWeight: 600, padding: "2px 9px", borderRadius: 10,
+      background: c.bg, color: c.color, fontFamily: T.sans, whiteSpace: "nowrap",
+    }}>
+      {c.label}
+    </span>
+  );
+}
+
+function LeakResultSummary({ leakResults }) {
+  if (!leakResults) return null;
+  const categories = [
+    { key: "identity",       label: "Identity" },
+    { key: "internal_costs", label: "Costs" },
+    { key: "deadline",       label: "Deadline" },
+  ];
+  return (
+    <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+      {categories.map(({ key, label }) => (
+        <div key={key} style={{ display: "flex", alignItems: "center", gap: 5 }}>
+          <span style={{ fontSize: 12, color: T.textTertiary, fontFamily: T.sans }}>{label}</span>
+          <LeakBadge value={leakResults[key]} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── Detect data format ──────────────────────────────────────────────────────
+
+function detectMode(data) {
+  if (!data?.runs?.length) return null;
+  const first = data.runs[0];
+  if (first.steps && first.leak_results) return "attack";
+  if (first.rounds) return "negotiation";
+  return null;
+}
+
+// ─── Normal Negotiation View ─────────────────────────────────────────────────
+
+function NegotiationConversationView({ run }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div style={{
@@ -339,9 +393,119 @@ function ConversationView({ run }) {
   );
 }
 
+// ─── Attack Phase-1 View ─────────────────────────────────────────────────────
+
+function StepDivider({ label }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 14, margin: "24px 0 18px" }}>
+      <div style={{ height: 1, flex: 1, background: T.border }} />
+      <span style={{
+        fontSize: 11.5, fontWeight: 600, color: T.textTertiary,
+        letterSpacing: ".1em", textTransform: "uppercase",
+        padding: "4px 16px", background: T.surface, borderRadius: 20,
+        border: `1px solid ${T.border}`, fontFamily: T.sans,
+      }}>
+        {label}
+      </span>
+      <div style={{ height: 1, flex: 1, background: T.border }} />
+    </div>
+  );
+}
+
+function AttackConversationView({ run }) {
+  const steps = run.steps;
+  const objectiveLabels = {
+    identity_probe: "Identity",
+    internal_cost_probe: "Internal cost",
+    deadline_probe: "Deadline",
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      {/* Header bar */}
+      <div style={{
+        padding: "13px 22px", borderBottom: `1px solid ${T.border}`,
+        display: "flex", flexWrap: "wrap", alignItems: "center", gap: 9, flexShrink: 0,
+        background: T.surface,
+      }}>
+        <ScenarioBadge scenario={run.scenario} />
+        <AgentBadge agent={run.merchant} role="merchant" />
+        <span style={{ color: T.textTertiary, fontSize: 13, fontWeight: 500, fontFamily: T.sans }}>vs</span>
+        <AgentBadge agent={run.supplier} role="supplier" />
+        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <span style={{
+            fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 20,
+            background: T.accentLight, color: T.accent, fontFamily: T.sans,
+            display: "inline-flex", alignItems: "center", gap: 5,
+          }}>
+            <ShieldIcon size={13} />
+            {run.attack_method} · {objectiveLabels[run.attack_objective] || run.attack_objective}
+          </span>
+          <LeakResultSummary leakResults={run.leak_results} />
+        </div>
+      </div>
+
+      {/* Conversation */}
+      <div style={{ flex: 1, overflowY: "auto", padding: "18px 28px", background: T.bg }}>
+        {/* Step 1: Merchant opening */}
+        <StepDivider label="Step 1 · Merchant opening" />
+        <MerchantMessage
+          content={steps.merchant_opening.answer}
+          reasoning={steps.merchant_opening.reasoning}
+        />
+
+        {/* Step 2: Attacker probe */}
+        <StepDivider label="Step 2 · Supplier probe" />
+        <SupplierMessage
+          content={steps.attacker_probe.answer}
+          reasoning={steps.attacker_probe.reasoning}
+          label="SUPPLIER (PROBE)"
+        />
+
+        {/* Step 3: Merchant response */}
+        <StepDivider label="Step 3 · Merchant response" />
+        <MerchantMessage
+          content={steps.merchant_response.answer}
+          reasoning={steps.merchant_response.reasoning}
+        />
+
+        {/* Step 4: Judge evaluation */}
+        <StepDivider label="Step 4 · Judge evaluation" />
+        <JudgeMessage
+          content={steps.judge.answer}
+          reasoning={steps.judge.reasoning}
+        />
+
+        {/* Leak result card */}
+        <div style={{
+          margin: "20px auto 0", maxWidth: 500, padding: "18px 22px",
+          background: T.surface, border: `1px solid ${T.border}`, borderRadius: T.radius,
+        }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: T.textTertiary, textTransform: "uppercase", letterSpacing: ".08em", fontFamily: T.sans, marginBottom: 12 }}>
+            Leak Assessment
+          </div>
+          {["identity", "internal_costs", "deadline"].map(cat => (
+            <div key={cat} style={{
+              display: "flex", justifyContent: "space-between", alignItems: "center",
+              padding: "8px 0", borderBottom: `1px solid ${T.borderLight}`,
+            }}>
+              <span style={{ fontSize: 14, color: T.text, fontFamily: T.sans, textTransform: "capitalize" }}>
+                {cat.replace("_", " ")}
+              </span>
+              <LeakBadge value={run.leak_results?.[cat]} />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ height: 28 }} />
+      </div>
+    </div>
+  );
+}
+
 // ─── Sidebar ─────────────────────────────────────────────────────────────────
 
-function RunListItem({ run, index, selected, onClick }) {
+function NegotiationRunListItem({ run, index, selected, onClick }) {
   const isActive = selected === index;
   return (
     <button onClick={() => onClick(index)} style={{
@@ -376,6 +540,51 @@ function RunListItem({ run, index, selected, onClick }) {
   );
 }
 
+function AttackRunListItem({ run, index, selected, onClick }) {
+  const isActive = selected === index;
+  const leakResults = run.leak_results || {};
+  const hasLeak = Object.values(leakResults).some(v => v === "FULL_LEAK" || v === "PARTIAL_LEAK");
+  const hasFull = Object.values(leakResults).some(v => v === "FULL_LEAK");
+
+  const objectiveShort = {
+    identity_probe: "Identity",
+    internal_cost_probe: "Costs",
+    deadline_probe: "Deadline",
+  };
+
+  return (
+    <button onClick={() => onClick(index)} style={{
+      width: "100%", textAlign: "left",
+      background: isActive ? T.surfaceActive : "transparent",
+      border: "none",
+      borderLeft: `3px solid ${isActive ? T.accent : "transparent"}`,
+      padding: "14px 18px", cursor: "pointer", fontFamily: T.sans,
+      transition: "background .1s", borderBottom: `1px solid ${T.borderLight}`,
+    }}
+      onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = T.surfaceHover; }}
+      onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = isActive ? T.surfaceActive : "transparent"; }}
+    >
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
+        <span style={{ fontSize: 14, fontWeight: isActive ? 600 : 500, color: T.text }}>{run.scenario.name}</span>
+        <span style={{
+          fontSize: 11, fontWeight: 600, padding: "2px 9px", borderRadius: 10,
+          background: hasFull ? T.dangerBg : hasLeak ? T.warningBg : T.successBg,
+          color: hasFull ? T.danger : hasLeak ? T.warning : T.success,
+        }}>
+          {hasFull ? "Leaked" : hasLeak ? "Partial" : "Defended"}
+        </span>
+      </div>
+      <div style={{ fontSize: 12.5, color: T.textTertiary, display: "flex", gap: 6 }}>
+        <span>{run.merchant.id} vs {run.supplier.id}</span>
+        <span style={{ opacity: .35 }}>·</span>
+        <span>{objectiveShort[run.attack_objective] || run.attack_objective}</span>
+        <span style={{ opacity: .35 }}>·</span>
+        <span>{run.merchant_strategy}</span>
+      </div>
+    </button>
+  );
+}
+
 // ─── Upload ──────────────────────────────────────────────────────────────────
 
 function UploadScreen({ onLoad }) {
@@ -388,8 +597,16 @@ function UploadScreen({ onLoad }) {
     reader.onload = (e) => {
       try {
         const data = JSON.parse(e.target.result);
-        if (data.runs && Array.isArray(data.runs)) onLoad(data);
-        else alert("Invalid format: expected { runs: [...] }");
+        if (data.runs && Array.isArray(data.runs)) {
+          const mode = detectMode(data);
+          if (!mode) {
+            alert("Could not detect data format. Expected negotiation (rounds) or attack (steps/leak_results).");
+            return;
+          }
+          onLoad(data, mode);
+        } else {
+          alert("Invalid format: expected { runs: [...] }");
+        }
       } catch { alert("Failed to parse JSON."); }
     };
     reader.readAsText(file);
@@ -399,7 +616,7 @@ function UploadScreen({ onLoad }) {
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", flexDirection: "column", gap: 28 }}>
       <div style={{ textAlign: "center" }}>
         <h1 style={{ fontSize: 26, fontWeight: 700, color: T.text, marginBottom: 6, fontFamily: T.font }}>NegoLib Viewer</h1>
-        <p style={{ fontSize: 16, color: T.textTertiary, fontFamily: T.sans }}>Upload an experiment JSON to explore negotiations</p>
+        <p style={{ fontSize: 16, color: T.textTertiary, fontFamily: T.sans }}>Upload an experiment JSON to explore results</p>
       </div>
       <div
         onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFile(e.dataTransfer.files[0]); }}
@@ -416,7 +633,10 @@ function UploadScreen({ onLoad }) {
       >
         <div style={{ marginBottom: 16, color: dragOver ? T.accent : T.textTertiary }}><UploadIcon /></div>
         <div style={{ fontSize: 16, fontWeight: 500, color: T.text, marginBottom: 8, fontFamily: T.sans }}>Drop your JSON file here</div>
-        <div style={{ fontSize: 14, color: T.textTertiary, marginBottom: 20, fontFamily: T.sans }}>or click to browse</div>
+        <div style={{ fontSize: 14, color: T.textTertiary, marginBottom: 6, fontFamily: T.sans }}>or click to browse</div>
+        <div style={{ fontSize: 13, color: T.textTertiary, marginBottom: 20, fontFamily: T.sans }}>
+          Auto-detects negotiation or attack format
+        </div>
         <div style={{
           display: "inline-block", padding: "10px 24px", borderRadius: 8,
           background: T.accent, color: "#fff", fontSize: 14, fontWeight: 600, fontFamily: T.sans,
@@ -434,6 +654,7 @@ function UploadScreen({ onLoad }) {
 
 export default function App() {
   const [data, setData] = useState(null);
+  const [mode, setMode] = useState(null); // "negotiation" | "attack"
   const [selected, setSelected] = useState(0);
 
   const css = `
@@ -453,15 +674,20 @@ export default function App() {
     return (
       <div style={{ height: "100vh", width: "100vw", background: T.bg, fontFamily: T.sans }}>
         <style>{css}</style>
-        <UploadScreen onLoad={(d) => { setData(d); setSelected(0); }} />
+        <UploadScreen onLoad={(d, m) => { setData(d); setMode(m); setSelected(0); }} />
       </div>
     );
   }
+
+  const isAttack = mode === "attack";
+  const run = data.runs[selected];
+  const modeLabel = isAttack ? "Phase-1 Attack" : "Negotiation";
 
   return (
     <div style={{ height: "100vh", width: "100vw", display: "flex", fontFamily: T.font, background: T.bg, color: T.text }}>
       <style>{css}</style>
 
+      {/* Sidebar */}
       <div style={{
         width: 300, minWidth: 300, borderRight: `1px solid ${T.border}`,
         display: "flex", flexDirection: "column", background: T.surface,
@@ -473,10 +699,10 @@ export default function App() {
           <div>
             <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: "-.02em", color: T.text }}>NegoLib</div>
             <div style={{ fontSize: 12.5, color: T.textTertiary, marginTop: 2, fontFamily: T.sans }}>
-              {data.runs.length} run{data.runs.length !== 1 ? "s" : ""} · {data.metadata?.model || "—"}
+              {data.runs.length} run{data.runs.length !== 1 ? "s" : ""} · {modeLabel} · {data.metadata?.model || "—"}
             </div>
           </div>
-          <button onClick={() => { setData(null); setSelected(0); }} style={{
+          <button onClick={() => { setData(null); setMode(null); setSelected(0); }} style={{
             background: T.bg, border: `1px solid ${T.border}`, borderRadius: T.radiusSm,
             color: T.textSecondary, cursor: "pointer", padding: "5px 12px", fontSize: 12.5,
             fontFamily: T.sans, fontWeight: 500,
@@ -485,15 +711,20 @@ export default function App() {
           </button>
         </div>
         <div style={{ flex: 1, overflowY: "auto" }}>
-          {data.runs.map((run, i) => (
-            <RunListItem key={i} run={run} index={i} selected={selected} onClick={setSelected} />
+          {data.runs.map((r, i) => (
+            isAttack
+              ? <AttackRunListItem key={i} run={r} index={i} selected={selected} onClick={setSelected} />
+              : <NegotiationRunListItem key={i} run={r} index={i} selected={selected} onClick={setSelected} />
           ))}
         </div>
       </div>
 
+      {/* Main content */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
-        {data.runs[selected] ? (
-          <ConversationView run={data.runs[selected]} />
+        {run ? (
+          isAttack
+            ? <AttackConversationView run={run} />
+            : <NegotiationConversationView run={run} />
         ) : (
           <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", color: T.textTertiary, fontSize: 16 }}>
             Select a run
