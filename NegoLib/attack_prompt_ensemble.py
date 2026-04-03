@@ -32,7 +32,8 @@ from NegoLib.prompt_ensemble    import (
 )
 
 # Method registry — import available methods here
-from NegoLib.attack_methods.Simply_Asking import (
+# Method registry — import available methods here
+from NegoLib.attack_methods.A0_Simply_Asking import (
     METHOD_NAME as SIMPLY_ASKING,
     SIMPLY_ASKING_PROMPTS,
     EMBEDDED_OBJECTIVES as SIMPLY_ASKING_EMBEDDED,
@@ -40,21 +41,85 @@ from NegoLib.attack_methods.Simply_Asking import (
     INTERNAL_COST_PROBE,
     DEADLINE_PROBE,
 )
+from NegoLib.attack_methods.A1_Persona_Jailbreak import (
+    METHOD_NAME as PERSONA_JAILBREAK,
+    PERSONA_JAILBREAK_PROMPTS,
+    EMBEDDED_OBJECTIVES as PERSONA_JAILBREAK_EMBEDDED,
+)
+from NegoLib.attack_methods.A2_Naive_Injection import (
+    METHOD_NAME as NAIVE_INJECTION,
+    NAIVE_INJECTION_PROMPTS,
+    EMBEDDED_OBJECTIVES as NAIVE_INJECTION_EMBEDDED,
+)
+from NegoLib.attack_methods.A3_Context_Ignoring import (
+    METHOD_NAME as CONTEXT_IGNORING,
+    CONTEXT_IGNORING_PROMPTS,
+    EMBEDDED_OBJECTIVES as CONTEXT_IGNORING_EMBEDDED,
+)
+from NegoLib.attack_methods.A4_Combined_Injection import (
+    METHOD_NAME as COMBINED_INJECTION,
+    COMBINED_INJECTION_PROMPTS,
+    EMBEDDED_OBJECTIVES as COMBINED_INJECTION_EMBEDDED,
+)
+from NegoLib.attack_methods.A5_Fake_Completion import (
+    METHOD_NAME as FAKE_COMPLETION,
+    FAKE_COMPLETION_PROMPTS,
+    EMBEDDED_OBJECTIVES as FAKE_COMPLETION_EMBEDDED,
+)
+from NegoLib.attack_methods.A6_Escape_Characters import (
+    METHOD_NAME as ESCAPE_CHARACTERS,
+    ESCAPE_CHARACTERS_PROMPTS,
+    EMBEDDED_OBJECTIVES as ESCAPE_CHARACTERS_EMBEDDED,
+)
+from NegoLib.attack_methods.A7_OWASP_Obfuscated import (
+    METHOD_NAME as OWASP_OBFUSCATED,
+    OWASP_OBFUSCATED_PROMPTS,
+    EMBEDDED_OBJECTIVES as OWASP_OBFUSCATED_EMBEDDED,
+)
+from NegoLib.attack_methods.A8_Transfer_Suffix import (
+    METHOD_NAME as TRANSFER_SUFFIX,
+    TRANSFER_SUFFIX_PROMPTS,
+    EMBEDDED_OBJECTIVES as TRANSFER_SUFFIX_EMBEDDED,
+)
+
+
 
 # ---------------------------------------------------------------------------
 # Registry: method_name -> {objective -> instruction_text}
 # New methods register themselves here.
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Registry: method_name -> {objective -> instruction_text}
+# ---------------------------------------------------------------------------
+
 ATTACK_METHOD_REGISTRY: dict[str, dict[str, str]] = {
-    SIMPLY_ASKING: SIMPLY_ASKING_PROMPTS,
+    SIMPLY_ASKING:      SIMPLY_ASKING_PROMPTS,
+    PERSONA_JAILBREAK:  PERSONA_JAILBREAK_PROMPTS,
+    NAIVE_INJECTION:    NAIVE_INJECTION_PROMPTS,
+    CONTEXT_IGNORING:   CONTEXT_IGNORING_PROMPTS,
+    COMBINED_INJECTION: COMBINED_INJECTION_PROMPTS,
+    FAKE_COMPLETION:    FAKE_COMPLETION_PROMPTS,
+    ESCAPE_CHARACTERS:  ESCAPE_CHARACTERS_PROMPTS,
+    OWASP_OBFUSCATED:   OWASP_OBFUSCATED_PROMPTS,
+    TRANSFER_SUFFIX:    TRANSFER_SUFFIX_PROMPTS,
 }
 
 # Registry: method_name -> set of objective keys that are embedded
-# (i.e. the attacker should include a counter-offer alongside the probe)
 EMBEDDED_REGISTRY: dict[str, set[str]] = {
-    SIMPLY_ASKING: SIMPLY_ASKING_EMBEDDED,
+    SIMPLY_ASKING:      SIMPLY_ASKING_EMBEDDED,
+    PERSONA_JAILBREAK:  PERSONA_JAILBREAK_EMBEDDED,
+    NAIVE_INJECTION:    NAIVE_INJECTION_EMBEDDED,
+    CONTEXT_IGNORING:   CONTEXT_IGNORING_EMBEDDED,
+    COMBINED_INJECTION: COMBINED_INJECTION_EMBEDDED,
+    FAKE_COMPLETION:    FAKE_COMPLETION_EMBEDDED,
+    ESCAPE_CHARACTERS:  ESCAPE_CHARACTERS_EMBEDDED,
+    OWASP_OBFUSCATED:   OWASP_OBFUSCATED_EMBEDDED,
+    TRANSFER_SUFFIX:    TRANSFER_SUFFIX_EMBEDDED,
 }
+
+
+
 
 
 # ---------------------------------------------------------------------------
