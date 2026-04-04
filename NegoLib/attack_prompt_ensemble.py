@@ -81,8 +81,11 @@ from NegoLib.attack_methods.A8_Transfer_Suffix import (
     TRANSFER_SUFFIX_PROMPTS,
     EMBEDDED_OBJECTIVES as TRANSFER_SUFFIX_EMBEDDED,
 )
-
-
+from NegoLib.attack_methods.A9_Auto_Persona_Modulation import (
+    METHOD_NAME as AUTO_PERSONA_MODULATION,
+    AUTO_PERSONA_MODULATION_PROMPTS,
+    EMBEDDED_OBJECTIVES as AUTO_PERSONA_MODULATION_EMBEDDED,
+)
 
 # ---------------------------------------------------------------------------
 # Registry: method_name -> {objective -> instruction_text}
@@ -103,6 +106,7 @@ ATTACK_METHOD_REGISTRY: dict[str, dict[str, str]] = {
     ESCAPE_CHARACTERS:  ESCAPE_CHARACTERS_PROMPTS,
     OWASP_OBFUSCATED:   OWASP_OBFUSCATED_PROMPTS,
     TRANSFER_SUFFIX:    TRANSFER_SUFFIX_PROMPTS,
+    AUTO_PERSONA_MODULATION: AUTO_PERSONA_MODULATION_PROMPTS,
 }
 
 # Registry: method_name -> set of objective keys that are embedded
@@ -116,6 +120,7 @@ EMBEDDED_REGISTRY: dict[str, set[str]] = {
     ESCAPE_CHARACTERS:  ESCAPE_CHARACTERS_EMBEDDED,
     OWASP_OBFUSCATED:   OWASP_OBFUSCATED_EMBEDDED,
     TRANSFER_SUFFIX:    TRANSFER_SUFFIX_EMBEDDED,
+    AUTO_PERSONA_MODULATION: AUTO_PERSONA_MODULATION_EMBEDDED,
 }
 
 
