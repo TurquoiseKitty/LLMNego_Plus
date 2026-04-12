@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "model": "deepseek-reasoner",
+    "n_random_trials": 3,
+    "n_exps_per_trial": 1,
+    "scenario": "KIOSK_COLA",
+    "merchant_max_rounds": 20,
+    "supplier_max_rounds": 20,
+    "rng_seed": 42
+  },
+  "trials": [
+    {
+      "prefix": "trial1_M-cooperative_S-anchor_high",
+      "n_runs": 1,
+      "n_transitions": 6,
+      "fit": {
+        "intercept": 1.16255673309525,
+        "coef_merchant_n": -0.1780324847367789,
+        "coef_supplier_n": 0.10252275083516894,
+        "rmse_all": 0.0068605648566041596,
+        "r2_all": 0.9065145045263338,
+        "n_samples": 6
+      }
+    },
+    {
+      "prefix": "trial2_M-tit_for_tat_matcher_S-gradual_conceder",
+      "n_runs": 1,
+      "n_transitions": 5,
+      "fit": {
+        "intercept": -0.4023537353735426,
+        "coef_merchant_n": 0.43978397839784805,
+        "coef_supplier_n": 1.0664266426642661,
+        "rmse_all": 0.007107253429077194,
+        "r2_all": 0.9868455595559559,
+        "n_samples": 5
+      }
+    },
+    {
+      "prefix": "trial3_M-gradual_conceder_S-patient_explorer",
+      "n_runs": 1,
+      "n_transitions": 5,
+      "fit": {
+        "intercept": 0.6080920661353133,
+        "coef_merchant_n": 0.005590579279193541,
+        "coef_supplier_n": 0.32698941358395206,
+        "rmse_all": 0.0054732064694051254,
+        "r2_all": 0.9745272201898485,
+        "n_samples": 5
+      }
+    }
+  ]
+}

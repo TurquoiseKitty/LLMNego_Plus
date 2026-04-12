@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "model": "deepseek-reasoner",
+    "n_random_trials": 5,
+    "n_exps_per_trial": 10,
+    "scenario": "KIOSK_COLA",
+    "merchant_max_rounds": 10,
+    "supplier_max_rounds": 10,
+    "rng_seed": 42
+  },
+  "trials": [
+    {
+      "prefix": "trial1_M-cooperative_S-anchor_high",
+      "n_runs": 10,
+      "n_transitions": 49,
+      "fit": {
+        "intercept": -0.022501113938944783,
+        "coef_merchant_n": 0.20776295064096453,
+        "coef_supplier_n": 0.815110506180013,
+        "rmse_all": 0.022822455378512643,
+        "r2_all": 0.9897061058612716,
+        "n_samples": 49
+      }
+    },
+    {
+      "prefix": "trial2_M-tit_for_tat_matcher_S-gradual_conceder",
+      "n_runs": 10,
+      "n_transitions": 45,
+      "fit": {
+        "intercept": 0.004661390755328519,
+        "coef_merchant_n": 0.2084865929716243,
+        "coef_supplier_n": 0.7846923872158634,
+        "rmse_all": 0.01707494615915798,
+        "r2_all": 0.9954450605352315,
+        "n_samples": 45
+      }
+    },
+    {
+      "prefix": "trial3_M-gradual_conceder_S-patient_explorer",
+      "n_runs": 10,
+      "n_transitions": 54,
+      "fit": {
+        "intercept": -0.02683967521189719,
+        "coef_merchant_n": 0.23196902494848282,
+        "coef_supplier_n": 0.7949944383210122,
+        "rmse_all": 0.02382293437246094,
+        "r2_all": 0.9909846477854783,
+        "n_samples": 54
+      }
+    },
+    {
+      "prefix": "trial4_M-cooperative_S-cooperative",
+      "n_runs": 10,
+      "n_transitions": 33,
+      "fit": {
+        "intercept": 0.0011533099326576047,
+        "coef_merchant_n": 0.23621469375701232,
+        "coef_supplier_n": 0.7612713032927478,
+        "rmse_all": 0.01033017164781997,
+        "r2_all": 0.9980746487450425,
+        "n_samples": 33
+      }
+    },
+    {
+      "prefix": "trial5_M-semantic_persuadable_S-anchor_high",
+      "n_runs": 10,
+      "n_transitions": 52,
+      "fit": {
+        "intercept": -0.00227379582799646,
+        "coef_merchant_n": 0.1863482594839857,
+        "coef_supplier_n": 0.8118937437815446,
+        "rmse_all": 0.010114487399528563,
+        "r2_all": 0.9994123810202694,
+        "n_samples": 52
+      }
+    }
+  ]
+}

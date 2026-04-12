@@ -25,8 +25,11 @@ from NegoLib.Entities.strategies import ALL_SUPPLIER_STRATEGIES, ALL_MERCHANT_ST
 # ---------------------------------------------------------------------------
 
 def _is_gpt_model(model: str) -> bool:
-    """Return True if the model is a GPT-series model (no native reasoning separation)."""
-    return model.lower().startswith(("gpt-", "gpt4", "gpt3"))
+    """
+    Return True for model families that should use standard OpenAI-compatible
+    chat payloads (i.e., no DeepSeek-only `extra_body` thinking fields).
+    """
+    return model.lower().startswith(("gpt-", "gpt4", "gpt3", "gemini"))
 
 
 def _extract_think_tags(text: str) -> tuple[str, str | None]:

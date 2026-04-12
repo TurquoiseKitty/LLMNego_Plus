@@ -129,7 +129,7 @@ BUDGET_MERCHANT = Merchant(
         snack=0.05,
         convenience=0.05,
     ),
-    max_rounds=3,
+    max_rounds=3,  
 )
 
 # ---------------------------------------------------------------------------

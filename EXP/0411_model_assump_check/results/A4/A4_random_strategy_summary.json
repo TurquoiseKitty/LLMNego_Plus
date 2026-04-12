@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "model": "gemini-2.5-pro",
+    "n_random_trials": 3,
+    "n_exps_per_trial": 5,
+    "scenario": "KIOSK_COLA",
+    "merchant_max_rounds": 10,
+    "supplier_max_rounds": 10,
+    "rng_seed": 10
+  },
+  "trials": [
+    {
+      "prefix": "trial1_M-anchor_low_S-semantic_persuadable",
+      "n_runs": 5,
+      "n_transitions": 20,
+      "fit": {
+        "intercept": -0.002960742979338212,
+        "coef_merchant_n": 0.2958979258550659,
+        "coef_supplier_n": 0.7098398345090874,
+        "rmse_all": 0.009572684512878526,
+        "r2_all": 0.9961191233625796,
+        "n_samples": 20
+      }
+    },
+    {
+      "prefix": "trial2_M-walk_away_shutdown_S-anchor_high",
+      "n_runs": 5,
+      "n_transitions": 22,
+      "fit": {
+        "intercept": 0.06837375281268274,
+        "coef_merchant_n": 0.13771129404214702,
+        "coef_supplier_n": 0.7877907630158795,
+        "rmse_all": 0.01536193277267029,
+        "r2_all": 0.9847119554551038,
+        "n_samples": 22
+      }
+    },
+    {
+      "prefix": "trial3_M-gradual_conceder_S-walk_away_shutdown",
+      "n_runs": 5,
+      "n_transitions": 18,
+      "fit": {
+        "intercept": 0.04017571369042381,
+        "coef_merchant_n": 0.3108781170413454,
+        "coef_supplier_n": 0.6464919165908385,
+        "rmse_all": 0.01993333977260084,
+        "r2_all": 0.9914089705433279,
+        "n_samples": 18
+      }
+    }
+  ]
+}
