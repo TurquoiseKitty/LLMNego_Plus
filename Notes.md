@@ -156,3 +156,42 @@ p_{t+1}^S \sim f_\theta(p_t^B, p_t^S, v)
 $$
 
 In the simplest case, learning the latent $v$ reduces to a Bandit problem.
+
+
+---
+
+# 04-12
+
+Adjusted model:
+
+Let $M$ be the market price, then 
+
+$$
+\frac{p_{t+1}^S - v}{M - v} = a \frac{p_{t+1}^B - v}{M - v} + b \frac{p_{t}^S - v}{M - v} + c + \epsilon
+$$
+
+The model generally holds. But for different model API and different strategy the model parameters can be different.
+
+
+**There are several problems with this model**:
+
+1. What will happen when $p_{t+1}^B$ is really large? The seller will directly accept, with $p_{t+1}^S = p_{t+1}^S$
+
+2. What will happen when $p_{t+1}^B$ is really small? Will the seller just mindlessly decrease the price with it?
+
+---
+
+# 04-13
+
+The negotiation price seem to follow:
+
+$$
+\frac{p_{t+1}^S - v}{M - v} = \left\{
+\begin{aligned}
+    & 0 & & p_{t+1}^B < v \\
+    & a \cdot \frac{p_{t+1}^B - v}{M - v} + b \cdot \frac{p_{t}^S - v}{M - v} + c &  & v < p_{t+1}^B < p_t^S\\ 
+    & p_{t+1}^B & & p_{t+1}^B > p_t^S
+\end{aligned}
+\right.
+$$
+

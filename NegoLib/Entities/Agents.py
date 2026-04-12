@@ -231,9 +231,9 @@ LOCAL_SUPPLIER = Supplier(
         "negotiation ties up a sales rep who could be closing other deals."
     ),
     internal_costs=InternalCostStructure(
-        beverage=0.04,
-        snack=0.05,
-        convenience=0.40,
+        beverage=0.4,
+        snack=0.6,
+        convenience=2.8,
     ),
     max_rounds=3,
 )
@@ -255,9 +255,9 @@ NATIONAL_SUPPLIER = Supplier(
         "multi-round negotiation but expects structured counter-offers."
     ),
     internal_costs=InternalCostStructure(
-        beverage=0.12,
-        snack=0.12,
-        convenience=0.15,
+        beverage=0.9,
+        snack=0.5,
+        convenience=4.3,
     ),
     max_rounds=5,
 )
