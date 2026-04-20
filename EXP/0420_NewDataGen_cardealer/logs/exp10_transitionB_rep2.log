@@ -1,0 +1,1512 @@
+=== START exp10_transitionB_rep2 ===
+    schedule    : threephase__opponent_aware_diagnostic@1_market_expert_value_justifier@6_reciprocal_fairness_keeper@12
+    adaptive    : True  (switches=[6, 12])
+    unique strat: ['market_expert_value_justifier', 'opponent_aware_diagnostic', 'reciprocal_fairness_keeper']
+    n_rounds    : 16
+    n_cars      : 5
+    runs/car    : 30
+    total runs  : 150
+    total calls : 2400  (~12.0 h @ 200 calls/h)
+    model       : deepseek-reasoner
+    base_url    : https://api.deepseek.com
+    base_seed   : 20260420
+    output      : results\exp10_transitionB_rep2.json
+
+--- CAR 1/5: 2014 Mercedes-Benz S550  (M=$96,000.00  cost=$19,000.00  cost/M=19.79%) ---
+
+   run 1/30 on 2014 Mercedes-Benz S550  seed=21260420
+      R 1  buy $ 40,647.01   sel     $65,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 11,719.78   sel     $58,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 17,706.32   sel     $55,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 13,214.75   sel     $55,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 24,079.53   sel     $52,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 11,444.19   sel     $51,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 17,767.39   sel     $49,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 22,729.57   sel     $48,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 16,999.00   sel     $46,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 27,457.66   sel     $44,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 16,030.48   sel     $42,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 10,152.85   sel     $40,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  5,259.43   sel     $38,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 17,309.14   sel     $37,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 16,643.02   sel     $36,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 10,322.09   sel     $35,000.00   [strat=reciprocal_fairness_keeper]
+   run 1 done in 5.0 min
+
+   run 2/30 on 2014 Mercedes-Benz S550  seed=21260421
+      R 1  buy $ 62,052.32   sel     $74,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 45,714.91   sel     $71,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 25,249.49   sel     $69,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 46,313.23   sel     $67,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 64,310.88   sel     $65,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 30,151.12   sel     $65,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 56,943.07   sel     $64,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 27,534.86   sel     $64,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 53,779.09   sel     $63,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 11,641.94   sel     $63,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 10,398.32   sel     $62,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  9,320.19   sel     $62,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 57,263.49   sel     $60,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 40,891.98   sel     $60,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,005.80   sel     $59,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 44,988.96   sel     $58,000.00   [strat=reciprocal_fairness_keeper]
+   run 2 done in 5.5 min
+
+   run 3/30 on 2014 Mercedes-Benz S550  seed=21260422
+      R 1  buy $ 10,200.98   sel     $28,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 15,340.75   sel     $25,800.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 23,682.04   sel     $25,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 13,542.39   sel     $24,800.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 22,397.63   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 13,277.19   sel     $24,200.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 16,678.31   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,047.84   sel     $23,800.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 20,879.60   sel     $22,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 18,830.10   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 11,377.26   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,982.79   sel     $20,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 16,136.75   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,939.74   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 10,918.72   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 19,620.71   sel     $19,800.00   [strat=reciprocal_fairness_keeper]
+   run 3 done in 5.3 min
+
+   run 4/30 on 2014 Mercedes-Benz S550  seed=21260423
+      R 1  buy $ 18,119.10   sel     $22,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 19,561.13   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  1,933.54   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $    997.69   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  5,625.87   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  1,199.18   sel     $21,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  9,569.96   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,340.11   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 11,494.14   sel     $19,750.00   [strat=market_expert_value_justifier]
+      R10  buy $ 18,149.11   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 19,326.83   sel     $19,326.83   [strat=market_expert_value_justifier]
+      R12  buy $ 12,695.37   sel     $19,250.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 11,453.70   sel     $19,200.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,441.64   sel     $19,150.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 17,708.87   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  5,298.87   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+   run 4 done in 4.4 min
+
+   run 5/30 on 2014 Mercedes-Benz S550  seed=21260424
+      R 1  buy $ 14,067.83   sel     $24,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  2,825.78   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 15,340.79   sel     $20,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,043.57   sel     $20,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  1,618.40   sel     $20,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 14,777.55   sel     $20,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  1,851.96   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,701.58   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 17,917.81   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  5,869.67   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 17,900.03   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 16,442.16   sel     $19,250.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  9,643.20   sel     $19,250.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 16,273.25   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  9,723.27   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 10,888.61   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+   run 5 done in 5.6 min
+
+   run 6/30 on 2014 Mercedes-Benz S550  seed=21260425
+      R 1  buy $ 20,149.61   sel     $22,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 21,781.42   sel     $22,200.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    837.62   sel     $22,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 18,622.44   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  9,028.76   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  8,244.61   sel     $20,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 15,897.43   sel     $19,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $  1,999.31   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  9,165.04   sel     $19,300.00   [strat=market_expert_value_justifier]
+      R10  buy $  1,916.85   sel     $19,200.00   [strat=market_expert_value_justifier]
+      R11  buy $ 10,627.63   sel     $19,200.00   [strat=market_expert_value_justifier]
+      R12  buy $ 11,898.13   sel     $19,200.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $    492.01   sel     $19,200.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 11,658.58   sel     $19,200.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 17,690.42   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 18,915.51   sel     $19,100.00   [strat=reciprocal_fairness_keeper]
+   run 6 done in 4.4 min
+
+   run 7/30 on 2014 Mercedes-Benz S550  seed=21260426
+      R 1  buy $ 81,689.69   sel     $89,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 62,542.83   sel     $86,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 57,029.43   sel     $84,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 56,925.60   sel     $84,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 40,165.15   sel     $84,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 28,899.54   sel     $83,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 17,290.97   sel     $83,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 59,593.80   sel     $82,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 35,966.00   sel     $81,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 19,197.25   sel     $81,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 76,993.47   sel     $79,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 72,722.32   sel     $78,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 20,333.88   sel     $77,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 20,810.66   sel     $77,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 26,911.51   sel     $76,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 58,001.32   sel     $75,000.00   [strat=reciprocal_fairness_keeper]
+   run 7 done in 4.1 min
+
+   run 8/30 on 2014 Mercedes-Benz S550  seed=21260427
+      R 1  buy $ 40,212.46   sel     $55,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 34,287.84   sel     $48,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 42,075.87   sel     $46,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 18,303.82   sel     $45,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 31,156.17   sel     $44,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  4,573.65   sel     $43,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 19,328.88   sel     $43,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 22,819.36   sel     $43,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 25,991.77   sel     $35,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  5,793.50   sel     $43,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 31,079.35   sel     $33,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 29,888.15   sel     $32,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 23,117.72   sel     $32,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  5,651.74   sel     $32,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 14,425.36   sel     $43,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 21,294.21   sel     $32,000.00   [strat=reciprocal_fairness_keeper]
+   run 8 done in 4.2 min
+
+   run 9/30 on 2014 Mercedes-Benz S550  seed=21260428
+      R 1  buy $ 44,161.94   sel     $52,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  2,162.20   sel     $51,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  3,558.36   sel     $49,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 42,160.03   sel     $48,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 40,392.80   sel     $47,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  2,676.16   sel     $47,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 37,114.45   sel     $45,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 39,742.64   sel     $43,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 38,128.12   sel     $42,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 18,484.12   sel     $41,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 21,224.76   sel     $38,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 29,431.26   sel     $36,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 13,199.88   sel     $34,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  2,818.09   sel     $33,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 17,911.87   sel     $30,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 13,867.54   sel     $29,500.00   [strat=reciprocal_fairness_keeper]
+   run 9 done in 4.8 min
+
+   run 10/30 on 2014 Mercedes-Benz S550  seed=21260429
+      R 1  buy $ 79,948.92   sel     $82,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 60,881.58   sel     $75,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 74,921.71   sel     $74,921.71   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 44,053.89   sel     $70,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 25,415.64   sel     $68,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 48,175.69   sel     $66,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,175.75   sel     $65,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 25,169.34   sel     $64,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 61,923.37   sel     $64,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 26,042.63   sel     $63,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 37,604.73   sel     $63,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 46,963.41   sel     $62,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 45,181.41   sel     $62,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  7,179.79   sel     $61,800.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 18,981.94   sel     $61,700.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 40,019.25   sel     $61,500.00   [strat=reciprocal_fairness_keeper]
+   run 10 done in 4.0 min
+
+   run 11/30 on 2014 Mercedes-Benz S550  seed=21260430
+      R 1  buy $ 90,320.27   sel     $94,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 86,287.59   sel     $92,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 16,163.49   sel     $91,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 75,074.55   sel     $89,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 60,025.61   sel     $88,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 43,017.76   sel     $87,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 86,774.15   sel     $86,774.15   [strat=market_expert_value_justifier]
+      R 8  buy $ 37,830.46   sel     $86,774.15   [strat=market_expert_value_justifier]
+      R 9  buy $ 22,550.88   sel     $85,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 46,462.52   sel     $84,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 67,597.10   sel     $82,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 45,316.02   sel     $80,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 16,147.68   sel     $79,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 61,561.19   sel     $78,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 74,595.27   sel     $76,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 34,757.36   sel     $75,500.00   [strat=reciprocal_fairness_keeper]
+   run 11 done in 4.9 min
+
+   run 12/30 on 2014 Mercedes-Benz S550  seed=21260431
+      R 1  buy $ 55,947.34   sel     $62,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 43,954.80   sel     $59,995.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  9,642.86   sel     $57,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 36,396.06   sel     $57,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 45,661.10   sel     $57,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  8,595.40   sel     $57,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 37,132.73   sel     $54,995.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 39,512.77   sel     $51,995.00   [strat=market_expert_value_justifier]
+      R 9  buy $  6,039.27   sel     $49,995.00   [strat=market_expert_value_justifier]
+      R10  buy $  3,166.62   sel     $49,995.00   [strat=market_expert_value_justifier]
+      R11  buy $ 39,956.22   sel     $47,995.00   [strat=market_expert_value_justifier]
+      R12  buy $ 21,030.39   sel     $45,995.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 35,395.11   sel     $43,995.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  9,425.35   sel     $42,995.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 24,475.67   sel     $41,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 20,756.29   sel     $39,995.00   [strat=reciprocal_fairness_keeper]
+   run 12 done in 6.0 min
+
+   run 13/30 on 2014 Mercedes-Benz S550  seed=21260432
+      R 1  buy $ 14,200.20   sel     $26,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  2,534.95   sel     $26,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 21,130.07   sel     $25,900.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $    148.43   sel     $25,800.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  6,047.35   sel     $25,800.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 23,050.94   sel     $25,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 12,950.23   sel     $25,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 20,842.75   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $    212.79   sel     $23,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 15,908.38   sel     $23,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 16,830.42   sel     $22,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,076.84   sel     $22,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 16,436.02   sel     $21,900.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 11,788.87   sel     $21,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 12,187.51   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 15,723.58   sel     $20,500.00   [strat=reciprocal_fairness_keeper]
+   run 13 done in 4.8 min
+
+   run 14/30 on 2014 Mercedes-Benz S550  seed=21260433
+      R 1  buy $ 75,060.51   sel     $85,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 31,190.77   sel     $84,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,955.30   sel     $29,995.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  8,576.55   sel     $27,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  4,388.05   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 14,985.61   sel     $21,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 12,350.69   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 20,310.35   sel     $20,400.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 12,897.11   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  7,547.81   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 17,707.66   sel     $19,200.00   [strat=market_expert_value_justifier]
+      R12  buy $  2,047.54   sel     $19,100.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  3,113.05   sel     $19,050.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 11,556.67   sel     $19,025.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  2,189.80   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,558.19   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+   run 14 done in 8.2 min
+
+   run 15/30 on 2014 Mercedes-Benz S550  seed=21260434
+      R 1  buy $ 88,435.61   sel     $94,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 66,133.17   sel     $85,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 76,122.95   sel     $82,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 28,922.12   sel     $81,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 51,034.20   sel     $79,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 16,765.54   sel     $78,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 55,803.39   sel     $75,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 11,200.65   sel     $74,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 14,373.09   sel     $74,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 29,805.27   sel     $73,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 49,891.02   sel     $72,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 40,557.13   sel     $71,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 59,829.34   sel     $67,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 34,766.67   sel     $65,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 46,502.19   sel     $60,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 59,341.98   sel     $59,341.98   [strat=reciprocal_fairness_keeper]
+   run 15 done in 6.6 min
+
+   run 16/30 on 2014 Mercedes-Benz S550  seed=21260435
+      R 1  buy $ 35,903.34   sel     $41,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  2,444.96   sel     $39,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  4,047.28   sel     $38,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 29,601.79   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  8,580.33   sel     $32,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 24,801.80   sel     $30,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  7,051.37   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,981.51   sel     $27,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 14,152.52   sel     $26,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 17,420.89   sel     $25,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 14,000.04   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  5,594.30   sel     $23,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  8,004.49   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 18,677.96   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  7,917.67   sel     $21,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 15,148.51   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+   run 16 done in 5.3 min
+
+   run 17/30 on 2014 Mercedes-Benz S550  seed=21260436
+      R 1  buy $ 51,085.36   sel     $55,185.36   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 26,081.74   sel     $55,185.36   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 35,696.65   sel     $54,185.36   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 39,191.91   sel     $53,185.36   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 34,414.49   sel     $52,185.36   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 22,617.86   sel     $51,185.36   [strat=market_expert_value_justifier] *
+      R 7  buy $ 32,512.50   sel     $49,185.36   [strat=market_expert_value_justifier]
+      R 8  buy $ 34,761.14   sel     $48,185.36   [strat=market_expert_value_justifier]
+      R 9  buy $ 34,453.25   sel     $46,185.36   [strat=market_expert_value_justifier]
+      R10  buy $ 27,004.89   sel     $44,185.36   [strat=market_expert_value_justifier]
+      R11  buy $ 35,268.22   sel     $42,185.36   [strat=market_expert_value_justifier]
+      R12  buy $ 36,132.09   sel     $40,185.36   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 39,650.45   sel     $39,800.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 14,989.46   sel     $42,185.36   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 39,724.14   sel     $39,724.14   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 27,789.14   sel     $41,185.36   [strat=reciprocal_fairness_keeper]
+   run 17 done in 6.4 min
+
+   run 18/30 on 2014 Mercedes-Benz S550  seed=21260437
+      R 1  buy $ 32,985.45   sel     $38,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 29,574.12   sel     $37,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,419.17   sel     $36,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 24,296.82   sel     $35,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $    998.42   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 13,889.93   sel     $34,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,195.89   sel     $33,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 28,206.52   sel     $33,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 19,622.54   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 23,464.05   sel     $26,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  7,788.46   sel     $25,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,117.93   sel     $24,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $    208.38   sel     $24,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 18,441.58   sel     $23,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  9,295.69   sel     $22,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 18,066.30   sel     $21,500.00   [strat=reciprocal_fairness_keeper]
+   run 18 done in 6.6 min
+
+   run 19/30 on 2014 Mercedes-Benz S550  seed=21260438
+      R 1  buy $ 74,258.97   sel     $94,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 74,286.76   sel     $92,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 72,821.34   sel     $90,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 42,881.55   sel     $88,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 17,595.21   sel     $86,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  3,787.22   sel     $86,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 79,842.63   sel     $84,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,799.77   sel     $83,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 78,876.17   sel     $82,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 73,557.21   sel     $80,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 26,749.27   sel     $78,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 41,994.10   sel     $77,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  7,209.59   sel     $76,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 18,044.35   sel     $75,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 31,459.87   sel     $74,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  6,188.35   sel     $74,000.00   [strat=reciprocal_fairness_keeper]
+   run 19 done in 4.2 min
+
+   run 20/30 on 2014 Mercedes-Benz S550  seed=21260439
+      R 1  buy $  8,197.75   sel     $29,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 26,001.39   sel     $28,750.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,141.72   sel     $28,250.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 26,163.57   sel     $27,200.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 17,046.21   sel     $26,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 25,911.79   sel     $26,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  2,567.70   sel     $25,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  4,621.00   sel     $24,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 19,455.64   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 15,506.31   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  2,180.66   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  4,104.64   sel     $19,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,265.91   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  1,051.94   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 19,148.56   sel     $19,148.56   [strat=reciprocal_fairness_keeper]
+      R16  buy $  3,105.60   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+   run 20 done in 6.0 min
+
+   run 21/30 on 2014 Mercedes-Benz S550  seed=21260440
+      R 1  buy $ 69,691.31   sel     $85,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 47,273.53   sel     $82,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 21,143.14   sel     $80,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 65,551.00   sel     $77,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 25,017.13   sel     $76,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 36,473.11   sel     $74,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 61,795.88   sel     $73,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 50,520.96   sel     $71,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 41,422.74   sel     $70,000.00   [strat=market_expert_value_justifier]
+      R10  buy $    313.43   sel     $70,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 47,847.46   sel     $69,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 46,393.12   sel     $68,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,673.83   sel     $68,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,054.76   sel     $67,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 28,462.86   sel     $67,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 39,979.37   sel     $66,500.00   [strat=reciprocal_fairness_keeper]
+   run 21 done in 6.2 min
+
+   run 22/30 on 2014 Mercedes-Benz S550  seed=21260441
+      R 1  buy $ 74,007.62   sel     $89,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 70,698.86   sel     $88,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 52,062.80   sel     $86,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 62,092.37   sel     $86,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 30,661.52   sel     $85,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 78,233.24   sel     $78,233.24   [strat=market_expert_value_justifier] *
+      R 7  buy $ 76,633.67   sel     $78,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 41,356.30   sel     $78,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 30,561.34   sel     $78,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 17,494.53   sel     $77,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 11,377.74   sel     $77,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 48,332.14   sel     $76,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 74,969.42   sel     $75,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 21,122.10   sel     $74,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 11,790.66   sel     $73,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 34,014.08   sel     $72,000.00   [strat=reciprocal_fairness_keeper]
+   run 22 done in 6.2 min
+
+   run 23/30 on 2014 Mercedes-Benz S550  seed=21260442
+      R 1  buy $ 32,766.33   sel     $34,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 20,859.81   sel     $33,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  2,407.04   sel     $32,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,374.98   sel     $31,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 20,171.28   sel     $28,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 26,133.59   sel     $27,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 23,176.42   sel     $26,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 25,615.51   sel     $25,800.00   [strat=market_expert_value_justifier]
+      R 9  buy $  3,619.26   sel     $25,500.00   [strat=market_expert_value_justifier]
+      R10  buy $    321.81   sel     $25,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 21,286.74   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 23,962.38   sel     $23,981.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 17,394.31   sel     $23,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $    402.00   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 21,151.63   sel     $22,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 17,308.01   sel     $21,500.00   [strat=reciprocal_fairness_keeper]
+   run 23 done in 6.0 min
+
+   run 24/30 on 2014 Mercedes-Benz S550  seed=21260443
+      R 1  buy $  9,683.51   sel     $23,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 17,644.68   sel     $22,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 17,522.84   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  7,592.56   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 14,421.44   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  2,230.32   sel     $21,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 11,059.37   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,809.62   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  9,103.52   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 19,559.98   sel     $19,700.00   [strat=market_expert_value_justifier]
+      R11  buy $  2,662.27   sel     $19,700.00   [strat=market_expert_value_justifier]
+      R12  buy $ 17,862.94   sel     $19,400.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 13,552.97   sel     $19,400.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 13,355.55   sel     $19,400.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  9,601.11   sel     $19,200.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 10,008.88   sel     $19,200.00   [strat=reciprocal_fairness_keeper]
+   run 24 done in 5.9 min
+
+   run 25/30 on 2014 Mercedes-Benz S550  seed=21260444
+      R 1  buy $ 68,474.69   sel     $85,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 61,591.66   sel     $83,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,264.50   sel     $82,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 16,520.77   sel     $81,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 67,645.04   sel     $78,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  1,744.31   sel     $77,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 70,182.28   sel     $75,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 52,093.16   sel     $73,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 18,547.07   sel     $71,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 28,418.57   sel     $69,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 26,712.61   sel     $68,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 25,493.76   sel     $67,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 22,226.94   sel     $65,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 10,831.41   sel     $65,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 40,814.43   sel     $64,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 33,904.16   sel     $63,000.00   [strat=reciprocal_fairness_keeper]
+   run 25 done in 6.8 min
+
+   run 26/30 on 2014 Mercedes-Benz S550  seed=21260445
+      R 1  buy $ 36,501.89   sel     $49,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 41,006.64   sel     $47,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 41,961.90   sel     $45,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 25,560.38   sel     $44,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 17,957.50   sel     $44,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 28,259.12   sel     $42,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $    262.09   sel     $42,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  5,850.51   sel     $42,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 34,286.73   sel     $40,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  4,523.52   sel     $39,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 21,890.71   sel     $38,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 12,542.15   sel     $37,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 33,533.38   sel     $36,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 31,302.53   sel     $35,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  3,713.22   sel     $36,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 35,283.53   sel     $35,500.00   [strat=reciprocal_fairness_keeper]
+   run 26 done in 7.1 min
+
+   run 27/30 on 2014 Mercedes-Benz S550  seed=21260446
+      R 1  buy $ 65,985.72   sel     $74,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 25,572.05   sel     $73,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 30,677.15   sel     $68,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 23,076.58   sel     $65,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 35,404.59   sel     $58,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  4,548.16   sel     $56,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 28,950.94   sel     $54,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 12,087.70   sel     $52,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 45,715.53   sel     $50,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 16,416.64   sel     $48,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 13,783.00   sel     $47,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 40,293.63   sel     $45,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 28,051.87   sel     $43,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 20,594.70   sel     $41,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 36,338.58   sel     $39,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,039.98   sel     $39,000.00   [strat=reciprocal_fairness_keeper]
+   run 27 done in 7.0 min
+
+   run 28/30 on 2014 Mercedes-Benz S550  seed=21260447
+      R 1  buy $ 68,401.31   sel     $85,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 59,310.56   sel     $85,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 78,124.14   sel     $82,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 62,237.64   sel     $82,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 27,368.11   sel     $81,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 72,084.31   sel     $79,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 52,930.13   sel     $81,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 27,899.29   sel     $81,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 45,441.11   sel     $81,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 11,629.44   sel     $80,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  6,370.97   sel     $79,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 22,521.76   sel     $79,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 23,864.28   sel     $79,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 18,974.68   sel     $79,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 21,301.36   sel     $78,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 26,906.73   sel     $77,500.00   [strat=reciprocal_fairness_keeper]
+   run 28 done in 6.9 min
+
+   run 29/30 on 2014 Mercedes-Benz S550  seed=21260448
+      R 1  buy $  3,088.65   sel     $34,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 12,247.32   sel     $31,750.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 21,564.08   sel     $28,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  2,010.47   sel     $27,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  1,801.22   sel     $25,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  5,497.05   sel     $24,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  4,175.59   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 23,728.94   sel     $23,900.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 18,505.51   sel     $23,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  7,590.11   sel     $22,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  9,740.39   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  7,070.34   sel     $21,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  9,266.74   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  7,442.61   sel     $20,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  7,137.48   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 11,019.53   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+   run 29 done in 8.1 min
+
+   run 30/30 on 2014 Mercedes-Benz S550  seed=21260449
+      R 1  buy $ 21,959.62   sel     $24,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 11,616.38   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 11,034.31   sel     $24,300.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  9,159.33   sel     $22,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 12,615.68   sel     $22,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  6,055.09   sel     $22,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 18,132.48   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 11,480.81   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  2,126.38   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 21,144.62   sel     $21,144.62   [strat=market_expert_value_justifier]
+      R11  buy $  8,098.13   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R12  buy $    926.12   sel     $21,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 13,011.59   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  7,315.94   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,698.38   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 18,131.63   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+   run 30 done in 5.5 min
+
+   ---> checkpoint: car 1/5 done in 172.1 min; total so far 172.1 min; saved 30 runs to exp10_transitionB_rep2.json
+
+--- CAR 2/5: 2016 Cadillac CTS 3.6 Luxury  (M=$45,000.00  cost=$15,750.00  cost/M=35.00%) ---
+
+   run 1/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261420
+      R 1  buy $ 41,219.38   sel     $44,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 36,744.70   sel     $43,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,566.58   sel     $42,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  3,698.31   sel     $41,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 10,780.78   sel     $41,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 40,973.50   sel     $40,973.50   [strat=market_expert_value_justifier] *
+      R 7  buy $    605.39   sel     $40,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 30,546.44   sel     $39,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 34,208.64   sel     $38,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 38,101.01   sel     $38,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 13,477.83   sel     $38,000.00   [strat=market_expert_value_justifier]
+      R12  buy $    621.80   sel     $38,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,350.27   sel     $38,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 22,894.32   sel     $36,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 21,694.48   sel     $35,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 13,504.68   sel     $35,000.00   [strat=reciprocal_fairness_keeper]
+   run 1 done in 5.3 min
+
+   run 2/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261421
+      R 1  buy $ 42,388.05   sel     $44,200.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 21,900.60   sel     $43,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 11,769.80   sel     $43,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 24,708.06   sel     $39,900.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 30,241.10   sel     $38,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 34,119.92   sel     $36,800.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 27,317.92   sel     $35,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 17,107.11   sel     $35,900.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 20,700.64   sel     $34,900.00   [strat=market_expert_value_justifier]
+      R10  buy $ 33,468.58   sel     $34,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 10,364.16   sel     $34,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 15,677.34   sel     $33,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,713.93   sel     $32,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 31,745.27   sel     $31,900.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  1,977.15   sel     $31,900.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 14,351.01   sel     $31,500.00   [strat=reciprocal_fairness_keeper]
+   run 2 done in 7.1 min
+
+   run 3/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261422
+      R 1  buy $ 29,732.61   sel     $32,495.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 16,105.93   sel     $31,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  8,411.76   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  3,596.11   sel     $29,900.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 29,479.30   sel     $29,700.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 22,390.78   sel     $29,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 20,200.91   sel     $29,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 18,611.11   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 27,122.21   sel     $27,800.00   [strat=market_expert_value_justifier]
+      R10  buy $ 15,108.96   sel     $27,800.00   [strat=market_expert_value_justifier]
+      R11  buy $  1,366.51   sel     $27,800.00   [strat=market_expert_value_justifier]
+      R12  buy $ 24,349.05   sel     $26,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 21,251.47   sel     $25,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 17,630.89   sel     $24,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 17,630.87   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 15,528.71   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+   run 3 done in 6.4 min
+
+   run 4/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261423
+      R 1  buy $ 29,373.54   sel     $34,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 27,547.20   sel     $33,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,497.05   sel     $33,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 25,564.81   sel     $32,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 22,720.94   sel     $31,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 11,528.20   sel     $31,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 17,855.94   sel     $30,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,280.03   sel     $30,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 13,746.92   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 16,705.53   sel     $29,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 21,222.29   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,838.45   sel     $28,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 25,143.47   sel     $27,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 22,802.76   sel     $27,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 12,441.17   sel     $26,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  9,157.92   sel     $26,500.00   [strat=reciprocal_fairness_keeper]
+   run 4 done in 10.4 min
+
+   run 5/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261424
+      R 1  buy $ 19,601.79   sel     $24,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 14,938.99   sel     $23,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  2,864.75   sel     $23,900.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 21,079.93   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  8,546.17   sel     $23,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 16,084.13   sel     $22,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  8,556.05   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 20,440.51   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  1,517.43   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  1,852.63   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  1,830.21   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  2,513.47   sel     $21,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $    592.25   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  2,728.91   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 20,162.99   sel     $20,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 20,085.03   sel     $20,300.00   [strat=reciprocal_fairness_keeper]
+   run 5 done in 7.2 min
+
+   run 6/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261425
+      R 1  buy $ 13,347.18   sel     $18,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  5,393.93   sel     $17,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 13,014.91   sel     $17,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,343.06   sel     $17,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 12,521.40   sel     $16,800.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  1,946.96   sel     $16,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  5,991.59   sel     $16,250.00   [strat=market_expert_value_justifier]
+      R 8  buy $  6,580.09   sel     $16,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  6,503.71   sel     $15,900.00   [strat=market_expert_value_justifier]
+      R10  buy $  7,834.41   sel     $15,800.00   [strat=market_expert_value_justifier]
+      R11  buy $  2,597.64   sel     $15,800.00   [strat=market_expert_value_justifier]
+      R12  buy $ 10,478.29   sel     $15,780.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  2,861.77   sel     $15,780.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  1,145.90   sel     $15,760.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  5,728.75   sel     $15,755.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,181.21   sel     $15,750.00   [strat=reciprocal_fairness_keeper]
+   run 6 done in 8.8 min
+
+   run 7/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261426
+      R 1  buy $ 21,115.24   sel     $22,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 16,757.31   sel     $20,995.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  6,088.64   sel     $19,995.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  9,848.80   sel     $19,495.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 18,506.89   sel     $18,995.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  2,309.97   sel     $18,995.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 10,084.09   sel     $18,995.00   [strat=market_expert_value_justifier]
+      R 8  buy $  4,534.07   sel     $18,995.00   [strat=market_expert_value_justifier]
+      R 9  buy $  3,090.68   sel     $18,995.00   [strat=market_expert_value_justifier]
+      R10  buy $ 13,324.65   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  9,664.86   sel     $18,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 15,191.49   sel     $17,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $    834.37   sel     $17,300.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 10,483.24   sel     $17,200.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 11,545.50   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 14,981.75   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+   run 7 done in 4.6 min
+
+   run 8/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261427
+      R 1  buy $ 17,400.38   sel     $19,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  6,435.40   sel     $18,800.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  4,476.57   sel     $18,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  5,424.35   sel     $18,200.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  8,588.78   sel     $17,900.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 14,605.17   sel     $17,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  8,542.10   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  1,019.61   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  9,906.25   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 14,680.24   sel     $17,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  8,118.91   sel     $17,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  6,922.01   sel     $17,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  4,132.06   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  9,501.66   sel     $16,300.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 11,543.54   sel     $16,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  7,001.30   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+   run 8 done in 5.3 min
+
+   run 9/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261428
+      R 1  buy $ 41,446.43   sel     $43,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  5,693.93   sel     $43,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 30,406.12   sel     $39,999.99   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 20,947.53   sel     $34,999.99   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 18,932.23   sel     $33,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 13,892.10   sel     $32,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  2,721.36   sel     $31,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  9,180.60   sel     $30,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  9,306.07   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  5,458.17   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  9,803.33   sel     $27,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 18,093.87   sel     $24,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  2,921.30   sel     $23,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 18,182.01   sel     $21,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 13,619.38   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  8,485.11   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+   run 9 done in 6.3 min
+
+   run 10/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261429
+      R 1  buy $ 42,317.35   sel     $44,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 21,552.22   sel     $44,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 22,227.78   sel     $43,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 30,597.08   sel     $42,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  3,627.57   sel     $40,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  9,091.96   sel     $39,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 34,297.70   sel     $37,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 28,500.66   sel     $36,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 25,073.01   sel     $34,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  5,810.45   sel     $32,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 26,825.77   sel     $31,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 22,652.01   sel     $30,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,984.68   sel     $29,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 15,848.44   sel     $29,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 23,173.19   sel     $27,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 15,544.92   sel     $26,000.00   [strat=reciprocal_fairness_keeper]
+   run 10 done in 6.0 min
+
+   run 11/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261430
+      R 1  buy $ 36,101.40   sel     $39,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 28,119.84   sel     $38,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 31,958.63   sel     $38,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  2,708.49   sel     $37,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  7,618.95   sel     $37,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 20,054.20   sel     $36,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,473.23   sel     $36,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 31,230.80   sel     $35,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  1,426.57   sel     $35,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 24,306.87   sel     $34,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  3,165.12   sel     $34,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  3,193.31   sel     $33,900.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 20,974.59   sel     $33,750.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 15,628.67   sel     $33,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $    428.70   sel     $33,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 27,959.87   sel     $32,500.00   [strat=reciprocal_fairness_keeper]
+   run 11 done in 6.8 min
+
+   run 12/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261431
+      R 1  buy $ 21,529.10   sel     $23,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  7,894.59   sel     $22,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,663.06   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  3,765.57   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  6,334.99   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 12,528.66   sel     $18,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 13,142.13   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 15,091.71   sel     $16,900.00   [strat=market_expert_value_justifier]
+      R 9  buy $  4,451.59   sel     $16,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  3,820.66   sel     $16,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 10,069.38   sel     $16,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  2,606.86   sel     $16,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,296.62   sel     $15,900.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  4,316.74   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 15,633.70   sel     $15,700.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $    914.46   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+   run 12 done in 6.1 min
+
+   run 13/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261432
+      R 1  buy $  5,131.82   sel     $18,750.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 14,478.08   sel     $18,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    664.88   sel     $17,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $    567.71   sel     $16,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  5,537.92   sel     $15,999.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 15,823.81   sel     $15,950.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 11,942.05   sel     $15,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 14,749.93   sel     $15,800.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 14,617.31   sel     $15,775.00   [strat=market_expert_value_justifier]
+      R10  buy $  1,951.88   sel     $15,750.00   [strat=market_expert_value_justifier]
+      R11  buy $  4,794.20   sel     $15,725.00   [strat=market_expert_value_justifier]
+      R12  buy $ 10,430.22   sel     $15,725.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,829.93   sel     $15,750.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 14,680.89   sel     PARSE-FAIL   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 14,877.73   sel     $15,700.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  7,789.29   sel     $15,750.00   [strat=reciprocal_fairness_keeper]
+   run 13 done in 6.3 min
+
+   run 14/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261433
+      R 1  buy $ 28,905.11   sel     $32,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 19,002.27   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 21,183.75   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,898.96   sel     $29,750.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $    768.69   sel     $29,750.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  7,977.47   sel     $29,750.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  8,139.31   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $    463.51   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  4,562.62   sel     $29,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 13,942.58   sel     $29,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 15,619.63   sel     $28,750.00   [strat=market_expert_value_justifier]
+      R12  buy $ 20,410.03   sel     $28,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  9,380.30   sel     $28,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 21,327.86   sel     $27,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 25,187.47   sel     $26,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 22,213.32   sel     $26,000.00   [strat=reciprocal_fairness_keeper]
+   run 14 done in 5.4 min
+
+   run 15/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261434
+      R 1  buy $ 28,946.62   sel     $33,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  7,863.89   sel     $31,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 25,384.22   sel     $29,900.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  3,470.62   sel     $28,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 28,362.03   sel     $28,400.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 10,302.09   sel     $28,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 14,543.28   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  2,463.00   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 20,470.16   sel     $27,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 26,245.08   sel     $26,800.00   [strat=market_expert_value_justifier]
+      R11  buy $ 22,077.30   sel     $25,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 10,176.20   sel     $25,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,502.40   sel     $25,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,335.74   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 18,952.74   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 14,841.67   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+   run 15 done in 6.2 min
+
+   run 16/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261435
+      R 1  buy $ 18,210.30   sel     $21,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 10,907.59   sel     $20,250.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 10,915.08   sel     $20,250.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 10,435.09   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 10,607.17   sel     $19,250.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  2,597.45   sel     $18,900.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  2,702.42   sel     $18,750.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,922.72   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  2,900.03   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  2,540.60   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 12,944.20   sel     $16,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  1,315.75   sel     $16,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  2,277.76   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 15,926.64   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,555.49   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  7,267.25   sel     $16,000.00   [strat=reciprocal_fairness_keeper]
+   run 16 done in 6.1 min
+
+   run 17/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261436
+      R 1  buy $ 37,614.35   sel     $43,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 24,018.89   sel     $34,995.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 30,706.73   sel     $33,495.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  1,832.18   sel     $32,495.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 23,471.43   sel     $31,995.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 28,654.71   sel     $30,995.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 27,672.48   sel     $30,495.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 21,149.76   sel     $29,995.00   [strat=market_expert_value_justifier]
+      R 9  buy $  5,784.61   sel     $29,495.00   [strat=market_expert_value_justifier]
+      R10  buy $ 25,420.03   sel     $28,495.00   [strat=market_expert_value_justifier]
+      R11  buy $ 15,368.96   sel     $27,995.00   [strat=market_expert_value_justifier]
+      R12  buy $    589.69   sel     $27,995.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 18,429.78   sel     $26,995.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  7,020.54   sel     $26,495.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,208.13   sel     $25,995.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 23,471.72   sel     $24,995.00   [strat=reciprocal_fairness_keeper]
+   run 17 done in 6.6 min
+
+   run 18/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261437
+      R 1  buy $ 15,741.18   sel     $17,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 14,348.10   sel     $16,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 15,510.27   sel     $16,250.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  2,668.74   sel     $16,250.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  2,265.97   sel     $16,250.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $    454.60   sel     $16,250.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  6,883.08   sel     $16,250.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,856.30   sel     $16,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  1,283.14   sel     $16,000.00   [strat=market_expert_value_justifier]
+      R10  buy $    522.96   sel     $16,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  9,281.42   sel     $15,900.00   [strat=market_expert_value_justifier]
+      R12  buy $ 15,878.34   sel     $15,800.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 10,691.95   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  9,485.28   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 11,989.81   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  7,774.28   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+   run 18 done in 6.9 min
+
+   run 19/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261438
+      R 1  buy $ 20,067.03   sel     $22,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $    479.26   sel     $21,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 15,831.57   sel     $21,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,965.71   sel     $20,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  2,379.87   sel     $19,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  5,568.26   sel     $19,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  2,355.55   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  2,671.59   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  5,357.16   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 16,725.57   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  5,924.96   sel     $18,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 17,167.47   sel     $17,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 13,481.08   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  4,287.88   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 16,321.25   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  9,585.46   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+   run 19 done in 7.2 min
+
+   run 20/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261439
+      R 1  buy $ 35,138.62   sel     $42,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 39,931.70   sel     $41,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,642.23   sel     $40,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 36,815.58   sel     $39,900.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 23,155.57   sel     $38,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 37,727.30   sel     $38,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  7,893.76   sel     $37,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 10,211.34   sel     $37,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 15,426.89   sel     $36,000.00   [strat=market_expert_value_justifier]
+      R10  buy $    394.81   sel     $36,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 28,696.43   sel     $34,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  5,494.34   sel     $34,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 33,527.00   sel     $33,700.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 24,921.95   sel     $32,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 31,382.91   sel     $32,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 30,453.30   sel     $31,250.00   [strat=reciprocal_fairness_keeper]
+   run 20 done in 6.6 min
+
+   run 21/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261440
+      R 1  buy $ 40,933.30   sel     $43,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 32,583.43   sel     $41,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 25,778.12   sel     $39,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 32,442.87   sel     $36,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 30,540.05   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 19,226.67   sel     $33,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 26,783.63   sel     $32,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  4,552.28   sel     $31,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 19,262.68   sel     $30,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 26,795.90   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 23,772.69   sel     $26,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  8,191.73   sel     $24,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  2,358.99   sel     $22,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 19,968.28   sel     $21,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 19,901.54   sel     $20,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 10,645.59   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+   run 21 done in 7.6 min
+
+   run 22/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261441
+      R 1  buy $ 32,380.30   sel     $38,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 26,329.17   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  9,116.42   sel     $28,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 11,232.66   sel     $27,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 12,699.04   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 13,500.12   sel     $21,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  1,882.14   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  8,896.68   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 12,930.35   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 12,270.10   sel     $17,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  3,470.58   sel     $16,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,834.98   sel     $16,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 14,886.82   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  4,111.45   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,378.55   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  9,424.80   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+   run 22 done in 10.4 min
+
+   run 23/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261442
+      R 1  buy $  3,815.37   sel     $28,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $    494.80   sel     $27,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  5,905.66   sel     $27,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 10,716.85   sel     $27,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 10,914.63   sel     $26,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 12,733.60   sel     $25,900.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 14,571.85   sel     $24,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,765.36   sel     $24,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  7,644.29   sel     $23,900.00   [strat=market_expert_value_justifier]
+      R10  buy $ 20,170.25   sel     $23,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  1,976.91   sel     $23,400.00   [strat=market_expert_value_justifier]
+      R12  buy $  5,290.25   sel     $23,300.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,801.87   sel     $23,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 20,167.71   sel     $22,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $    496.39   sel     $24,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  4,277.39   sel     $24,500.00   [strat=reciprocal_fairness_keeper]
+   run 23 done in 8.9 min
+
+   run 24/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261443
+      R 1  buy $ 33,781.75   sel     $38,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 35,563.46   sel     $38,450.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 22,435.03   sel     $36,995.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 29,465.93   sel     $35,750.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 25,599.59   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  1,081.47   sel     $34,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  7,358.78   sel     $33,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 17,705.61   sel     $33,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 24,174.71   sel     $33,000.00   [strat=market_expert_value_justifier]
+      R10  buy $     26.95   sel     $32,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  8,446.69   sel     $32,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 30,238.23   sel     $31,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  9,169.26   sel     $30,900.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 16,563.62   sel     $30,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 16,848.35   sel     $28,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 21,913.84   sel     $26,000.00   [strat=reciprocal_fairness_keeper]
+   run 24 done in 10.4 min
+
+   run 25/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261444
+      R 1  buy $ 33,207.68   sel     $38,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  6,861.70   sel     $38,999.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 32,372.39   sel     $36,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 27,877.81   sel     $35,999.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 25,794.75   sel     $34,999.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  7,942.72   sel     $34,999.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 14,468.05   sel     $32,999.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 18,027.04   sel     $31,999.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 14,693.15   sel     $29,999.00   [strat=market_expert_value_justifier]
+      R10  buy $ 19,377.76   sel     $29,999.00   [strat=market_expert_value_justifier]
+      R11  buy $  1,756.20   sel     $24,999.00   [strat=market_expert_value_justifier]
+      R12  buy $ 23,572.87   sel     $23,999.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  8,455.00   sel     $23,999.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 13,638.70   sel     $23,999.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 12,766.06   sel     PARSE-FAIL   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 19,455.03   sel     $21,999.00   [strat=reciprocal_fairness_keeper]
+   run 25 done in 8.5 min
+
+   run 26/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261445
+      R 1  buy $ 42,368.93   sel     $44,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 24,753.51   sel     $38,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  2,658.24   sel     $35,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  6,301.29   sel     $35,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 13,384.16   sel     $35,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 29,693.93   sel     $32,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 12,472.17   sel     $32,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 31,742.10   sel     $31,742.10   [strat=market_expert_value_justifier]
+      R 9  buy $ 25,468.44   sel     $31,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 25,717.54   sel     $30,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 23,506.86   sel     $29,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 14,908.82   sel     $28,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 17,270.28   sel     $28,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  8,975.05   sel     $27,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 23,765.61   sel     $25,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 16,963.13   sel     $24,000.00   [strat=reciprocal_fairness_keeper]
+   run 26 done in 8.6 min
+
+   run 27/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261446
+      R 1  buy $  4,793.52   sel     $29,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  5,463.48   sel     $22,995.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,782.98   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 15,433.77   sel     $20,995.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  3,889.63   sel     $20,995.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 18,212.58   sel     $19,995.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  5,882.63   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 18,334.83   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 10,256.65   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  3,970.70   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 14,699.89   sel     $17,995.00   [strat=market_expert_value_justifier]
+      R12  buy $ 17,928.44   sel     $17,950.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 15,627.93   sel     $17,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 16,582.23   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 15,480.13   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,912.82   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+   run 27 done in 7.7 min
+
+   run 28/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261447
+      R 1  buy $ 24,237.72   sel     $30,998.72   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  1,330.39   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  1,051.27   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  1,728.28   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  4,925.08   sel     $30,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 26,166.49   sel     $29,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 18,781.29   sel     $28,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 24,132.85   sel     $27,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 26,290.90   sel     $26,990.00   [strat=market_expert_value_justifier]
+      R10  buy $  5,938.21   sel     $26,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 23,545.40   sel     $26,250.00   [strat=market_expert_value_justifier]
+      R12  buy $ 19,345.99   sel     $25,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  1,812.98   sel     $25,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  2,627.82   sel     $24,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  6,679.93   sel     $24,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,773.29   sel     $24,000.00   [strat=reciprocal_fairness_keeper]
+   run 28 done in 8.7 min
+
+   run 29/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261448
+      R 1  buy $ 13,570.07   sel     $16,495.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  8,862.80   sel     $16,495.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    813.98   sel     $16,495.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  9,832.30   sel     $15,995.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  4,156.42   sel     $15,995.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 15,196.83   sel     $15,595.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 13,754.69   sel     $15,795.00   [strat=market_expert_value_justifier]
+      R 8  buy $  7,740.17   sel     $15,695.00   [strat=market_expert_value_justifier]
+      R 9  buy $  2,910.69   sel     $15,695.00   [strat=market_expert_value_justifier]
+      R10  buy $ 11,880.82   sel     $15,595.00   [strat=market_expert_value_justifier]
+      R11  buy $  5,634.38   sel     $15,495.00   [strat=market_expert_value_justifier]
+      R12  buy $ 12,947.91   sel     $15,395.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  6,759.80   sel     $15,395.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 11,614.20   sel     $15,395.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $    515.70   sel     $15,395.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 11,586.32   sel     $15,795.00   [strat=reciprocal_fairness_keeper]
+   run 29 done in 9.4 min
+
+   run 30/30 on 2016 Cadillac CTS 3.6 Luxury  seed=21261449
+      R 1  buy $ 31,620.81   sel     $34,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 20,518.39   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  1,385.98   sel     $34,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  7,484.55   sel     $33,900.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 32,222.46   sel     $32,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $    412.04   sel     $33,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 26,142.76   sel     $32,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 24,243.00   sel     $32,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 11,299.28   sel     $32,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  9,693.13   sel     $32,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 20,270.09   sel     $32,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  5,941.56   sel     $32,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,513.53   sel     $31,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 22,249.15   sel     $31,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 29,836.05   sel     $30,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  7,448.16   sel     $31,000.00   [strat=reciprocal_fairness_keeper]
+   run 30 done in 7.4 min
+
+   ---> checkpoint: car 2/5 done in 219.4 min; total so far 391.5 min; saved 60 runs to exp10_transitionB_rep2.json
+
+--- CAR 3/5: 2019 Honda Accord Sport 1.5T  (M=$28,000.00  cost=$14,000.00  cost/M=50.00%) ---
+
+   run 1/30 on 2019 Honda Accord Sport 1.5T  seed=21262420
+      R 1  buy $    331.79   sel     $23,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  4,106.75   sel     $23,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 12,159.30   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 21,953.28   sel     $22,200.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 13,919.26   sel     $21,900.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $    854.57   sel     $21,900.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 20,285.73   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $     19.29   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 17,143.35   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $    923.55   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  4,704.71   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  6,095.02   sel     $19,250.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 13,204.54   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  4,626.32   sel     $18,750.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 14,367.49   sel     $18,250.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $    664.58   sel     $18,000.00   [strat=reciprocal_fairness_keeper]
+   run 1 done in 9.7 min
+
+   run 2/30 on 2019 Honda Accord Sport 1.5T  seed=21262421
+      R 1  buy $ 21,469.48   sel     $26,999.99   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  1,898.19   sel     $25,999.99   [strat=opponent_aware_diagnostic]
+      R 3  buy $  9,259.73   sel     $24,999.99   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,547.01   sel     $23,999.99   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 12,472.94   sel     $22,999.99   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 18,314.76   sel     $21,999.99   [strat=market_expert_value_justifier] *
+      R 7  buy $ 20,275.87   sel     $21,499.99   [strat=market_expert_value_justifier]
+      R 8  buy $  8,241.00   sel     $21,499.99   [strat=market_expert_value_justifier]
+      R 9  buy $  1,834.95   sel     $21,499.99   [strat=market_expert_value_justifier]
+      R10  buy $ 13,445.68   sel     $21,499.99   [strat=market_expert_value_justifier]
+      R11  buy $ 14,139.46   sel     $20,999.99   [strat=market_expert_value_justifier]
+      R12  buy $ 18,801.37   sel     $20,499.99   [strat=reciprocal_fairness_keeper] *
+      R13  buy $    699.48   sel     $20,499.99   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,866.06   sel     $19,999.99   [strat=reciprocal_fairness_keeper]
+      R15  buy $  1,229.16   sel     $19,999.99   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 11,168.36   sel     $19,599.99   [strat=reciprocal_fairness_keeper]
+   run 2 done in 8.9 min
+
+   run 3/30 on 2019 Honda Accord Sport 1.5T  seed=21262422
+      R 1  buy $ 21,906.71   sel     $26,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 12,671.61   sel     $25,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 12,443.51   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 17,476.77   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  9,461.66   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  2,779.09   sel     $20,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 14,928.55   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  6,418.28   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 11,382.74   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 14,361.25   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  5,102.68   sel     $17,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  4,817.03   sel     $16,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,264.28   sel     $16,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 12,388.49   sel     $15,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  1,531.60   sel     $15,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 14,416.17   sel     $14,800.00   [strat=reciprocal_fairness_keeper]
+   run 3 done in 8.8 min
+
+   run 4/30 on 2019 Honda Accord Sport 1.5T  seed=21262423
+      R 1  buy $ 17,153.67   sel     $25,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 13,123.40   sel     $24,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 16,242.02   sel     $24,600.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 17,367.38   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 10,143.18   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  8,812.94   sel     $24,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 22,438.22   sel     $23,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 11,745.39   sel     $23,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 15,916.16   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 14,463.15   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 16,406.57   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,435.40   sel     $19,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  4,866.39   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 13,504.25   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 12,571.77   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 13,540.35   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+   run 4 done in 9.7 min
+
+   run 5/30 on 2019 Honda Accord Sport 1.5T  seed=21262424
+      R 1  buy $  3,406.76   sel     $25,995.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  5,138.49   sel     $24,995.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 13,640.29   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 14,218.11   sel     $20,995.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 17,481.71   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  7,738.27   sel     $18,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  9,245.77   sel     $17,995.00   [strat=market_expert_value_justifier]
+      R 8  buy $    464.91   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 12,345.75   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  9,926.60   sel     $17,250.00   [strat=market_expert_value_justifier]
+      R11  buy $  2,116.70   sel     $16,995.00   [strat=market_expert_value_justifier]
+      R12  buy $ 16,266.08   sel     $16,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  4,675.51   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  8,399.12   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 15,037.36   sel     $15,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  5,361.94   sel     $15,000.00   [strat=reciprocal_fairness_keeper]
+   run 5 done in 8.5 min
+
+   run 6/30 on 2019 Honda Accord Sport 1.5T  seed=21262425
+      R 1  buy $ 26,622.82   sel     $27,800.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 23,075.46   sel     $27,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 16,316.71   sel     $27,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 17,170.02   sel     $26,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 15,588.83   sel     $25,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 12,734.27   sel     $24,900.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  5,266.28   sel     $24,900.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 16,354.54   sel     $24,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 19,165.40   sel     $23,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 17,991.23   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  4,246.49   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R12  buy $  9,561.38   sel     $20,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  5,242.70   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 10,538.61   sel     $19,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  4,321.28   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 11,537.09   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+   run 6 done in 10.9 min
+
+   run 7/30 on 2019 Honda Accord Sport 1.5T  seed=21262426
+      R 1  buy $ 27,852.35   sel     $27,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 23,106.40   sel     $27,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  9,435.29   sel     $26,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 18,529.39   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 16,934.96   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  8,071.97   sel     $23,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 11,613.09   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,158.28   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  4,161.29   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 11,067.80   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R11  buy $ 14,896.89   sel     $14,896.89   [strat=market_expert_value_justifier]
+      R12  buy $  6,929.37   sel     $16,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  1,518.54   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  3,302.49   sel     $18,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 12,211.70   sel     $17,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  8,715.08   sel     $17,250.00   [strat=reciprocal_fairness_keeper]
+   run 7 done in 11.2 min
+
+   run 8/30 on 2019 Honda Accord Sport 1.5T  seed=21262427
+      R 1  buy $  5,462.39   sel     $25,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  3,276.12   sel     $24,999.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    908.08   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 22,166.00   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 21,674.94   sel     $22,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  6,701.24   sel     $22,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 13,743.95   sel     $21,999.00   [strat=market_expert_value_justifier]
+      R 8  buy $  5,466.68   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 20,569.97   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 14,362.14   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  3,460.56   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  7,121.73   sel     $20,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,209.34   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 19,743.04   sel     $19,743.04   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 13,489.36   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,681.87   sel     $20,000.00   [strat=reciprocal_fairness_keeper]
+   run 8 done in 10.8 min
+
+   run 9/30 on 2019 Honda Accord Sport 1.5T  seed=21262428
+      R 1  buy $ 13,290.93   sel     PARSE-FAIL   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 18,268.50   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  2,623.21   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  7,129.43   sel     $19,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  6,250.71   sel     $18,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  7,153.67   sel     $18,250.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,684.59   sel     $18,250.00   [strat=market_expert_value_justifier]
+      R 8  buy $  1,365.93   sel     $18,250.00   [strat=market_expert_value_justifier]
+      R 9  buy $  4,603.36   sel     $18,250.00   [strat=market_expert_value_justifier]
+      R10  buy $ 10,969.92   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  6,713.29   sel     $17,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  5,561.26   sel     $17,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  6,348.49   sel     $17,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 10,364.76   sel     $16,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 14,888.24   sel     $15,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 14,347.59   sel     $14,500.00   [strat=reciprocal_fairness_keeper]
+   run 9 done in 9.4 min
+
+   run 10/30 on 2019 Honda Accord Sport 1.5T  seed=21262429
+      R 1  buy $ 11,918.34   sel     $19,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $    473.32   sel     $19,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 14,461.24   sel     $18,750.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 12,833.04   sel     $18,250.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 13,363.83   sel     $17,900.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 16,351.11   sel     $17,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $    995.32   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  9,037.31   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  8,553.86   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R10  buy $ 11,680.60   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  8,745.26   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 13,265.64   sel     $17,250.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 15,319.86   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  5,110.24   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  9,355.25   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  5,698.55   sel     $16,250.00   [strat=reciprocal_fairness_keeper]
+   run 10 done in 9.1 min
+
+   run 11/30 on 2019 Honda Accord Sport 1.5T  seed=21262430
+      R 1  buy $  2,218.13   sel     $24,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 15,364.36   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    182.58   sel     $22,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  3,069.88   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  7,724.30   sel     $20,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 15,742.47   sel     $19,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  7,411.98   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 13,722.66   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  5,684.50   sel     $18,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 15,402.12   sel     $15,402.12   [strat=market_expert_value_justifier]
+      R11  buy $  6,194.27   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R12  buy $    516.79   sel     $17,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  1,671.12   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,480.37   sel     $16,000.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  4,493.46   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,139.38   sel     $15,800.00   [strat=reciprocal_fairness_keeper]
+   run 11 done in 10.0 min
+
+   run 12/30 on 2019 Honda Accord Sport 1.5T  seed=21262431
+      R 1  buy $ 10,186.71   sel     $25,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  9,888.46   sel     $24,900.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 18,382.67   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 16,857.08   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 15,775.01   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 16,451.04   sel     $19,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 13,086.83   sel     $18,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 11,362.66   sel     $18,000.00   [strat=market_expert_value_justifier]
+      R 9  buy $  3,187.70   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R10  buy $  7,681.21   sel     $16,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  8,488.94   sel     $15,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  9,913.19   sel     $15,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 10,730.74   sel     $14,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  6,297.46   sel     $14,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  4,778.05   sel     $14,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 12,749.53   sel     $14,250.00   [strat=reciprocal_fairness_keeper]
+   run 12 done in 15.5 min
+
+   run 13/30 on 2019 Honda Accord Sport 1.5T  seed=21262432
+      R 1  buy $  5,970.21   sel     $24,999.99   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  9,586.79   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $  6,385.42   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,167.85   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 10,428.82   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  9,426.79   sel     $23,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  2,878.32   sel     $22,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 17,152.06   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  7,300.67   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  1,628.21   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R11  buy $  1,941.43   sel     $19,000.00   [strat=market_expert_value_justifier]
+      R12  buy $  6,110.47   sel     $18,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  3,642.38   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  1,424.03   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 10,902.79   sel     $17,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $ 11,745.96   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+   run 13 done in 8.5 min
+
+   run 14/30 on 2019 Honda Accord Sport 1.5T  seed=21262433
+      R 1  buy $  6,921.54   sel     $25,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 16,704.06   sel     $24,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,358.19   sel     $24,300.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $    186.12   sel     $23,900.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 21,467.35   sel     $22,800.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 17,544.08   sel     $22,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 14,755.90   sel     $21,800.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 21,070.64   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 11,157.78   sel     $21,200.00   [strat=market_expert_value_justifier]
+      R10  buy $ 12,219.23   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R11  buy $  4,233.93   sel     $20,800.00   [strat=market_expert_value_justifier]
+      R12  buy $ 15,138.63   sel     $20,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 11,822.00   sel     $20,300.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 20,135.85   sel     $20,200.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  3,585.87   sel     $20,200.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  1,196.70   sel     $20,200.00   [strat=reciprocal_fairness_keeper]
+   run 14 done in 10.4 min
+
+   run 15/30 on 2019 Honda Accord Sport 1.5T  seed=21262434
+      R 1  buy $ 22,461.61   sel     $26,500.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 16,936.45   sel     $25,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 12,304.07   sel     $25,000.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  1,196.80   sel     $25,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 16,665.29   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $  7,341.34   sel     $23,500.00   [strat=market_expert_value_justifier] *
+      R 7  buy $ 16,119.42   sel     $22,000.00   [strat=market_expert_value_justifier]
+      R 8  buy $  3,244.84   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $  3,761.43   sel     $21,000.00   [strat=market_expert_value_justifier]
+      R10  buy $  8,600.06   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 19,519.83   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R12  buy $ 19,039.68   sel     $19,500.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  9,831.95   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  9,511.19   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  4,581.20   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  2,790.47   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+   run 15 done in 8.5 min
+
+   run 16/30 on 2019 Honda Accord Sport 1.5T  seed=21262435
+      R 1  buy $  8,285.64   sel     $24,000.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 21,953.09   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 18,827.88   sel     $22,900.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 12,849.19   sel     $21,500.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $    857.25   sel     $20,000.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $    937.86   sel     $20,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,328.38   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $ 10,685.05   sel     $18,900.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 18,034.90   sel     $18,400.00   [strat=market_expert_value_justifier]
+      R10  buy $ 15,645.69   sel     $17,900.00   [strat=market_expert_value_justifier]
+      R11  buy $  4,337.89   sel     $17,500.00   [strat=market_expert_value_justifier]
+      R12  buy $ 16,757.03   sel     $17,250.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 17,201.01   sel     $17,201.01   [strat=reciprocal_fairness_keeper]
+      R14  buy $  2,896.19   sel     $17,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  8,593.51   sel     $16,950.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  5,083.35   sel     $16,500.00   [strat=reciprocal_fairness_keeper]
+   run 16 done in 9.8 min
+
+   run 17/30 on 2019 Honda Accord Sport 1.5T  seed=21262436
+      R 1  buy $ 13,940.05   sel     $15,499.99   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  9,774.40   sel     $15,000.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 12,870.69   sel     $14,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $  4,795.47   sel     $14,200.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 11,315.41   sel     $13,999.99   [strat=opponent_aware_diagnostic]
+      R 6  buy $  1,208.97   sel     $13,999.99   [strat=market_expert_value_justifier] *
+      R 7  buy $  3,631.82   sel     $14,200.00   [strat=market_expert_value_justifier]
+      R 8  buy $  6,152.95   sel     $14,200.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 11,522.66   sel     $14,100.00   [strat=market_expert_value_justifier]
+      R10  buy $  8,672.20   sel     $14,100.00   [strat=market_expert_value_justifier]
+      R11  buy $  6,789.29   sel     $14,100.00   [strat=market_expert_value_justifier]
+      R12  buy $  8,766.26   sel     $14,100.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $ 12,039.95   sel     $14,050.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $  2,415.51   sel     $14,050.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $ 10,644.10   sel     $14,000.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  5,213.33   sel     $14,000.00   [strat=reciprocal_fairness_keeper]
+   run 17 done in 11.5 min
+
+   run 18/30 on 2019 Honda Accord Sport 1.5T  seed=21262437
+      R 1  buy $ 21,136.04   sel     $25,999.99   [strat=opponent_aware_diagnostic] *
+      R 2  buy $ 23,568.13   sel     $24,785.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $    859.80   sel     $24,176.50   [strat=opponent_aware_diagnostic]
+      R 4  buy $  1,655.57   sel     $24,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $  6,154.93   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 6  buy $ 15,834.10   sel     $22,000.00   [strat=market_expert_value_justifier] *
+      R 7  buy $  9,684.01   sel     $21,500.00   [strat=market_expert_value_justifier]
+      R 8  buy $  7,303.18   sel     $20,500.00   [strat=market_expert_value_justifier]
+      R 9  buy $ 15,594.65   sel     $20,000.00   [strat=market_expert_value_justifier]
+      R10  buy $ 16,941.79   sel     $19,500.00   [strat=market_expert_value_justifier]
+      R11  buy $ 19,426.47   sel     $19,426.47   [strat=market_expert_value_justifier]
+      R12  buy $ 12,166.48   sel     $19,000.00   [strat=reciprocal_fairness_keeper] *
+      R13  buy $  7,173.51   sel     $19,000.00   [strat=reciprocal_fairness_keeper]
+      R14  buy $ 13,623.22   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R15  buy $  1,428.03   sel     $18,500.00   [strat=reciprocal_fairness_keeper]
+      R16  buy $  6,751.38   sel     $18,000.00   [strat=reciprocal_fairness_keeper]
+   run 18 done in 9.0 min
+
+   run 19/30 on 2019 Honda Accord Sport 1.5T  seed=21262438
+      R 1  buy $  9,327.28   sel     $24,999.00   [strat=opponent_aware_diagnostic] *
+      R 2  buy $  8,269.48   sel     $23,999.00   [strat=opponent_aware_diagnostic]
+      R 3  buy $ 19,310.47   sel     $23,500.00   [strat=opponent_aware_diagnostic]
+      R 4  buy $ 12,800.79   sel     $23,000.00   [strat=opponent_aware_diagnostic]
+      R 5  buy $ 21,820.53   sel     $22,500.00   [strat=opponent_aware_diagnostic]

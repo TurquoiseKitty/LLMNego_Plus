@@ -1,0 +1,417 @@
+{
+  "notebook_id": "nb5",
+  "model": "deepseek-reasoner",
+  "n_rounds": 15,
+  "base_seed": 10000,
+  "timestamp": "2026-04-17T20:51:07.491639",
+  "total_minutes": 1590.68,
+  "experiments": [
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher"
+        ],
+        "is_adaptive": false
+      },
+      "n_runs": 22,
+      "category_filter": null
+    }
+  ],
+  "timings": [
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_random",
+      "status": "ok",
+      "seconds": 9825.9,
+      "minutes": 163.77,
+      "n_runs": 22,
+      "n_transitions": 290
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_budget",
+      "status": "ok",
+      "seconds": 10289.4,
+      "minutes": 171.49,
+      "n_runs": 22,
+      "n_transitions": 283
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_wild",
+      "status": "ok",
+      "seconds": 10953.9,
+      "minutes": 182.57,
+      "n_runs": 22,
+      "n_transitions": 295
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_concession",
+      "status": "ok",
+      "seconds": 9176.4,
+      "minutes": 152.94,
+      "n_runs": 22,
+      "n_transitions": 295
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 7834.5,
+      "minutes": 130.57,
+      "n_runs": 22,
+      "n_transitions": 298
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 15259.3,
+      "minutes": 254.32,
+      "n_runs": 22,
+      "n_transitions": 297
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 10381.9,
+      "minutes": 173.03,
+      "n_runs": 22,
+      "n_transitions": 301
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 6974.6,
+      "minutes": 116.24,
+      "n_runs": 22,
+      "n_transitions": 306
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 8459.9,
+      "minutes": 141.0,
+      "n_runs": 22,
+      "n_transitions": 308
+    },
+    {
+      "tag": "sel_tit_for_tat_matcher__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 6284.5,
+      "minutes": 104.74,
+      "n_runs": 22,
+      "n_transitions": 308
+    }
+  ]
+}

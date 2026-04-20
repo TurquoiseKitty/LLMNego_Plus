@@ -1,0 +1,2232 @@
+{
+  "notebook_id": "nb12",
+  "model": "deepseek-reasoner",
+  "n_rounds": 15,
+  "base_seed": 17000,
+  "timestamp": "2026-04-17T18:31:54.488179",
+  "total_minutes": 1448.25,
+  "experiments": [
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high__then__cooperative@r8",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller__then__conceder_seller@r8",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "cooperative__then__anchor_high@r8",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_anchor_to_concession",
+      "buyer": {
+        "name": "ab_anchor_to_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'concession'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_wild_to_boulware",
+      "buyer": {
+        "name": "ab_wild_to_boulware",
+        "description": "Adaptive buyer that cycles through ['wild', 'boulware_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "wild",
+            "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+            "type": "WildBuyer"
+          },
+          {
+            "name": "boulware_buyer",
+            "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+            "type": "BoulwareBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 4.0
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_budget_to_tft",
+      "buyer": {
+        "name": "ab_budget_to_tft",
+        "description": "Adaptive buyer that cycles through ['budget', 'tit_for_tat_buyer'] switching at rounds [8].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "budget",
+            "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+            "type": "BudgetBuyer"
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          8
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_persistent_tft_concession",
+      "buyer": {
+        "name": "ab_persistent_tft_concession",
+        "description": "Adaptive buyer that cycles through ['persistent_f0.30', 'tit_for_tat_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "persistent_f0.30",
+            "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+            "type": "PersistentBuyer",
+            "price_frac": 0.3
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_anchor_conceder_concession",
+      "buyer": {
+        "name": "ab_anchor_conceder_concession",
+        "description": "Adaptive buyer that cycles through ['anchor_drag', 'conceder_buyer', 'concession'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "anchor_drag",
+            "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+            "type": "AnchorDragBuyer",
+            "anchor_frac": 0.05,
+            "step_frac": 0.03
+          },
+          {
+            "name": "conceder_buyer",
+            "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+            "type": "ConcederBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.65,
+            "exponent": 0.35
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_random_concession_tft",
+      "buyer": {
+        "name": "ab_random_concession_tft",
+        "description": "Adaptive buyer that cycles through ['random', 'concession', 'tit_for_tat_buyer'] switching at rounds [6, 11].",
+        "type": "AdaptiveBuyer",
+        "substrategies": [
+          {
+            "name": "random",
+            "description": "Uniform random price in [production_cost, market_price].",
+            "type": "RandomBuyer"
+          },
+          {
+            "name": "concession",
+            "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+            "type": "ConcessionBuyer",
+            "start_frac": 0.1,
+            "end_frac": 0.6
+          },
+          {
+            "name": "tit_for_tat_buyer",
+            "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+            "type": "TitForTatBuyer",
+            "anchor_frac": 0.1,
+            "match_frac": 0.7,
+            "cap_frac": 0.75
+          }
+        ],
+        "schedule": [
+          6,
+          11
+        ]
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 6,
+      "category_filter": null
+    }
+  ],
+  "timings": [
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 2348.6,
+      "minutes": 39.14,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 2340.3,
+      "minutes": 39.0,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 1992.4,
+      "minutes": 33.21,
+      "n_runs": 6,
+      "n_transitions": 82
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 2080.4,
+      "minutes": 34.67,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 2028.7,
+      "minutes": 33.81,
+      "n_runs": 6,
+      "n_transitions": 82
+    },
+    {
+      "tag": "sel_anchor_high__then__cooperative@r8__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 1594.4,
+      "minutes": 26.57,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 1858.5,
+      "minutes": 30.98,
+      "n_runs": 6,
+      "n_transitions": 79
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 1621.5,
+      "minutes": 27.02,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 1681.3,
+      "minutes": 28.02,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 1629.2,
+      "minutes": 27.15,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 1771.8,
+      "minutes": 29.53,
+      "n_runs": 6,
+      "n_transitions": 82
+    },
+    {
+      "tag": "sel_boulware_seller__then__conceder_seller@r8__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 1920.1,
+      "minutes": 32.0,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 2424.3,
+      "minutes": 40.41,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 1579.8,
+      "minutes": 26.33,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 2504.0,
+      "minutes": 41.73,
+      "n_runs": 6,
+      "n_transitions": 83
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 2831.5,
+      "minutes": 47.19,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 2235.9,
+      "minutes": 37.27,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_cooperative__then__anchor_high@r8__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 2367.5,
+      "minutes": 39.46,
+      "n_runs": 6,
+      "n_transitions": 82
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 2490.8,
+      "minutes": 41.51,
+      "n_runs": 6,
+      "n_transitions": 80
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 2390.6,
+      "minutes": 39.84,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 2232.6,
+      "minutes": 37.21,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 2180.0,
+      "minutes": 36.33,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 2796.2,
+      "minutes": 46.6,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_anchor_high@1..cooperative@6..conceder_seller@11__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 5102.6,
+      "minutes": 85.04,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 3542.6,
+      "minutes": 59.04,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 4829.1,
+      "minutes": 80.49,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 2717.0,
+      "minutes": 45.28,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 2318.0,
+      "minutes": 38.63,
+      "n_runs": 6,
+      "n_transitions": 83
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 2131.7,
+      "minutes": 35.53,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 2443.2,
+      "minutes": 40.72,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_anchor_to_concession",
+      "status": "ok",
+      "seconds": 2514.8,
+      "minutes": 41.91,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_wild_to_boulware",
+      "status": "ok",
+      "seconds": 2663.5,
+      "minutes": 44.39,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_budget_to_tft",
+      "status": "ok",
+      "seconds": 2175.3,
+      "minutes": 36.25,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_persistent_tft_concession",
+      "status": "ok",
+      "seconds": 2162.9,
+      "minutes": 36.05,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_anchor_conceder_concession",
+      "status": "ok",
+      "seconds": 2289.0,
+      "minutes": 38.15,
+      "n_runs": 6,
+      "n_transitions": 84
+    },
+    {
+      "tag": "sel_relational@1..cooperative@6..boulware_seller@11__buy_ab_random_concession_tft",
+      "status": "ok",
+      "seconds": 3104.6,
+      "minutes": 51.74,
+      "n_runs": 6,
+      "n_transitions": 84
+    }
+  ]
+}

@@ -1,0 +1,1780 @@
+=== START exp06_transitionA_rep1 ===
+    schedule    : twophase__friendly_rapport_builder__to__patient_value_defender@r9
+    adaptive    : True  (switches=[9])
+    unique strat: ['friendly_rapport_builder', 'patient_value_defender']
+    n_rounds    : 16
+    n_cars      : 5
+    runs/car    : 30
+    total runs  : 150
+    total calls : 2400  (~12.0 h @ 200 calls/h)
+    model       : deepseek-reasoner
+    base_url    : https://api.deepseek.com
+    base_seed   : 20260420
+    output      : results\exp06_transitionA_rep1.json
+
+--- CAR 1/5: 2014 Mercedes-Benz S550  (M=$96,000.00  cost=$19,000.00  cost/M=19.79%) ---
+
+   run 1/30 on 2014 Mercedes-Benz S550  seed=20860420
+      R 1  buy $  5,049.77   sel     $44,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 25,855.98   sel     $39,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 34,865.53   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 29,853.19   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 11,462.12   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 11,290.28   sel     $34,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 15,975.10   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,645.00   sel     $33,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 17,462.01   sel     $32,500.00   [strat=patient_value_defender] *
+      R10  buy $ 29,997.12   sel     $31,500.00   [strat=patient_value_defender]
+      R11  buy $  3,929.19   sel     $31,000.00   [strat=patient_value_defender]
+      R12  buy $  8,041.30   sel     $30,500.00   [strat=patient_value_defender]
+      R13  buy $  1,176.62   sel     $30,500.00   [strat=patient_value_defender]
+      R14  buy $ 19,214.30   sel     $29,999.00   [strat=patient_value_defender]
+      R15  buy $  3,891.21   sel     $29,999.00   [strat=patient_value_defender]
+      R16  buy $ 18,149.16   sel     $29,500.00   [strat=patient_value_defender]
+   run 1 done in 3.9 min
+
+   run 2/30 on 2014 Mercedes-Benz S550  seed=20860421
+      R 1  buy $ 58,852.23   sel     $85,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 74,802.96   sel     $82,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 12,258.64   sel     $82,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 51,251.58   sel     $79,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 46,919.37   sel     $78,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 62,881.84   sel     $77,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 55,606.04   sel     $76,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 73,512.88   sel     $75,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 60,337.70   sel     $75,000.00   [strat=patient_value_defender] *
+      R10  buy $ 59,821.40   sel     $74,000.00   [strat=patient_value_defender]
+      R11  buy $ 19,311.11   sel     $73,000.00   [strat=patient_value_defender]
+      R12  buy $ 17,586.32   sel     $72,500.00   [strat=patient_value_defender]
+      R13  buy $ 66,304.82   sel     $71,000.00   [strat=patient_value_defender]
+      R14  buy $  1,769.40   sel     $70,000.00   [strat=patient_value_defender]
+      R15  buy $  4,679.41   sel     $69,500.00   [strat=patient_value_defender]
+      R16  buy $ 58,610.83   sel     $68,500.00   [strat=patient_value_defender]
+   run 2 done in 4.1 min
+
+   run 3/30 on 2014 Mercedes-Benz S550  seed=20860422
+      R 1  buy $ 67,457.78   sel     $72,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 71,447.38   sel     $72,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 62,807.88   sel     $72,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  6,126.20   sel     $72,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 37,830.91   sel     $71,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 60,510.29   sel     $70,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 10,326.01   sel     $69,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 63,193.17   sel     $66,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $    431.23   sel     $66,500.00   [strat=patient_value_defender] *
+      R10  buy $ 64,041.09   sel     $65,000.00   [strat=patient_value_defender]
+      R11  buy $ 61,589.08   sel     $64,500.00   [strat=patient_value_defender]
+      R12  buy $ 31,707.44   sel     $64,500.00   [strat=patient_value_defender]
+      R13  buy $ 53,024.99   sel     $62,000.00   [strat=patient_value_defender]
+      R14  buy $ 19,103.05   sel     $61,500.00   [strat=patient_value_defender]
+      R15  buy $ 33,926.60   sel     $59,000.00   [strat=patient_value_defender]
+      R16  buy $ 38,115.19   sel     $58,000.00   [strat=patient_value_defender]
+   run 3 done in 3.9 min
+
+   run 4/30 on 2014 Mercedes-Benz S550  seed=20860423
+      R 1  buy $ 84,309.41   sel     $90,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  6,139.56   sel     $85,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 55,085.85   sel     $80,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 50,892.54   sel     $79,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 62,421.07   sel     $77,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 36,866.62   sel     $75,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 56,312.09   sel     $73,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,641.64   sel     $71,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 41,139.28   sel     $69,000.00   [strat=patient_value_defender] *
+      R10  buy $ 68,375.36   sel     $68,375.36   [strat=patient_value_defender]
+      R11  buy $ 35,160.97   sel     $67,000.00   [strat=patient_value_defender]
+      R12  buy $ 19,545.74   sel     $65,000.00   [strat=patient_value_defender]
+      R13  buy $ 64,466.35   sel     $64,800.00   [strat=patient_value_defender]
+      R14  buy $ 44,066.83   sel     $63,000.00   [strat=patient_value_defender]
+      R15  buy $ 45,950.47   sel     $59,000.00   [strat=patient_value_defender]
+      R16  buy $ 43,791.77   sel     $57,000.00   [strat=patient_value_defender]
+   run 4 done in 4.3 min
+
+   run 5/30 on 2014 Mercedes-Benz S550  seed=20860424
+      R 1  buy $ 23,340.73   sel     $31,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,352.51   sel     $28,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  3,429.17   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 14,252.17   sel     $25,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 16,422.52   sel     $23,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $  4,316.96   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 12,738.98   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 14,259.73   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 21,384.61   sel     $21,500.00   [strat=patient_value_defender] *
+      R10  buy $  2,475.08   sel     $21,000.00   [strat=patient_value_defender]
+      R11  buy $  8,495.32   sel     $20,500.00   [strat=patient_value_defender]
+      R12  buy $ 12,746.89   sel     $20,000.00   [strat=patient_value_defender]
+      R13  buy $  8,299.99   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $ 16,539.85   sel     $19,250.00   [strat=patient_value_defender]
+      R15  buy $ 10,740.12   sel     $19,250.00   [strat=patient_value_defender]
+      R16  buy $ 19,208.76   sel     $19,208.76   [strat=patient_value_defender]
+   run 5 done in 4.3 min
+
+   run 6/30 on 2014 Mercedes-Benz S550  seed=20860425
+      R 1  buy $ 43,329.08   sel     $46,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 18,620.73   sel     $44,750.00   [strat=friendly_rapport_builder]
+      R 3  buy $  6,893.05   sel     $44,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 15,902.13   sel     $43,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 37,708.53   sel     $42,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 25,596.06   sel     $41,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 22,779.19   sel     $40,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 29,604.37   sel     $39,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 23,503.58   sel     $38,500.00   [strat=patient_value_defender] *
+      R10  buy $ 18,014.79   sel     $38,000.00   [strat=patient_value_defender]
+      R11  buy $ 36,300.17   sel     $37,500.00   [strat=patient_value_defender]
+      R12  buy $  2,714.23   sel     $37,000.00   [strat=patient_value_defender]
+      R13  buy $ 11,933.41   sel     $36,500.00   [strat=patient_value_defender]
+      R14  buy $  3,547.14   sel     $36,000.00   [strat=patient_value_defender]
+      R15  buy $ 25,556.42   sel     $35,500.00   [strat=patient_value_defender]
+      R16  buy $ 27,479.71   sel     $34,500.00   [strat=patient_value_defender]
+   run 6 done in 4.1 min
+
+   run 7/30 on 2014 Mercedes-Benz S550  seed=20860426
+      R 1  buy $ 82,135.79   sel     $94,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  6,622.63   sel     $93,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  7,367.61   sel     $92,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 88,416.86   sel     $90,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 15,932.13   sel     $89,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 81,837.21   sel     $87,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 32,595.66   sel     $86,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 78,443.98   sel     $84,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  4,367.47   sel     $83,500.00   [strat=patient_value_defender] *
+      R10  buy $  1,528.78   sel     $82,500.00   [strat=patient_value_defender]
+      R11  buy $ 44,803.74   sel     $80,000.00   [strat=patient_value_defender]
+      R12  buy $ 16,198.05   sel     $79,000.00   [strat=patient_value_defender]
+      R13  buy $ 18,053.08   sel     $78,000.00   [strat=patient_value_defender]
+      R14  buy $ 10,617.22   sel     $77,500.00   [strat=patient_value_defender]
+      R15  buy $ 14,765.80   sel     $77,000.00   [strat=patient_value_defender]
+      R16  buy $ 35,222.32   sel     $76,000.00   [strat=patient_value_defender]
+   run 7 done in 4.8 min
+
+   run 8/30 on 2014 Mercedes-Benz S550  seed=20860427
+      R 1  buy $ 88,256.59   sel     $92,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 76,933.79   sel     $90,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 33,384.70   sel     $85,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 19,445.12   sel     $80,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 65,402.34   sel     $75,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 47,019.22   sel     $70,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 14,065.60   sel     $68,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 23,576.69   sel     $65,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 17,036.06   sel     $64,000.00   [strat=patient_value_defender] *
+      R10  buy $ 55,183.45   sel     $62,500.00   [strat=patient_value_defender]
+      R11  buy $ 60,206.04   sel     $61,500.00   [strat=patient_value_defender]
+      R12  buy $ 17,667.24   sel     $61,000.00   [strat=patient_value_defender]
+      R13  buy $ 49,179.35   sel     $59,500.00   [strat=patient_value_defender]
+      R14  buy $  5,004.23   sel     $59,500.00   [strat=patient_value_defender]
+      R15  buy $ 22,840.35   sel     $59,000.00   [strat=patient_value_defender]
+      R16  buy $ 16,991.72   sel     $58,500.00   [strat=patient_value_defender]
+   run 8 done in 5.3 min
+
+   run 9/30 on 2014 Mercedes-Benz S550  seed=20860428
+      R 1  buy $ 30,619.51   sel     $34,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 19,541.53   sel     $33,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 14,581.10   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 28,913.58   sel     $31,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 24,556.72   sel     $30,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,942.40   sel     $29,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 29,079.12   sel     $29,250.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 15,006.87   sel     $28,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 19,811.78   sel     $27,500.00   [strat=patient_value_defender] *
+      R10  buy $ 11,037.68   sel     $27,000.00   [strat=patient_value_defender]
+      R11  buy $ 23,270.04   sel     $26,000.00   [strat=patient_value_defender]
+      R12  buy $ 20,846.63   sel     $25,500.00   [strat=patient_value_defender]
+      R13  buy $  9,945.76   sel     $24,500.00   [strat=patient_value_defender]
+      R14  buy $ 10,905.79   sel     $24,500.00   [strat=patient_value_defender]
+      R15  buy $ 23,599.55   sel     $24,000.00   [strat=patient_value_defender]
+      R16  buy $ 10,698.85   sel     $23,500.00   [strat=patient_value_defender]
+   run 9 done in 4.4 min
+
+   run 10/30 on 2014 Mercedes-Benz S550  seed=20860429
+      R 1  buy $ 23,254.21   sel     $27,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,324.67   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 19,949.79   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 10,822.43   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 20,618.07   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,964.00   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  3,505.01   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,044.04   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,370.49   sel     $20,500.00   [strat=patient_value_defender] *
+      R10  buy $  7,181.33   sel     $20,000.00   [strat=patient_value_defender]
+      R11  buy $ 12,040.40   sel     $19,999.00   [strat=patient_value_defender]
+      R12  buy $  5,840.95   sel     $19,500.00   [strat=patient_value_defender]
+      R13  buy $  7,136.24   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $  4,227.59   sel     $19,500.00   [strat=patient_value_defender]
+      R15  buy $  5,464.69   sel     $19,500.00   [strat=patient_value_defender]
+      R16  buy $ 17,615.65   sel     $19,250.00   [strat=patient_value_defender]
+   run 10 done in 3.8 min
+
+   run 11/30 on 2014 Mercedes-Benz S550  seed=20860430
+      R 1  buy $ 90,568.59   sel     $94,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 28,989.65   sel     $92,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 86,041.86   sel     $89,950.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 39,892.70   sel     $88,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 79,235.63   sel     $86,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 48,948.59   sel     $84,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 41,756.31   sel     $83,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 38,481.40   sel     $82,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,697.38   sel     $82,000.00   [strat=patient_value_defender] *
+      R10  buy $ 57,906.65   sel     $80,000.00   [strat=patient_value_defender]
+      R11  buy $ 19,376.26   sel     $79,500.00   [strat=patient_value_defender]
+      R12  buy $ 41,324.31   sel     $78,000.00   [strat=patient_value_defender]
+      R13  buy $  5,376.01   sel     $77,500.00   [strat=patient_value_defender]
+      R14  buy $ 15,240.46   sel     $76,500.00   [strat=patient_value_defender]
+      R15  buy $ 51,389.80   sel     $75,000.00   [strat=patient_value_defender]
+      R16  buy $ 71,537.53   sel     $73,500.00   [strat=patient_value_defender]
+   run 11 done in 3.9 min
+
+   run 12/30 on 2014 Mercedes-Benz S550  seed=20860431
+      R 1  buy $ 80,691.80   sel     $94,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 86,002.41   sel     $92,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 41,602.15   sel     $90,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 59,101.44   sel     $89,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 48,167.10   sel     $88,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 47,301.72   sel     $87,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 19,058.15   sel     $87,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 28,067.11   sel     $86,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  4,336.23   sel     $86,000.00   [strat=patient_value_defender] *
+      R10  buy $ 64,955.66   sel     $85,000.00   [strat=patient_value_defender]
+      R11  buy $ 82,474.93   sel     $84,500.00   [strat=patient_value_defender]
+      R12  buy $ 29,329.52   sel     $84,000.00   [strat=patient_value_defender]
+      R13  buy $ 66,319.41   sel     $83,500.00   [strat=patient_value_defender]
+      R14  buy $ 61,103.41   sel     $83,000.00   [strat=patient_value_defender]
+      R15  buy $ 59,601.25   sel     $82,500.00   [strat=patient_value_defender]
+      R16  buy $  8,977.03   sel     $82,500.00   [strat=patient_value_defender]
+   run 12 done in 3.6 min
+
+   run 13/30 on 2014 Mercedes-Benz S550  seed=20860432
+      R 1  buy $ 13,445.76   sel     $28,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 23,207.00   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 11,930.37   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 25,079.58   sel     $24,900.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 16,745.90   sel     $24,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 17,503.69   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  9,526.64   sel     $24,400.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 12,994.58   sel     $24,300.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,514.61   sel     $24,200.00   [strat=patient_value_defender] *
+      R10  buy $  2,608.62   sel     $24,100.00   [strat=patient_value_defender]
+      R11  buy $ 11,570.89   sel     $24,000.00   [strat=patient_value_defender]
+      R12  buy $ 15,376.55   sel     $23,900.00   [strat=patient_value_defender]
+      R13  buy $  5,503.05   sel     $23,900.00   [strat=patient_value_defender]
+      R14  buy $ 21,010.11   sel     $23,800.00   [strat=patient_value_defender]
+      R15  buy $  5,031.62   sel     $23,700.00   [strat=patient_value_defender]
+      R16  buy $  5,785.09   sel     $23,700.00   [strat=patient_value_defender]
+   run 13 done in 3.9 min
+
+   run 14/30 on 2014 Mercedes-Benz S550  seed=20860433
+      R 1  buy $ 31,714.21   sel     $39,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,690.80   sel     $39,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  5,401.93   sel     $38,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 26,373.93   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 27,091.63   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 15,394.67   sel     $32,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 31,170.38   sel     $31,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 26,782.85   sel     $31,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 19,597.94   sel     $30,000.00   [strat=patient_value_defender] *
+      R10  buy $ 26,338.24   sel     $29,500.00   [strat=patient_value_defender]
+      R11  buy $  7,850.31   sel     $29,000.00   [strat=patient_value_defender]
+      R12  buy $ 23,168.21   sel     $28,500.00   [strat=patient_value_defender]
+      R13  buy $  5,519.10   sel     $28,000.00   [strat=patient_value_defender]
+      R14  buy $  1,706.29   sel     $27,500.00   [strat=patient_value_defender]
+      R15  buy $  9,686.67   sel     $27,000.00   [strat=patient_value_defender]
+      R16  buy $  3,766.58   sel     $26,500.00   [strat=patient_value_defender]
+   run 14 done in 4.4 min
+
+   run 15/30 on 2014 Mercedes-Benz S550  seed=20860434
+      R 1  buy $ 86,266.24   sel     $94,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 27,538.51   sel     $92,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 77,072.93   sel     $88,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 29,617.25   sel     $85,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 82,338.99   sel     $83,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,127.50   sel     $82,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  2,025.33   sel     $80,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 24,669.03   sel     $78,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 20,854.04   sel     $75,000.00   [strat=patient_value_defender] *
+      R10  buy $ 30,405.94   sel     $72,000.00   [strat=patient_value_defender]
+      R11  buy $ 62,006.32   sel     $70,000.00   [strat=patient_value_defender]
+      R12  buy $ 26,124.74   sel     $68,000.00   [strat=patient_value_defender]
+      R13  buy $  7,458.35   sel     $65,000.00   [strat=patient_value_defender]
+      R14  buy $ 30,681.57   sel     $62,000.00   [strat=patient_value_defender]
+      R15  buy $ 44,642.25   sel     $58,000.00   [strat=patient_value_defender]
+      R16  buy $ 22,860.58   sel     $56,000.00   [strat=patient_value_defender]
+   run 15 done in 5.4 min
+
+   run 16/30 on 2014 Mercedes-Benz S550  seed=20860435
+      R 1  buy $ 46,443.42   sel     $52,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 30,003.71   sel     $48,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 40,711.06   sel     $46,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 33,473.98   sel     $42,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 27,523.20   sel     $39,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 27,783.39   sel     $38,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  3,617.41   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 19,414.73   sel     $34,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  5,014.46   sel     $34,000.00   [strat=patient_value_defender] *
+      R10  buy $ 19,533.41   sel     $32,500.00   [strat=patient_value_defender]
+      R11  buy $  8,913.04   sel     $32,500.00   [strat=patient_value_defender]
+      R12  buy $ 12,937.71   sel     $30,000.00   [strat=patient_value_defender]
+      R13  buy $ 18,133.93   sel     $28,000.00   [strat=patient_value_defender]
+      R14  buy $ 12,352.95   sel     $26,000.00   [strat=patient_value_defender]
+      R15  buy $ 11,554.41   sel     $25,000.00   [strat=patient_value_defender]
+      R16  buy $ 17,966.50   sel     $24,000.00   [strat=patient_value_defender]
+   run 16 done in 4.7 min
+
+   run 17/30 on 2014 Mercedes-Benz S550  seed=20860436
+      R 1  buy $ 62,315.93   sel     $74,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 64,512.60   sel     $72,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 71,126.81   sel     $71,813.41   [strat=friendly_rapport_builder]
+      R 4  buy $ 28,626.39   sel     $68,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 28,446.36   sel     $67,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  7,870.56   sel     $65,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 47,098.28   sel     $58,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 23,373.85   sel     $54,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 48,263.00   sel     $52,000.00   [strat=patient_value_defender] *
+      R10  buy $ 26,933.20   sel     $51,000.00   [strat=patient_value_defender]
+      R11  buy $ 35,517.71   sel     $49,000.00   [strat=patient_value_defender]
+      R12  buy $ 37,892.19   sel     $48,500.00   [strat=patient_value_defender]
+      R13  buy $ 26,951.03   sel     $46,500.00   [strat=patient_value_defender]
+      R14  buy $  3,589.82   sel     $44,500.00   [strat=patient_value_defender]
+      R15  buy $ 12,991.69   sel     $42,000.00   [strat=patient_value_defender]
+      R16  buy $ 33,500.80   sel     $40,000.00   [strat=patient_value_defender]
+   run 17 done in 5.3 min
+
+   run 18/30 on 2014 Mercedes-Benz S550  seed=20860437
+      R 1  buy $ 13,849.63   sel     $22,499.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  1,435.05   sel     $22,499.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 18,243.16   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 20,973.27   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 16,803.38   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 10,150.36   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 19,207.20   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 16,788.19   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,698.24   sel     $19,500.00   [strat=patient_value_defender] *
+      R10  buy $  3,685.08   sel     $19,500.00   [strat=patient_value_defender]
+      R11  buy $  5,020.66   sel     $19,500.00   [strat=patient_value_defender]
+      R12  buy $ 12,411.60   sel     $19,250.00   [strat=patient_value_defender]
+      R13  buy $ 14,065.11   sel     $19,250.00   [strat=patient_value_defender]
+      R14  buy $  4,562.02   sel     $19,250.00   [strat=patient_value_defender]
+      R15  buy $  1,393.77   sel     $19,250.00   [strat=patient_value_defender]
+      R16  buy $ 11,630.84   sel     $19,250.00   [strat=patient_value_defender]
+   run 18 done in 4.5 min
+
+   run 19/30 on 2014 Mercedes-Benz S550  seed=20860438
+      R 1  buy $  4,815.72   sel     $59,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 50,887.33   sel     $58,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 32,089.61   sel     $57,900.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 45,480.81   sel     $57,200.00   [strat=friendly_rapport_builder]
+      R 5  buy $  6,435.54   sel     $56,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  4,220.06   sel     $56,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 45,991.10   sel     $55,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 25,950.38   sel     $55,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 15,227.59   sel     $54,000.00   [strat=patient_value_defender] *
+      R10  buy $ 24,149.42   sel     $53,500.00   [strat=patient_value_defender]
+      R11  buy $ 20,143.80   sel     $52,000.00   [strat=patient_value_defender]
+      R12  buy $ 26,280.77   sel     $50,000.00   [strat=patient_value_defender]
+      R13  buy $ 34,111.75   sel     $48,500.00   [strat=patient_value_defender]
+      R14  buy $ 27,986.16   sel     $47,000.00   [strat=patient_value_defender]
+      R15  buy $ 38,114.59   sel     $45,000.00   [strat=patient_value_defender]
+      R16  buy $  3,724.92   sel     $44,000.00   [strat=patient_value_defender]
+   run 19 done in 5.9 min
+
+   run 20/30 on 2014 Mercedes-Benz S550  seed=20860439
+      R 1  buy $ 56,192.12   sel     $75,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 66,629.39   sel     $72,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 20,355.52   sel     $69,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 12,772.29   sel     $68,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $    930.64   sel     $67,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 66,383.96   sel     $66,383.96   [strat=friendly_rapport_builder]
+      R 7  buy $ 47,796.93   sel     $65,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 21,623.43   sel     $64,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 50,352.65   sel     $63,000.00   [strat=patient_value_defender] *
+      R10  buy $ 15,698.21   sel     $62,000.00   [strat=patient_value_defender]
+      R11  buy $ 40,262.27   sel     $61,500.00   [strat=patient_value_defender]
+      R12  buy $ 22,917.08   sel     $60,000.00   [strat=patient_value_defender]
+      R13  buy $ 23,424.77   sel     $59,000.00   [strat=patient_value_defender]
+      R14  buy $  3,662.12   sel     $58,000.00   [strat=patient_value_defender]
+      R15  buy $ 39,971.43   sel     $57,500.00   [strat=patient_value_defender]
+      R16  buy $  2,551.68   sel     $56,000.00   [strat=patient_value_defender]
+   run 20 done in 5.1 min
+
+   run 21/30 on 2014 Mercedes-Benz S550  seed=20860440
+      R 1  buy $ 87,346.16   sel     $91,600.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 53,249.49   sel     $89,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 57,623.26   sel     $86,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 15,186.62   sel     $84,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 54,205.12   sel     $82,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 30,710.66   sel     $80,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 45,436.55   sel     $79,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 28,250.70   sel     $78,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,418.74   sel     $78,000.00   [strat=patient_value_defender] *
+      R10  buy $ 62,208.56   sel     $76,000.00   [strat=patient_value_defender]
+      R11  buy $ 61,640.12   sel     $75,000.00   [strat=patient_value_defender]
+      R12  buy $  3,989.53   sel     $74,500.00   [strat=patient_value_defender]
+      R13  buy $  2,883.62   sel     $74,000.00   [strat=patient_value_defender]
+      R14  buy $  1,074.41   sel     $73,500.00   [strat=patient_value_defender]
+      R15  buy $ 45,024.98   sel     $72,000.00   [strat=patient_value_defender]
+      R16  buy $ 39,645.39   sel     $71,000.00   [strat=patient_value_defender]
+   run 21 done in 5.7 min
+
+   run 22/30 on 2014 Mercedes-Benz S550  seed=20860441
+      R 1  buy $ 63,638.56   sel     $69,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,190.93   sel     $65,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 47,010.82   sel     $63,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,972.05   sel     $62,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 29,725.29   sel     $60,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,113.16   sel     $58,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 50,476.54   sel     $55,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $  7,984.06   sel     $54,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 30,179.84   sel     $52,500.00   [strat=patient_value_defender] *
+      R10  buy $ 46,866.11   sel     $51,000.00   [strat=patient_value_defender]
+      R11  buy $ 47,468.05   sel     $50,000.00   [strat=patient_value_defender]
+      R12  buy $ 23,535.11   sel     $47,500.00   [strat=patient_value_defender]
+      R13  buy $ 18,986.12   sel     $46,500.00   [strat=patient_value_defender]
+      R14  buy $  1,599.24   sel     $45,000.00   [strat=patient_value_defender]
+      R15  buy $ 26,149.15   sel     $45,000.00   [strat=patient_value_defender]
+      R16  buy $  1,253.80   sel     $45,000.00   [strat=patient_value_defender]
+   run 22 done in 5.5 min
+
+   run 23/30 on 2014 Mercedes-Benz S550  seed=20860442
+      R 1  buy $ 68,622.12   sel     $79,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 46,038.33   sel     $78,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 22,279.88   sel     $77,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 59,202.32   sel     $74,995.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 62,922.53   sel     $72,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 45,940.36   sel     $71,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 22,612.18   sel     $69,995.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 28,609.56   sel     $68,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 47,280.40   sel     $67,500.00   [strat=patient_value_defender] *
+      R10  buy $ 24,291.50   sel     $66,000.00   [strat=patient_value_defender]
+      R11  buy $ 19,278.32   sel     $64,500.00   [strat=patient_value_defender]
+      R12  buy $  3,035.95   sel     $64,000.00   [strat=patient_value_defender]
+      R13  buy $ 59,589.00   sel     $62,000.00   [strat=patient_value_defender]
+      R14  buy $ 18,639.97   sel     $62,000.00   [strat=patient_value_defender]
+      R15  buy $    660.33   sel     $62,000.00   [strat=patient_value_defender]
+      R16  buy $ 32,994.75   sel     $61,000.00   [strat=patient_value_defender]
+   run 23 done in 5.4 min
+
+   run 24/30 on 2014 Mercedes-Benz S550  seed=20860443
+      R 1  buy $  6,543.50   sel     $25,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 17,009.45   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  7,359.61   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 10,670.52   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  7,866.69   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,895.94   sel     $19,250.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 16,072.40   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,426.53   sel     $18,750.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,516.40   sel     $19,000.00   [strat=patient_value_defender] *
+      R10  buy $    363.46   sel     $19,000.00   [strat=patient_value_defender]
+      R11  buy $ 17,174.12   sel     $19,000.00   [strat=patient_value_defender]
+      R12  buy $ 15,328.55   sel     $19,000.00   [strat=patient_value_defender]
+      R13  buy $ 11,890.24   sel     $19,000.00   [strat=patient_value_defender]
+      R14  buy $  6,733.99   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $ 18,409.95   sel     $19,000.00   [strat=patient_value_defender]
+      R16  buy $  1,332.63   sel     $19,000.00   [strat=patient_value_defender]
+   run 24 done in 5.8 min
+
+   run 25/30 on 2014 Mercedes-Benz S550  seed=20860444
+      R 1  buy $ 45,569.72   sel     $47,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 46,035.23   sel     $47,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 16,396.57   sel     $47,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 35,686.01   sel     $46,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 41,473.03   sel     $45,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  3,333.43   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 13,757.89   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 34,199.09   sel     $43,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 15,675.83   sel     $42,000.00   [strat=patient_value_defender] *
+      R10  buy $ 28,415.98   sel     $41,000.00   [strat=patient_value_defender]
+      R11  buy $ 21,244.24   sel     $40,000.00   [strat=patient_value_defender]
+      R12  buy $ 12,259.19   sel     $39,000.00   [strat=patient_value_defender]
+      R13  buy $ 33,714.91   sel     $37,500.00   [strat=patient_value_defender]
+      R14  buy $ 18,594.87   sel     $36,000.00   [strat=patient_value_defender]
+      R15  buy $ 24,001.53   sel     $34,500.00   [strat=patient_value_defender]
+      R16  buy $ 22,848.58   sel     $33,500.00   [strat=patient_value_defender]
+   run 25 done in 5.1 min
+
+   run 26/30 on 2014 Mercedes-Benz S550  seed=20860445
+      R 1  buy $ 85,861.09   sel     $92,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 75,925.18   sel     $88,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 64,911.21   sel     $85,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 22,860.92   sel     $84,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 14,490.33   sel     $83,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 68,037.41   sel     $81,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 24,804.49   sel     $80,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $  9,888.83   sel     $79,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 20,753.54   sel     $78,500.00   [strat=patient_value_defender] *
+      R10  buy $ 18,549.92   sel     $78,000.00   [strat=patient_value_defender]
+      R11  buy $ 30,433.28   sel     $77,000.00   [strat=patient_value_defender]
+      R12  buy $ 73,448.33   sel     $76,500.00   [strat=patient_value_defender]
+      R13  buy $ 48,544.72   sel     $76,000.00   [strat=patient_value_defender]
+      R14  buy $ 20,199.00   sel     $75,000.00   [strat=patient_value_defender]
+      R15  buy $  6,515.85   sel     $74,900.00   [strat=patient_value_defender]
+      R16  buy $ 54,455.40   sel     $74,000.00   [strat=patient_value_defender]
+   run 26 done in 5.3 min
+
+   run 27/30 on 2014 Mercedes-Benz S550  seed=20860446
+      R 1  buy $ 71,117.46   sel     $80,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 52,847.06   sel     $70,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 66,875.27   sel     $68,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 34,942.56   sel     $67,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,397.43   sel     $67,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 52,401.20   sel     $66,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 21,864.56   sel     $66,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 52,726.91   sel     $65,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 41,177.39   sel     $64,000.00   [strat=patient_value_defender] *
+      R10  buy $ 60,740.12   sel     $62,500.00   [strat=patient_value_defender]
+      R11  buy $ 27,850.93   sel     $62,000.00   [strat=patient_value_defender]
+      R12  buy $ 60,083.59   sel     $61,500.00   [strat=patient_value_defender]
+      R13  buy $ 53,547.58   sel     $60,000.00   [strat=patient_value_defender]
+      R14  buy $ 38,177.64   sel     $59,000.00   [strat=patient_value_defender]
+      R15  buy $    509.20   sel     $58,500.00   [strat=patient_value_defender]
+      R16  buy $ 32,569.32   sel     $57,500.00   [strat=patient_value_defender]
+   run 27 done in 5.6 min
+
+   run 28/30 on 2014 Mercedes-Benz S550  seed=20860447
+      R 1  buy $ 29,730.90   sel     $38,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 24,657.83   sel     $36,750.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 24,128.86   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 31,439.90   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,512.12   sel     $33,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  1,725.83   sel     $32,750.00   [strat=friendly_rapport_builder]
+      R 7  buy $  7,087.86   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 14,697.88   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,567.21   sel     $31,500.00   [strat=patient_value_defender] *
+      R10  buy $ 29,115.66   sel     $30,000.00   [strat=patient_value_defender]
+      R11  buy $  8,723.17   sel     $30,000.00   [strat=patient_value_defender]
+      R12  buy $  4,075.95   sel     $29,500.00   [strat=patient_value_defender]
+      R13  buy $  5,212.83   sel     $29,000.00   [strat=patient_value_defender]
+      R14  buy $ 14,315.97   sel     $29,000.00   [strat=patient_value_defender]
+      R15  buy $ 13,048.53   sel     $29,000.00   [strat=patient_value_defender]
+      R16  buy $ 16,924.36   sel     $29,000.00   [strat=patient_value_defender]
+   run 28 done in 4.4 min
+
+   run 29/30 on 2014 Mercedes-Benz S550  seed=20860448
+      R 1  buy $ 13,105.86   sel     $25,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 20,864.70   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  9,183.03   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  6,414.88   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,747.56   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,383.29   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,620.83   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 12,701.96   sel     $19,250.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,401.98   sel     $19,000.00   [strat=patient_value_defender] *
+      R10  buy $  7,899.98   sel     $19,000.00   [strat=patient_value_defender]
+      R11  buy $ 12,371.84   sel     $19,500.00   [strat=patient_value_defender]
+      R12  buy $ 15,831.47   sel     $19,000.00   [strat=patient_value_defender]
+      R13  buy $  1,149.95   sel     $19,000.00   [strat=patient_value_defender]
+      R14  buy $  1,780.32   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $ 12,980.20   sel     $19,000.00   [strat=patient_value_defender]
+      R16  buy $ 16,611.09   sel     $19,000.00   [strat=patient_value_defender]
+   run 29 done in 6.6 min
+
+   run 30/30 on 2014 Mercedes-Benz S550  seed=20860449
+      R 1  buy $ 73,143.98   sel     $78,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 72,305.17   sel     $77,900.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 10,926.05   sel     $77,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 77,001.64   sel     $77,250.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 51,457.82   sel     $76,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 51,406.13   sel     $76,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 48,378.99   sel     $75,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 42,671.90   sel     $70,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 27,132.96   sel     $65,000.00   [strat=patient_value_defender] *
+      R10  buy $ 43,979.63   sel     $60,000.00   [strat=patient_value_defender]
+      R11  buy $ 35,196.73   sel     $55,000.00   [strat=patient_value_defender]
+      R12  buy $ 52,567.11   sel     $54,000.00   [strat=patient_value_defender]
+      R13  buy $ 52,693.94   sel     $53,500.00   [strat=patient_value_defender]
+      R14  buy $ 24,584.56   sel     $52,000.00   [strat=patient_value_defender]
+      R15  buy $ 27,965.30   sel     $51,000.00   [strat=patient_value_defender]
+      R16  buy $ 20,376.99   sel     $50,000.00   [strat=patient_value_defender]
+   run 30 done in 5.8 min
+
+   ---> checkpoint: car 1/5 done in 145.0 min; total so far 145.0 min; saved 30 runs to exp06_transitionA_rep1.json
+
+--- CAR 2/5: 2016 Cadillac CTS 3.6 Luxury  (M=$45,000.00  cost=$15,750.00  cost/M=35.00%) ---
+
+   run 1/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861420
+      R 1  buy $ 11,894.52   sel     $17,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,088.73   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 10,062.10   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 4  buy $  8,427.85   sel     $15,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 11,630.09   sel     $15,250.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 15,203.86   sel     $15,150.00   [strat=friendly_rapport_builder]
+      R 7  buy $  3,636.93   sel     $15,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 14,460.47   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 10,874.73   sel     $15,700.00   [strat=patient_value_defender] *
+      R10  buy $    571.58   sel     $15,600.00   [strat=patient_value_defender]
+      R11  buy $  7,501.94   sel     $15,500.00   [strat=patient_value_defender]
+      R12  buy $  2,625.45   sel     $15,750.00   [strat=patient_value_defender]
+      R13  buy $ 11,722.88   sel     $15,700.00   [strat=patient_value_defender]
+      R14  buy $    822.09   sel     $15,700.00   [strat=patient_value_defender]
+      R15  buy $  3,833.08   sel     $15,750.00   [strat=patient_value_defender]
+      R16  buy $  3,794.02   sel     $15,600.00   [strat=patient_value_defender]
+   run 1 done in 7.4 min
+
+   run 2/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861421
+      R 1  buy $ 19,680.87   sel     $20,999.87   [strat=friendly_rapport_builder] *
+      R 2  buy $ 15,694.46   sel     $20,499.87   [strat=friendly_rapport_builder]
+      R 3  buy $  2,108.68   sel     $20,249.87   [strat=friendly_rapport_builder]
+      R 4  buy $  4,798.89   sel     $19,999.87   [strat=friendly_rapport_builder]
+      R 5  buy $    726.37   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 15,532.13   sel     $18,999.87   [strat=friendly_rapport_builder]
+      R 7  buy $ 18,764.17   sel     $18,750.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 18,464.14   sel     $18,600.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,574.03   sel     $18,600.00   [strat=patient_value_defender] *
+      R10  buy $ 12,756.23   sel     $18,500.00   [strat=patient_value_defender]
+      R11  buy $  3,389.71   sel     $18,450.00   [strat=patient_value_defender]
+      R12  buy $ 15,397.66   sel     $18,400.00   [strat=patient_value_defender]
+      R13  buy $ 17,881.55   sel     $18,400.00   [strat=patient_value_defender]
+      R14  buy $  2,013.73   sel     $18,400.00   [strat=patient_value_defender]
+      R15  buy $ 18,011.00   sel     $18,205.00   [strat=patient_value_defender]
+      R16  buy $ 15,440.15   sel     $18,205.00   [strat=patient_value_defender]
+   run 2 done in 4.9 min
+
+   run 3/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861422
+      R 1  buy $ 43,792.32   sel     $44,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,326.50   sel     $44,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  5,364.36   sel     $42,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 38,998.25   sel     $40,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  4,943.75   sel     $39,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 15,673.41   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  8,840.16   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,896.22   sel     $15,600.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,314.16   sel     $14,000.00   [strat=patient_value_defender] *
+      R10  buy $  8,159.35   sel     $15,800.00   [strat=patient_value_defender]
+      R11  buy $ 13,459.70   sel     $15,775.00   [strat=patient_value_defender]
+      R12  buy $ 13,528.43   sel     $15,775.00   [strat=patient_value_defender]
+      R13  buy $    612.56   sel     $15,775.00   [strat=patient_value_defender]
+      R14  buy $ 14,237.21   sel     $15,770.00   [strat=patient_value_defender]
+      R15  buy $ 14,417.15   sel     $15,765.00   [strat=patient_value_defender]
+      R16  buy $  9,173.58   sel     $15,760.00   [strat=patient_value_defender]
+   run 3 done in 6.5 min
+
+   run 4/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861423
+      R 1  buy $  4,858.50   sel     $39,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 17,380.19   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  7,136.68   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $  8,767.42   sel     $29,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,070.29   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 19,362.43   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 19,492.15   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  6,161.13   sel     $24,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  9,261.23   sel     $23,500.00   [strat=patient_value_defender] *
+      R10  buy $ 12,684.66   sel     $22,000.00   [strat=patient_value_defender]
+      R11  buy $  1,219.40   sel     $21,500.00   [strat=patient_value_defender]
+      R12  buy $ 13,692.56   sel     $20,500.00   [strat=patient_value_defender]
+      R13  buy $  8,345.98   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $  9,362.91   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $  3,707.18   sel     $18,500.00   [strat=patient_value_defender]
+      R16  buy $ 17,543.09   sel     $18,000.00   [strat=patient_value_defender]
+   run 4 done in 5.5 min
+
+   run 5/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861424
+      R 1  buy $ 33,853.46   sel     $37,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 37,380.04   sel     $37,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  3,678.36   sel     $37,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 24,686.39   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,467.52   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,955.17   sel     $34,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  7,186.00   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 29,836.67   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  3,402.70   sel     $30,500.00   [strat=patient_value_defender] *
+      R10  buy $    121.93   sel     $30,000.00   [strat=patient_value_defender]
+      R11  buy $ 10,713.07   sel     $29,500.00   [strat=patient_value_defender]
+      R12  buy $    306.32   sel     $29,000.00   [strat=patient_value_defender]
+      R13  buy $ 23,516.88   sel     $28,000.00   [strat=patient_value_defender]
+      R14  buy $  2,546.70   sel     $27,500.00   [strat=patient_value_defender]
+      R15  buy $ 17,532.76   sel     $26,500.00   [strat=patient_value_defender]
+      R16  buy $ 12,129.89   sel     $25,000.00   [strat=patient_value_defender]
+   run 5 done in 5.2 min
+
+   run 6/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861425
+      R 1  buy $  3,503.81   sel     $28,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 23,775.68   sel     $26,900.00   [strat=friendly_rapport_builder]
+      R 3  buy $  3,732.98   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  9,306.16   sel     $24,800.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 20,334.72   sel     $24,200.00   [strat=friendly_rapport_builder]
+      R 6  buy $    950.78   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 21,289.67   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 12,395.84   sel     $21,900.00   [strat=friendly_rapport_builder]
+      R 9  buy $  9,104.05   sel     $21,500.00   [strat=patient_value_defender] *
+      R10  buy $ 13,814.16   sel     $21,000.00   [strat=patient_value_defender]
+      R11  buy $  2,374.92   sel     $20,500.00   [strat=patient_value_defender]
+      R12  buy $ 12,173.49   sel     $20,500.00   [strat=patient_value_defender]
+      R13  buy $ 11,226.47   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $ 12,793.44   sel     $18,900.00   [strat=patient_value_defender]
+      R15  buy $ 17,813.73   sel     $18,500.00   [strat=patient_value_defender]
+      R16  buy $ 14,730.54   sel     $18,000.00   [strat=patient_value_defender]
+   run 6 done in 5.7 min
+
+   run 7/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861426
+      R 1  buy $ 35,074.06   sel     $42,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 18,330.75   sel     $40,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 33,204.93   sel     $38,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 33,874.25   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 32,471.40   sel     $34,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 19,589.80   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 18,409.19   sel     $32,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 22,861.44   sel     $31,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 24,337.48   sel     $29,900.00   [strat=patient_value_defender] *
+      R10  buy $ 28,409.33   sel     $29,150.00   [strat=patient_value_defender]
+      R11  buy $    856.15   sel     $28,500.00   [strat=patient_value_defender]
+      R12  buy $  7,178.87   sel     $28,500.00   [strat=patient_value_defender]
+      R13  buy $  7,621.36   sel     $28,409.33   [strat=patient_value_defender]
+      R14  buy $  5,608.31   sel     $28,409.33   [strat=patient_value_defender]
+      R15  buy $  6,050.46   sel     $28,000.00   [strat=patient_value_defender]
+      R16  buy $ 26,834.84   sel     $27,500.00   [strat=patient_value_defender]
+   run 7 done in 6.7 min
+
+   run 8/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861427
+      R 1  buy $  3,113.18   sel     $30,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  7,683.75   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  8,991.27   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  6,701.46   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,398.45   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  5,882.44   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  4,031.94   sel     $16,900.00   [strat=friendly_rapport_builder]
+      R 8  buy $  8,305.27   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 13,057.86   sel     $16,200.00   [strat=patient_value_defender] *
+      R10  buy $ 14,974.93   sel     $15,900.00   [strat=patient_value_defender]
+      R11  buy $  2,429.70   sel     $15,800.00   [strat=patient_value_defender]
+      R12  buy $  3,195.10   sel     $15,800.00   [strat=patient_value_defender]
+      R13  buy $ 12,920.40   sel     $15,700.00   [strat=patient_value_defender]
+      R14  buy $  7,283.03   sel     $15,700.00   [strat=patient_value_defender]
+      R15  buy $  9,415.85   sel     $15,700.00   [strat=patient_value_defender]
+      R16  buy $  1,262.21   sel     $15,800.00   [strat=patient_value_defender]
+   run 8 done in 8.3 min
+
+   run 9/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861428
+      R 1  buy $ 10,117.72   sel     $20,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  7,850.71   sel     $19,995.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 17,764.94   sel     $18,879.97   [strat=friendly_rapport_builder]
+      R 4  buy $ 13,789.49   sel     $18,499.00   [strat=friendly_rapport_builder]
+      R 5  buy $  1,219.74   sel     $18,499.00   [strat=friendly_rapport_builder]
+      R 6  buy $  1,176.63   sel     $18,299.00   [strat=friendly_rapport_builder]
+      R 7  buy $  2,439.81   sel     $18,199.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,471.91   sel     $18,099.00   [strat=friendly_rapport_builder]
+      R 9  buy $  1,000.10   sel     $18,000.00   [strat=patient_value_defender] *
+      R10  buy $  6,095.76   sel     $17,500.00   [strat=patient_value_defender]
+      R11  buy $  8,662.52   sel     $17,250.00   [strat=patient_value_defender]
+      R12  buy $ 10,751.74   sel     $17,000.00   [strat=patient_value_defender]
+      R13  buy $  5,455.72   sel     $16,500.00   [strat=patient_value_defender]
+      R14  buy $  6,423.78   sel     $16,250.00   [strat=patient_value_defender]
+      R15  buy $  2,419.03   sel     $16,000.00   [strat=patient_value_defender]
+      R16  buy $ 13,087.39   sel     $15,900.00   [strat=patient_value_defender]
+   run 9 done in 6.0 min
+
+   run 10/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861429
+      R 1  buy $ 19,120.53   sel     $20,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,778.99   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 18,551.10   sel     $19,200.00   [strat=friendly_rapport_builder]
+      R 4  buy $  3,578.79   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,222.03   sel     $18,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $    293.31   sel     $18,600.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,555.86   sel     $18,400.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,203.24   sel     $18,200.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,619.91   sel     $18,000.00   [strat=patient_value_defender] *
+      R10  buy $ 13,422.20   sel     $17,800.00   [strat=patient_value_defender]
+      R11  buy $ 10,381.36   sel     $17,600.00   [strat=patient_value_defender]
+      R12  buy $  2,893.01   sel     $17,400.00   [strat=patient_value_defender]
+      R13  buy $  9,369.09   sel     $17,200.00   [strat=patient_value_defender]
+      R14  buy $  1,927.19   sel     $17,000.00   [strat=patient_value_defender]
+      R15  buy $ 16,025.38   sel     $16,500.00   [strat=patient_value_defender]
+      R16  buy $ 15,814.50   sel     $16,200.00   [strat=patient_value_defender]
+   run 10 done in 6.4 min
+
+   run 11/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861430
+      R 1  buy $  1,321.68   sel     $18,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 15,669.98   sel     $17,499.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,895.32   sel     $17,250.00   [strat=friendly_rapport_builder]
+      R 4  buy $  9,328.04   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,043.15   sel     $16,200.00   [strat=friendly_rapport_builder]
+      R 6  buy $  1,980.07   sel     $15,935.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,732.21   sel     $15,700.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,776.77   sel     $15,600.00   [strat=friendly_rapport_builder]
+      R 9  buy $    288.33   sel     $15,600.00   [strat=patient_value_defender] *
+      R10  buy $  7,612.99   sel     $15,600.00   [strat=patient_value_defender]
+      R11  buy $  7,468.98   sel     $15,600.00   [strat=patient_value_defender]
+      R12  buy $  5,819.32   sel     $15,600.00   [strat=patient_value_defender]
+      R13  buy $ 10,347.79   sel     $15,750.00   [strat=patient_value_defender]
+      R14  buy $  8,380.36   sel     $15,750.00   [strat=patient_value_defender]
+      R15  buy $ 15,015.88   sel     PARSE-FAIL   [strat=patient_value_defender]
+      R16  buy $  8,664.24   sel     $15,750.00   [strat=patient_value_defender]
+   run 11 done in 4.4 min
+
+   run 12/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861431
+      R 1  buy $ 16,454.96   sel     $17,499.99   [strat=friendly_rapport_builder] *
+      R 2  buy $    553.16   sel     $17,250.00   [strat=friendly_rapport_builder]
+      R 3  buy $  5,753.54   sel     $16,999.99   [strat=friendly_rapport_builder]
+      R 4  buy $ 13,820.14   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  7,984.87   sel     $16,250.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,141.82   sel     $16,195.91   [strat=friendly_rapport_builder]
+      R 7  buy $  7,560.39   sel     $16,195.91   [strat=friendly_rapport_builder]
+      R 8  buy $  3,846.40   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,609.07   sel     $15,999.99   [strat=patient_value_defender] *
+      R10  buy $  3,012.36   sel     $15,999.99   [strat=patient_value_defender]
+      R11  buy $ 14,206.11   sel     $15,899.99   [strat=patient_value_defender]
+      R12  buy $  2,602.08   sel     $15,899.99   [strat=patient_value_defender]
+      R13  buy $ 13,446.19   sel     $15,799.99   [strat=patient_value_defender]
+      R14  buy $ 10,456.08   sel     $15,779.99   [strat=patient_value_defender]
+      R15  buy $  2,529.00   sel     $15,699.99   [strat=patient_value_defender]
+      R16  buy $ 10,185.47   sel     $15,599.99   [strat=patient_value_defender]
+   run 12 done in 5.4 min
+
+   run 13/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861432
+      R 1  buy $ 32,611.94   sel     $41,999.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 23,447.21   sel     $38,999.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,220.26   sel     $38,999.00   [strat=friendly_rapport_builder]
+      R 4  buy $  2,916.04   sel     $37,999.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 30,165.29   sel     $35,999.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 13,884.57   sel     $35,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 11,704.99   sel     $34,999.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 31,828.52   sel     $33,999.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,317.86   sel     $34,500.00   [strat=patient_value_defender] *
+      R10  buy $ 12,243.33   sel     $34,500.00   [strat=patient_value_defender]
+      R11  buy $  8,369.41   sel     $34,500.00   [strat=patient_value_defender]
+      R12  buy $ 24,156.75   sel     $32,999.00   [strat=patient_value_defender]
+      R13  buy $  7,136.44   sel     $31,999.00   [strat=patient_value_defender]
+      R14  buy $ 17,177.07   sel     $30,999.00   [strat=patient_value_defender]
+      R15  buy $ 25,112.47   sel     $29,999.00   [strat=patient_value_defender]
+      R16  buy $ 20,949.04   sel     $28,999.00   [strat=patient_value_defender]
+   run 13 done in 4.9 min
+
+   run 14/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861433
+      R 1  buy $ 20,054.05   sel     $22,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  5,886.55   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 10,829.20   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 16,046.85   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,461.31   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  1,911.99   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,832.21   sel     $15,900.00   [strat=friendly_rapport_builder]
+      R 8  buy $  5,110.86   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,518.15   sel     $15,600.00   [strat=patient_value_defender] *
+      R10  buy $ 15,166.55   sel     $15,800.00   [strat=patient_value_defender]
+      R11  buy $    904.99   sel     $15,700.00   [strat=patient_value_defender]
+      R12  buy $  2,404.47   sel     $15,600.00   [strat=patient_value_defender]
+      R13  buy $  1,108.96   sel     $15,600.00   [strat=patient_value_defender]
+      R14  buy $ 15,000.83   sel     $15,800.00   [strat=patient_value_defender]
+      R15  buy $  4,228.08   sel     $15,750.00   [strat=patient_value_defender]
+      R16  buy $ 11,933.04   sel     $15,750.00   [strat=patient_value_defender]
+   run 14 done in 6.8 min
+
+   run 15/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861434
+      R 1  buy $  3,473.87   sel     $34,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 25,406.78   sel     $31,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 29,403.42   sel     $30,450.00   [strat=friendly_rapport_builder]
+      R 4  buy $  7,840.08   sel     $30,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 27,922.59   sel     $29,750.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 21,288.19   sel     $29,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 13,032.31   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 20,007.72   sel     $28,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  8,362.40   sel     $27,500.00   [strat=patient_value_defender] *
+      R10  buy $ 11,424.61   sel     $27,000.00   [strat=patient_value_defender]
+      R11  buy $ 25,116.60   sel     $26,500.00   [strat=patient_value_defender]
+      R12  buy $  6,734.91   sel     $26,000.00   [strat=patient_value_defender]
+      R13  buy $  1,141.42   sel     $25,500.00   [strat=patient_value_defender]
+      R14  buy $  9,024.14   sel     $25,000.00   [strat=patient_value_defender]
+      R15  buy $  4,237.26   sel     $25,000.00   [strat=patient_value_defender]
+      R16  buy $ 21,661.35   sel     $24,500.00   [strat=patient_value_defender]
+   run 15 done in 5.3 min
+
+   run 16/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861435
+      R 1  buy $ 21,704.94   sel     $23,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,798.39   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,873.84   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $  7,828.28   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 20,042.08   sel     $20,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $  2,544.66   sel     $15,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 10,425.32   sel     $14,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  3,003.13   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,920.62   sel     $15,500.00   [strat=patient_value_defender] *
+      R10  buy $  6,741.18   sel     $14,500.00   [strat=patient_value_defender]
+      R11  buy $  2,876.24   sel     $15,900.00   [strat=patient_value_defender]
+      R12  buy $  8,244.82   sel     $15,800.00   [strat=patient_value_defender]
+      R13  buy $    878.06   sel     $15,800.00   [strat=patient_value_defender]
+      R14  buy $    390.38   sel     $15,795.00   [strat=patient_value_defender]
+      R15  buy $ 14,101.39   sel     $15,790.00   [strat=patient_value_defender]
+      R16  buy $  3,577.62   sel     $15,785.00   [strat=patient_value_defender]
+   run 16 done in 7.5 min
+
+   run 17/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861436
+      R 1  buy $ 22,375.04   sel     $25,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 24,883.61   sel     $24,883.61   [strat=friendly_rapport_builder]
+      R 3  buy $ 22,289.15   sel     $24,400.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 19,938.14   sel     $24,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 17,628.09   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  9,773.08   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 21,785.51   sel     $22,150.00   [strat=friendly_rapport_builder]
+      R 8  buy $  6,580.35   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  1,316.69   sel     $20,500.00   [strat=patient_value_defender] *
+      R10  buy $  2,282.30   sel     $20,000.00   [strat=patient_value_defender]
+      R11  buy $  1,929.16   sel     $19,500.00   [strat=patient_value_defender]
+      R12  buy $ 16,424.99   sel     $18,500.00   [strat=patient_value_defender]
+      R13  buy $  7,486.92   sel     $18,000.00   [strat=patient_value_defender]
+      R14  buy $ 11,629.48   sel     $17,500.00   [strat=patient_value_defender]
+      R15  buy $    665.31   sel     $17,000.00   [strat=patient_value_defender]
+      R16  buy $ 16,052.21   sel     $16,500.00   [strat=patient_value_defender]
+   run 17 done in 5.2 min
+
+   run 18/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861437
+      R 1  buy $ 28,472.07   sel     $30,997.07   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,572.10   sel     $30,500.07   [strat=friendly_rapport_builder]
+      R 3  buy $  1,587.70   sel     $29,999.07   [strat=friendly_rapport_builder]
+      R 4  buy $  1,188.00   sel     $29,900.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 22,091.37   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  3,505.12   sel     $27,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $  2,759.16   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 24,212.82   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  9,889.05   sel     $25,999.00   [strat=patient_value_defender] *
+      R10  buy $ 24,773.59   sel     $25,500.00   [strat=patient_value_defender]
+      R11  buy $ 14,353.00   sel     $25,000.00   [strat=patient_value_defender]
+      R12  buy $  4,426.95   sel     $24,900.00   [strat=patient_value_defender]
+      R13  buy $  3,641.40   sel     $24,500.00   [strat=patient_value_defender]
+      R14  buy $ 20,451.47   sel     $24,000.00   [strat=patient_value_defender]
+      R15  buy $  9,133.02   sel     $23,500.00   [strat=patient_value_defender]
+      R16  buy $  8,265.62   sel     $22,500.00   [strat=patient_value_defender]
+   run 18 done in 5.1 min
+
+   run 19/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861438
+      R 1  buy $  3,149.69   sel     $37,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,650.05   sel     $36,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 16,623.57   sel     $29,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 28,376.00   sel     $28,900.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 14,139.05   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,771.72   sel     $27,900.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 27,176.50   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 24,470.83   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 17,707.01   sel     $25,900.00   [strat=patient_value_defender] *
+      R10  buy $ 23,708.86   sel     $25,500.00   [strat=patient_value_defender]
+      R11  buy $     24.04   sel     $25,500.00   [strat=patient_value_defender]
+      R12  buy $  3,396.84   sel     $25,500.00   [strat=patient_value_defender]
+      R13  buy $  9,192.69   sel     $25,500.00   [strat=patient_value_defender]
+      R14  buy $ 17,936.18   sel     $24,900.00   [strat=patient_value_defender]
+      R15  buy $  4,863.95   sel     $24,500.00   [strat=patient_value_defender]
+      R16  buy $  4,778.35   sel     $24,000.00   [strat=patient_value_defender]
+   run 19 done in 4.9 min
+
+   run 20/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861439
+      R 1  buy $ 43,836.46   sel     $44,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 14,049.27   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 13,593.72   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 12,546.42   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 29,824.33   sel     $44,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 41,171.45   sel     $43,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 15,419.78   sel     $42,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 12,666.83   sel     $42,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  4,479.28   sel     $42,000.00   [strat=patient_value_defender] *
+      R10  buy $ 35,816.56   sel     $40,000.00   [strat=patient_value_defender]
+      R11  buy $ 17,019.34   sel     $39,500.00   [strat=patient_value_defender]
+      R12  buy $ 10,627.59   sel     $39,000.00   [strat=patient_value_defender]
+      R13  buy $  3,655.50   sel     $39,000.00   [strat=patient_value_defender]
+      R14  buy $ 11,378.65   sel     $38,500.00   [strat=patient_value_defender]
+      R15  buy $ 15,208.01   sel     $38,500.00   [strat=patient_value_defender]
+      R16  buy $ 14,160.96   sel     $38,000.00   [strat=patient_value_defender]
+   run 20 done in 4.6 min
+
+   run 21/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861440
+      R 1  buy $ 42,335.23   sel     $44,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,330.46   sel     $43,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 12,485.47   sel     $42,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $  8,245.33   sel     $41,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  1,171.64   sel     $40,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 14,119.62   sel     $39,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 24,234.69   sel     $37,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,095.74   sel     $36,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 30,626.82   sel     $35,000.00   [strat=patient_value_defender] *
+      R10  buy $  8,221.17   sel     $34,500.00   [strat=patient_value_defender]
+      R11  buy $  7,587.87   sel     $33,500.00   [strat=patient_value_defender]
+      R12  buy $ 10,727.16   sel     $32,500.00   [strat=patient_value_defender]
+      R13  buy $  3,144.78   sel     $32,000.00   [strat=patient_value_defender]
+      R14  buy $ 18,908.88   sel     $25,000.00   [strat=patient_value_defender]
+      R15  buy $    549.02   sel     $25,000.00   [strat=patient_value_defender]
+      R16  buy $ 20,292.50   sel     $23,000.00   [strat=patient_value_defender]
+   run 21 done in 5.6 min
+
+   run 22/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861441
+      R 1  buy $ 18,481.98   sel     $19,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  6,523.21   sel     $18,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $  5,704.69   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  3,379.30   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  6,538.90   sel     $16,200.00   [strat=friendly_rapport_builder]
+      R 6  buy $  7,364.11   sel     $16,100.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 11,151.20   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 10,636.61   sel     $15,775.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,488.44   sel     $15,775.00   [strat=patient_value_defender] *
+      R10  buy $ 11,419.16   sel     $15,765.00   [strat=patient_value_defender]
+      R11  buy $  5,226.14   sel     $15,760.00   [strat=patient_value_defender]
+      R12  buy $  5,564.19   sel     $15,750.00   [strat=patient_value_defender]
+      R13  buy $ 13,123.82   sel     $15,750.00   [strat=patient_value_defender]
+      R14  buy $  4,546.70   sel     $15,750.00   [strat=patient_value_defender]
+      R15  buy $  5,341.53   sel     $15,750.00   [strat=patient_value_defender]
+      R16  buy $  8,038.31   sel     $15,750.00   [strat=patient_value_defender]
+   run 22 done in 6.0 min
+
+   run 23/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861442
+      R 1  buy $ 28,105.09   sel     $32,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 25,252.07   sel     $30,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 12,682.01   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 26,869.51   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,457.19   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 19,526.00   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 22,958.23   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  6,229.81   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 17,360.01   sel     $21,000.00   [strat=patient_value_defender] *
+      R10  buy $ 17,008.74   sel     $19,999.00   [strat=patient_value_defender]
+      R11  buy $  4,189.98   sel     $19,500.00   [strat=patient_value_defender]
+      R12  buy $ 13,623.57   sel     $18,500.00   [strat=patient_value_defender]
+      R13  buy $  5,676.99   sel     $17,500.00   [strat=patient_value_defender]
+      R14  buy $ 12,055.78   sel     $16,500.00   [strat=patient_value_defender]
+      R15  buy $  5,057.21   sel     $16,250.00   [strat=patient_value_defender]
+      R16  buy $  6,720.26   sel     $16,250.00   [strat=patient_value_defender]
+   run 23 done in 5.3 min
+
+   run 24/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861443
+      R 1  buy $ 42,713.57   sel     $43,900.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  1,798.10   sel     $43,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $    539.95   sel     $43,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 22,444.34   sel     $42,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 39,799.63   sel     $41,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $  4,078.09   sel     $41,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  4,860.68   sel     $41,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 12,900.40   sel     $40,800.00   [strat=friendly_rapport_builder]
+      R 9  buy $  9,790.24   sel     $40,500.00   [strat=patient_value_defender] *
+      R10  buy $ 35,077.08   sel     $40,000.00   [strat=patient_value_defender]
+      R11  buy $ 23,521.52   sel     $39,500.00   [strat=patient_value_defender]
+      R12  buy $ 12,915.67   sel     $39,000.00   [strat=patient_value_defender]
+      R13  buy $  1,103.88   sel     $38,500.00   [strat=patient_value_defender]
+      R14  buy $ 20,186.05   sel     $37,500.00   [strat=patient_value_defender]
+      R15  buy $ 10,964.79   sel     $36,500.00   [strat=patient_value_defender]
+      R16  buy $ 35,872.99   sel     $36,000.00   [strat=patient_value_defender]
+   run 24 done in 5.8 min
+
+   run 25/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861444
+      R 1  buy $ 34,271.44   sel     $41,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 16,831.36   sel     $39,999.00   [strat=friendly_rapport_builder]
+      R 3  buy $  3,434.41   sel     $38,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 21,550.89   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 21,752.17   sel     $33,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 13,554.33   sel     $32,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 22,911.92   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 25,271.65   sel     $31,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,887.69   sel     $30,500.00   [strat=patient_value_defender] *
+      R10  buy $ 28,104.34   sel     $30,000.00   [strat=patient_value_defender]
+      R11  buy $ 18,924.32   sel     $29,500.00   [strat=patient_value_defender]
+      R12  buy $  3,896.74   sel     $29,500.00   [strat=patient_value_defender]
+      R13  buy $ 10,021.52   sel     $29,000.00   [strat=patient_value_defender]
+      R14  buy $ 13,086.55   sel     $28,500.00   [strat=patient_value_defender]
+      R15  buy $ 22,077.22   sel     $27,500.00   [strat=patient_value_defender]
+      R16  buy $  2,058.67   sel     $27,000.00   [strat=patient_value_defender]
+   run 25 done in 7.3 min
+
+   run 26/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861445
+      R 1  buy $ 16,967.51   sel     $18,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,253.07   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 13,201.25   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  2,940.31   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 11,508.59   sel     $15,900.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 14,836.30   sel     $15,900.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 10,870.11   sel     $15,800.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 10,595.37   sel     $15,790.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 13,104.26   sel     $15,780.00   [strat=patient_value_defender] *
+      R10  buy $ 11,669.92   sel     $15,770.00   [strat=patient_value_defender]
+      R11  buy $ 10,993.15   sel     $15,770.00   [strat=patient_value_defender]
+      R12  buy $    284.70   sel     $15,770.00   [strat=patient_value_defender]
+      R13  buy $  4,915.25   sel     $15,760.00   [strat=patient_value_defender]
+      R14  buy $  4,127.12   sel     $15,755.00   [strat=patient_value_defender]
+      R15  buy $  3,275.15   sel     $15,750.00   [strat=patient_value_defender]
+      R16  buy $  9,608.89   sel     $15,750.00   [strat=patient_value_defender]
+   run 26 done in 6.9 min
+
+   run 27/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861446
+      R 1  buy $ 24,854.65   sel     $28,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 14,576.82   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  5,185.41   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 24,837.75   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 21,884.87   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,154.36   sel     $24,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 23,952.24   sel     $23,952.24   [strat=friendly_rapport_builder]
+      R 8  buy $    804.87   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 15,274.65   sel     $22,500.00   [strat=patient_value_defender] *
+      R10  buy $ 11,373.93   sel     $22,000.00   [strat=patient_value_defender]
+      R11  buy $ 13,174.28   sel     $21,000.00   [strat=patient_value_defender]
+      R12  buy $  2,273.99   sel     $20,000.00   [strat=patient_value_defender]
+      R13  buy $  2,166.79   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $ 18,587.79   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $ 18,623.51   sel     $18,800.00   [strat=patient_value_defender]
+      R16  buy $  6,364.10   sel     $19,000.00   [strat=patient_value_defender]
+   run 27 done in 5.9 min
+
+   run 28/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861447
+      R 1  buy $ 40,596.65   sel     $42,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 39,995.45   sel     $41,250.00   [strat=friendly_rapport_builder]
+      R 3  buy $  9,400.36   sel     $40,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,482.73   sel     $38,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 13,509.79   sel     $35,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 30,632.81   sel     $34,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 10,212.10   sel     $32,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $  4,925.27   sel     $30,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  3,717.16   sel     $28,000.00   [strat=patient_value_defender] *
+      R10  buy $ 24,077.27   sel     $26,000.00   [strat=patient_value_defender]
+      R11  buy $  5,838.97   sel     $25,000.00   [strat=patient_value_defender]
+      R12  buy $ 13,602.25   sel     $24,500.00   [strat=patient_value_defender]
+      R13  buy $    532.25   sel     $24,000.00   [strat=patient_value_defender]
+      R14  buy $  4,939.73   sel     $22,500.00   [strat=patient_value_defender]
+      R15  buy $ 17,845.93   sel     $21,500.00   [strat=patient_value_defender]
+      R16  buy $  1,989.03   sel     $20,000.00   [strat=patient_value_defender]
+   run 28 done in 5.8 min
+
+   run 29/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861448
+      R 1  buy $ 43,338.46   sel     $45,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 34,880.15   sel     $44,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 18,261.89   sel     $43,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 34,641.15   sel     $42,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,346.55   sel     $41,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 25,931.69   sel     $40,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 17,766.71   sel     $39,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,698.95   sel     $38,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 31,027.92   sel     $37,000.00   [strat=patient_value_defender] *
+      R10  buy $ 33,069.58   sel     $36,000.00   [strat=patient_value_defender]
+      R11  buy $ 32,968.72   sel     $35,000.00   [strat=patient_value_defender]
+      R12  buy $ 10,421.11   sel     $34,500.00   [strat=patient_value_defender]
+      R13  buy $ 27,586.19   sel     $34,000.00   [strat=patient_value_defender]
+      R14  buy $ 29,473.31   sel     $33,500.00   [strat=patient_value_defender]
+      R15  buy $ 15,481.03   sel     $33,250.00   [strat=patient_value_defender]
+      R16  buy $  8,767.28   sel     $33,000.00   [strat=patient_value_defender]
+   run 29 done in 7.1 min
+
+   run 30/30 on 2016 Cadillac CTS 3.6 Luxury  seed=20861449
+      R 1  buy $ 22,728.18   sel     $26,495.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,293.00   sel     $25,995.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 17,187.94   sel     $24,495.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 18,235.46   sel     $23,995.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,708.78   sel     $23,495.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 17,590.36   sel     $22,995.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 21,781.15   sel     $22,395.00   [strat=friendly_rapport_builder]
+      R 8  buy $  5,247.36   sel     $21,995.00   [strat=friendly_rapport_builder]
+      R 9  buy $  5,831.06   sel     $21,500.00   [strat=patient_value_defender] *
+      R10  buy $  1,812.27   sel     $21,000.00   [strat=patient_value_defender]
+      R11  buy $  8,856.49   sel     $20,500.00   [strat=patient_value_defender]
+      R12  buy $ 10,739.36   sel     $20,000.00   [strat=patient_value_defender]
+      R13  buy $  6,914.81   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $ 16,690.46   sel     $18,495.00   [strat=patient_value_defender]
+      R15  buy $  8,580.51   sel     $17,995.00   [strat=patient_value_defender]
+      R16  buy $ 17,235.50   sel     $17,495.00   [strat=patient_value_defender]
+   run 30 done in 5.5 min
+
+   ---> checkpoint: car 2/5 done in 177.7 min; total so far 322.7 min; saved 60 runs to exp06_transitionA_rep1.json
+
+--- CAR 3/5: 2019 Honda Accord Sport 1.5T  (M=$28,000.00  cost=$14,000.00  cost/M=50.00%) ---
+
+   run 1/30 on 2019 Honda Accord Sport 1.5T  seed=20862420
+      R 1  buy $ 12,237.62   sel     $19,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 18,159.31   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $    301.73   sel     $19,250.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,480.40   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  1,592.96   sel     $18,750.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,909.89   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  9,503.60   sel     $18,250.00   [strat=friendly_rapport_builder]
+      R 8  buy $    175.27   sel     $18,250.00   [strat=friendly_rapport_builder]
+      R 9  buy $  1,089.82   sel     $18,250.00   [strat=patient_value_defender] *
+      R10  buy $  7,976.88   sel     $18,250.00   [strat=patient_value_defender]
+      R11  buy $ 16,940.33   sel     $17,995.00   [strat=patient_value_defender]
+      R12  buy $  7,828.69   sel     $17,895.00   [strat=patient_value_defender]
+      R13  buy $ 12,853.38   sel     $17,795.00   [strat=patient_value_defender]
+      R14  buy $ 17,570.40   sel     $17,695.00   [strat=patient_value_defender]
+      R15  buy $ 16,465.96   sel     $17,395.00   [strat=patient_value_defender]
+      R16  buy $ 12,663.85   sel     $17,195.00   [strat=patient_value_defender]
+   run 1 done in 8.5 min
+
+   run 2/30 on 2019 Honda Accord Sport 1.5T  seed=20862421
+      R 1  buy $  3,106.19   sel     $25,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,469.32   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 17,758.52   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 15,963.39   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 16,613.54   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 18,676.23   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,891.97   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,240.61   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  5,928.07   sel     $18,500.00   [strat=patient_value_defender] *
+      R10  buy $  4,869.12   sel     $18,000.00   [strat=patient_value_defender]
+      R11  buy $  6,232.02   sel     $17,500.00   [strat=patient_value_defender]
+      R12  buy $  2,141.30   sel     $17,000.00   [strat=patient_value_defender]
+      R13  buy $  1,864.85   sel     $17,000.00   [strat=patient_value_defender]
+      R14  buy $ 14,147.53   sel     $16,500.00   [strat=patient_value_defender]
+      R15  buy $ 13,137.39   sel     $15,500.00   [strat=patient_value_defender]
+      R16  buy $ 10,311.12   sel     $15,000.00   [strat=patient_value_defender]
+   run 2 done in 6.4 min
+
+   run 3/30 on 2019 Honda Accord Sport 1.5T  seed=20862422
+      R 1  buy $  1,014.79   sel     $24,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 22,192.90   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,048.34   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $  8,997.75   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 22,005.40   sel     $22,250.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 14,608.61   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 16,543.16   sel     $21,800.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 17,619.48   sel     $21,600.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,343.83   sel     $21,500.00   [strat=patient_value_defender] *
+      R10  buy $  1,806.89   sel     $21,400.00   [strat=patient_value_defender]
+      R11  buy $ 20,338.98   sel     $20,850.00   [strat=patient_value_defender]
+      R12  buy $ 12,020.41   sel     $20,500.00   [strat=patient_value_defender]
+      R13  buy $  4,806.15   sel     $20,200.00   [strat=patient_value_defender]
+      R14  buy $ 10,652.53   sel     $20,000.00   [strat=patient_value_defender]
+      R15  buy $  3,125.45   sel     $19,900.00   [strat=patient_value_defender]
+      R16  buy $    102.36   sel     $19,800.00   [strat=patient_value_defender]
+   run 3 done in 8.8 min
+
+   run 4/30 on 2019 Honda Accord Sport 1.5T  seed=20862423
+      R 1  buy $  4,236.96   sel     $26,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,966.12   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 22,457.30   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 20,268.73   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,159.97   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,045.55   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  7,124.68   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,728.32   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,017.23   sel     $19,000.00   [strat=patient_value_defender] *
+      R10  buy $ 12,904.06   sel     $18,500.00   [strat=patient_value_defender]
+      R11  buy $ 13,531.79   sel     $18,000.00   [strat=patient_value_defender]
+      R12  buy $ 13,724.84   sel     $17,500.00   [strat=patient_value_defender]
+      R13  buy $ 14,099.72   sel     $16,000.00   [strat=patient_value_defender]
+      R14  buy $ 13,913.47   sel     $15,500.00   [strat=patient_value_defender]
+      R15  buy $  6,268.13   sel     $15,000.00   [strat=patient_value_defender]
+      R16  buy $  4,491.08   sel     $15,000.00   [strat=patient_value_defender]
+   run 4 done in 7.2 min
+
+   run 5/30 on 2019 Honda Accord Sport 1.5T  seed=20862424
+      R 1  buy $  8,564.37   sel     $24,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,099.86   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 16,171.11   sel     $23,800.00   [strat=friendly_rapport_builder]
+      R 4  buy $  1,360.95   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 15,261.50   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  9,094.80   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 20,437.87   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $  8,033.95   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,661.71   sel     $20,000.00   [strat=patient_value_defender] *
+      R10  buy $ 12,337.46   sel     $19,500.00   [strat=patient_value_defender]
+      R11  buy $ 17,896.98   sel     $18,800.00   [strat=patient_value_defender]
+      R12  buy $ 12,209.02   sel     $18,500.00   [strat=patient_value_defender]
+      R13  buy $    633.11   sel     $18,500.00   [strat=patient_value_defender]
+      R14  buy $    254.89   sel     $18,500.00   [strat=patient_value_defender]
+      R15  buy $ 17,506.50   sel     $18,000.00   [strat=patient_value_defender]
+      R16  buy $ 15,623.53   sel     $17,500.00   [strat=patient_value_defender]
+   run 5 done in 7.1 min
+
+   run 6/30 on 2019 Honda Accord Sport 1.5T  seed=20862425
+      R 1  buy $ 12,734.81   sel     $19,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,182.46   sel     $19,750.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 18,494.50   sel     $19,495.00   [strat=friendly_rapport_builder]
+      R 4  buy $  6,803.58   sel     $19,295.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 16,057.34   sel     $18,995.00   [strat=friendly_rapport_builder]
+      R 6  buy $  3,610.46   sel     $18,495.00   [strat=friendly_rapport_builder]
+      R 7  buy $  8,119.52   sel     $17,995.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,823.19   sel     $16,995.00   [strat=friendly_rapport_builder]
+      R 9  buy $  4,910.02   sel     $16,500.00   [strat=patient_value_defender] *
+      R10  buy $  5,994.78   sel     $16,250.00   [strat=patient_value_defender]
+      R11  buy $  7,755.85   sel     $16,000.00   [strat=patient_value_defender]
+      R12  buy $ 13,509.29   sel     $15,500.00   [strat=patient_value_defender]
+      R13  buy $  5,374.22   sel     $15,000.00   [strat=patient_value_defender]
+      R14  buy $  9,518.17   sel     $14,500.00   [strat=patient_value_defender]
+      R15  buy $ 10,559.79   sel     $14,250.00   [strat=patient_value_defender]
+      R16  buy $  6,658.14   sel     $14,200.00   [strat=patient_value_defender]
+   run 6 done in 7.1 min
+
+   run 7/30 on 2019 Honda Accord Sport 1.5T  seed=20862426
+      R 1  buy $ 10,843.86   sel     $25,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 18,561.56   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,764.85   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  5,577.66   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,300.34   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 18,581.15   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  3,026.53   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 16,247.86   sel     $18,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,870.26   sel     $18,000.00   [strat=patient_value_defender] *
+      R10  buy $ 12,443.01   sel     $17,000.00   [strat=patient_value_defender]
+      R11  buy $  5,767.69   sel     $16,500.00   [strat=patient_value_defender]
+      R12  buy $ 16,457.84   sel     $16,457.84   [strat=patient_value_defender]
+      R13  buy $ 14,858.59   sel     $16,000.00   [strat=patient_value_defender]
+      R14  buy $  3,695.77   sel     $16,000.00   [strat=patient_value_defender]
+      R15  buy $  3,162.30   sel     $15,500.00   [strat=patient_value_defender]
+      R16  buy $ 11,180.99   sel     $15,000.00   [strat=patient_value_defender]
+   run 7 done in 7.5 min
+
+   run 8/30 on 2019 Honda Accord Sport 1.5T  seed=20862427
+      R 1  buy $ 19,930.86   sel     $24,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 16,185.03   sel     $23,900.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 16,380.70   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 12,338.18   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 13,324.01   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  3,856.76   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  2,610.24   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,251.22   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,401.42   sel     $17,500.00   [strat=patient_value_defender] *
+      R10  buy $  8,936.50   sel     $16,500.00   [strat=patient_value_defender]
+      R11  buy $  7,351.16   sel     $16,500.00   [strat=patient_value_defender]
+      R12  buy $ 16,482.03   sel     $16,482.03   [strat=patient_value_defender]
+      R13  buy $  8,923.67   sel     $16,000.00   [strat=patient_value_defender]
+      R14  buy $ 14,535.78   sel     $15,500.00   [strat=patient_value_defender]
+      R15  buy $  2,387.10   sel     $15,250.00   [strat=patient_value_defender]
+      R16  buy $  3,752.56   sel     $15,000.00   [strat=patient_value_defender]
+   run 8 done in 6.8 min
+
+   run 9/30 on 2019 Honda Accord Sport 1.5T  seed=20862428
+      R 1  buy $  5,360.38   sel     $24,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,376.82   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 19,420.14   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 18,857.48   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,650.99   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 18,674.71   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  9,206.00   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  6,817.89   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,595.82   sel     $18,000.00   [strat=patient_value_defender] *
+      R10  buy $  7,855.10   sel     $18,000.00   [strat=patient_value_defender]
+      R11  buy $  3,235.13   sel     $18,000.00   [strat=patient_value_defender]
+      R12  buy $ 17,272.75   sel     $17,600.00   [strat=patient_value_defender]
+      R13  buy $  1,209.68   sel     $18,000.00   [strat=patient_value_defender]
+      R14  buy $ 14,438.97   sel     $16,000.00   [strat=patient_value_defender]
+      R15  buy $ 13,078.54   sel     $15,500.00   [strat=patient_value_defender]
+      R16  buy $ 15,272.54   sel     $15,272.54   [strat=patient_value_defender]
+   run 9 done in 8.5 min
+
+   run 10/30 on 2019 Honda Accord Sport 1.5T  seed=20862429
+      R 1  buy $ 11,381.95   sel     $22,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,677.19   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 17,437.16   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $  9,388.33   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 11,624.46   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 13,246.82   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  4,482.61   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 10,061.24   sel     $16,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,799.17   sel     $15,500.00   [strat=patient_value_defender] *
+      R10  buy $  8,240.44   sel     $15,000.00   [strat=patient_value_defender]
+      R11  buy $ 13,529.14   sel     $14,500.00   [strat=patient_value_defender]
+      R12  buy $  7,551.56   sel     $14,000.00   [strat=patient_value_defender]
+      R13  buy $  7,655.42   sel     $14,000.00   [strat=patient_value_defender]
+      R14  buy $  1,839.18   sel     $14,000.00   [strat=patient_value_defender]
+      R15  buy $ 10,819.07   sel     $14,000.00   [strat=patient_value_defender]
+      R16  buy $ 13,835.25   sel     $14,000.00   [strat=patient_value_defender]
+   run 10 done in 6.7 min
+
+   run 11/30 on 2019 Honda Accord Sport 1.5T  seed=20862430
+      R 1  buy $ 14,396.78   sel     $15,498.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  2,631.86   sel     $15,200.00   [strat=friendly_rapport_builder]
+      R 3  buy $  8,953.96   sel     $14,998.00   [strat=friendly_rapport_builder]
+      R 4  buy $  5,896.48   sel     $14,800.00   [strat=friendly_rapport_builder]
+      R 5  buy $    363.46   sel     $14,800.00   [strat=friendly_rapport_builder]
+      R 6  buy $  1,863.55   sel     $14,700.00   [strat=friendly_rapport_builder]
+      R 7  buy $  1,939.35   sel     $14,600.00   [strat=friendly_rapport_builder]
+      R 8  buy $  8,236.22   sel     $14,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,403.85   sel     $14,403.85   [strat=patient_value_defender] *
+      R10  buy $  4,530.42   sel     $14,400.00   [strat=patient_value_defender]
+      R11  buy $  8,972.31   sel     $14,300.00   [strat=patient_value_defender]
+      R12  buy $ 13,295.85   sel     $14,200.00   [strat=patient_value_defender]
+      R13  buy $  1,142.14   sel     $14,100.00   [strat=patient_value_defender]
+      R14  buy $ 12,644.50   sel     $14,050.00   [strat=patient_value_defender]
+      R15  buy $  5,024.51   sel     $14,050.00   [strat=patient_value_defender]
+      R16  buy $  1,206.23   sel     $14,050.00   [strat=patient_value_defender]
+   run 11 done in 8.1 min
+
+   run 12/30 on 2019 Honda Accord Sport 1.5T  seed=20862431
+      R 1  buy $  3,587.44   sel     $24,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  7,172.14   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  4,672.38   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 18,479.14   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  5,242.11   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,322.07   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 16,763.52   sel     $17,800.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 16,219.83   sel     $16,600.00   [strat=friendly_rapport_builder]
+      R 9  buy $  1,627.98   sel     $16,500.00   [strat=patient_value_defender] *
+      R10  buy $  6,276.05   sel     $16,500.00   [strat=patient_value_defender]
+      R11  buy $ 11,161.31   sel     $15,000.00   [strat=patient_value_defender]
+      R12  buy $  6,388.68   sel     $15,000.00   [strat=patient_value_defender]
+      R13  buy $  1,573.87   sel     $15,000.00   [strat=patient_value_defender]
+      R14  buy $  8,471.89   sel     $15,000.00   [strat=patient_value_defender]
+      R15  buy $  2,672.01   sel     $15,000.00   [strat=patient_value_defender]
+      R16  buy $    719.70   sel     $15,000.00   [strat=patient_value_defender]
+   run 12 done in 7.9 min
+
+   run 13/30 on 2019 Honda Accord Sport 1.5T  seed=20862432
+      R 1  buy $ 21,836.49   sel     $24,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,543.93   sel     $23,999.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 12,234.51   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 16,133.30   sel     $21,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,688.39   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  4,515.72   sel     $19,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 19,141.57   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,624.63   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $    472.01   sel     $19,500.00   [strat=patient_value_defender] *
+      R10  buy $ 13,173.63   sel     $19,250.00   [strat=patient_value_defender]
+      R11  buy $ 14,391.14   sel     $19,000.00   [strat=patient_value_defender]
+      R12  buy $ 13,726.28   sel     $18,750.00   [strat=patient_value_defender]
+      R13  buy $  9,619.60   sel     $18,500.00   [strat=patient_value_defender]
+      R14  buy $ 15,273.88   sel     $18,000.00   [strat=patient_value_defender]
+      R15  buy $  4,962.32   sel     $17,750.00   [strat=patient_value_defender]
+      R16  buy $ 14,770.62   sel     $17,250.00   [strat=patient_value_defender]
+   run 13 done in 6.9 min
+
+   run 14/30 on 2019 Honda Accord Sport 1.5T  seed=20862433
+      R 1  buy $ 17,045.08   sel     $18,499.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  3,903.00   sel     $17,999.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,947.61   sel     $17,499.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,667.77   sel     $16,999.00   [strat=friendly_rapport_builder]
+      R 5  buy $  6,368.11   sel     $16,499.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 13,009.63   sel     $15,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 12,826.52   sel     $15,499.00   [strat=friendly_rapport_builder]
+      R 8  buy $  2,721.12   sel     $15,499.00   [strat=friendly_rapport_builder]
+      R 9  buy $  5,693.41   sel     $15,299.00   [strat=patient_value_defender] *
+      R10  buy $  8,853.18   sel     $15,299.00   [strat=patient_value_defender]
+      R11  buy $  7,955.39   sel     $15,299.00   [strat=patient_value_defender]
+      R12  buy $     92.14   sel     $15,999.00   [strat=patient_value_defender]
+      R13  buy $  1,864.90   sel     $15,899.00   [strat=patient_value_defender]
+      R14  buy $ 14,984.74   sel     $15,499.00   [strat=patient_value_defender]
+      R15  buy $ 10,271.60   sel     $15,299.00   [strat=patient_value_defender]
+      R16  buy $  8,341.17   sel     $15,199.00   [strat=patient_value_defender]
+   run 14 done in 8.4 min
+
+   run 15/30 on 2019 Honda Accord Sport 1.5T  seed=20862434
+      R 1  buy $ 21,648.22   sel     $24,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 22,266.33   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,362.73   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 21,614.57   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,039.83   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 16,541.39   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  8,965.02   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 18,851.12   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  6,995.58   sel     $21,000.00   [strat=patient_value_defender] *
+      R10  buy $  4,852.65   sel     $21,500.00   [strat=patient_value_defender]
+      R11  buy $ 10,352.31   sel     $21,000.00   [strat=patient_value_defender]
+      R12  buy $ 10,839.13   sel     $20,000.00   [strat=patient_value_defender]
+      R13  buy $ 15,428.20   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $ 10,891.49   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $  2,700.51   sel     $18,500.00   [strat=patient_value_defender]
+      R16  buy $ 10,118.83   sel     $18,000.00   [strat=patient_value_defender]
+   run 15 done in 7.5 min
+
+   run 16/30 on 2019 Honda Accord Sport 1.5T  seed=20862435
+      R 1  buy $ 26,290.33   sel     $27,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 14,857.15   sel     $27,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 15,550.52   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 17,416.76   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,580.87   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  4,710.99   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 24,386.78   sel     $24,386.78   [strat=friendly_rapport_builder]
+      R 8  buy $ 15,649.19   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  6,086.62   sel     $25,000.00   [strat=patient_value_defender] *
+      R10  buy $  8,967.79   sel     $24,500.00   [strat=patient_value_defender]
+      R11  buy $ 13,564.64   sel     $24,000.00   [strat=patient_value_defender]
+      R12  buy $ 12,411.83   sel     $23,500.00   [strat=patient_value_defender]
+      R13  buy $ 11,169.53   sel     $23,000.00   [strat=patient_value_defender]
+      R14  buy $  2,038.57   sel     $22,500.00   [strat=patient_value_defender]
+      R15  buy $ 17,731.20   sel     $21,000.00   [strat=patient_value_defender]
+      R16  buy $  1,411.60   sel     $20,000.00   [strat=patient_value_defender]
+   run 16 done in 7.4 min
+
+   run 17/30 on 2019 Honda Accord Sport 1.5T  seed=20862436
+      R 1  buy $ 15,768.45   sel     $25,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  9,473.68   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 20,157.93   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  7,110.91   sel     $20,000.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,553.12   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,625.46   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 12,062.56   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  7,476.06   sel     $18,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 16,415.62   sel     $17,500.00   [strat=patient_value_defender] *
+      R10  buy $ 15,648.99   sel     $17,250.00   [strat=patient_value_defender]
+      R11  buy $ 16,890.35   sel     $17,000.00   [strat=patient_value_defender]
+      R12  buy $    404.56   sel     $16,500.00   [strat=patient_value_defender]
+      R13  buy $  6,938.65   sel     $16,000.00   [strat=patient_value_defender]
+      R14  buy $    694.05   sel     $16,000.00   [strat=patient_value_defender]
+      R15  buy $ 15,494.82   sel     $15,800.00   [strat=patient_value_defender]
+      R16  buy $  2,840.90   sel     $15,600.00   [strat=patient_value_defender]
+   run 17 done in 8.3 min
+
+   run 18/30 on 2019 Honda Accord Sport 1.5T  seed=20862437
+      R 1  buy $ 17,593.62   sel     $21,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  6,843.06   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 13,432.14   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,526.73   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,832.51   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,632.14   sel     $15,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $  4,834.70   sel     $15,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 14,349.89   sel     $15,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,471.12   sel     $15,000.00   [strat=patient_value_defender] *
+      R10  buy $  4,603.20   sel     $15,000.00   [strat=patient_value_defender]
+      R11  buy $  9,356.99   sel     $15,000.00   [strat=patient_value_defender]
+      R12  buy $  1,132.74   sel     $15,000.00   [strat=patient_value_defender]
+      R13  buy $  9,267.88   sel     $15,000.00   [strat=patient_value_defender]
+      R14  buy $ 11,693.61   sel     $15,000.00   [strat=patient_value_defender]
+      R15  buy $  4,409.22   sel     $15,000.00   [strat=patient_value_defender]
+      R16  buy $     68.72   sel     $15,000.00   [strat=patient_value_defender]
+   run 18 done in 7.8 min
+
+   run 19/30 on 2019 Honda Accord Sport 1.5T  seed=20862438
+      R 1  buy $ 14,975.78   sel     $16,495.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  1,755.52   sel     $15,995.00   [strat=friendly_rapport_builder]
+      R 3  buy $  4,057.58   sel     $15,795.00   [strat=friendly_rapport_builder]
+      R 4  buy $  5,266.16   sel     $15,595.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 14,001.21   sel     $15,395.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,041.88   sel     $15,195.00   [strat=friendly_rapport_builder]
+      R 7  buy $  4,229.68   sel     $14,995.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 11,995.68   sel     $14,795.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,728.25   sel     $14,595.00   [strat=patient_value_defender] *
+      R10  buy $  1,471.31   sel     $14,495.00   [strat=patient_value_defender]
+      R11  buy $  6,685.47   sel     $14,395.00   [strat=patient_value_defender]
+      R12  buy $    341.45   sel     $14,295.00   [strat=patient_value_defender]
+      R13  buy $  8,030.64   sel     $14,195.00   [strat=patient_value_defender]
+      R14  buy $    615.73   sel     $14,095.00   [strat=patient_value_defender]
+      R15  buy $  7,089.63   sel     $14,050.00   [strat=patient_value_defender]
+      R16  buy $ 12,679.91   sel     $14,025.00   [strat=patient_value_defender]
+   run 19 done in 8.1 min
+
+   run 20/30 on 2019 Honda Accord Sport 1.5T  seed=20862439
+      R 1  buy $ 22,943.89   sel     $25,499.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  9,799.17   sel     $23,999.00   [strat=friendly_rapport_builder]
+      R 3  buy $  8,994.99   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  1,988.83   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  2,601.89   sel     $20,999.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,198.74   sel     $19,999.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 14,298.50   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  8,106.93   sel     $19,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 15,358.86   sel     $18,500.00   [strat=patient_value_defender] *
+      R10  buy $  7,787.96   sel     $18,250.00   [strat=patient_value_defender]
+      R11  buy $ 16,152.46   sel     $17,500.00   [strat=patient_value_defender]
+      R12  buy $  6,331.12   sel     $17,250.00   [strat=patient_value_defender]
+      R13  buy $  6,457.29   sel     $17,250.00   [strat=patient_value_defender]
+      R14  buy $  1,072.75   sel     $17,250.00   [strat=patient_value_defender]
+      R15  buy $ 16,976.17   sel     $17,250.00   [strat=patient_value_defender]
+      R16  buy $  1,305.61   sel     $17,250.00   [strat=patient_value_defender]
+   run 20 done in 7.5 min
+
+   run 21/30 on 2019 Honda Accord Sport 1.5T  seed=20862440
+      R 1  buy $ 14,797.65   sel     $16,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,159.43   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,328.72   sel     $16,200.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 15,894.53   sel     $15,894.53   [strat=friendly_rapport_builder]
+      R 5  buy $ 10,058.21   sel     $15,894.53   [strat=friendly_rapport_builder]
+      R 6  buy $ 12,481.43   sel     $15,894.53   [strat=friendly_rapport_builder]
+      R 7  buy $  6,716.83   sel     $15,894.53   [strat=friendly_rapport_builder]
+      R 8  buy $  8,600.12   sel     $15,894.53   [strat=friendly_rapport_builder]
+      R 9  buy $  5,333.55   sel     $15,894.53   [strat=patient_value_defender] *
+      R10  buy $  5,271.00   sel     $15,800.00   [strat=patient_value_defender]
+      R11  buy $    449.82   sel     $15,800.00   [strat=patient_value_defender]
+      R12  buy $ 10,081.92   sel     $15,700.00   [strat=patient_value_defender]
+      R13  buy $    182.67   sel     $15,700.00   [strat=patient_value_defender]
+      R14  buy $  5,677.64   sel     $15,700.00   [strat=patient_value_defender]
+      R15  buy $  5,854.20   sel     $15,700.00   [strat=patient_value_defender]
+      R16  buy $ 10,483.04   sel     $15,700.00   [strat=patient_value_defender]
+   run 21 done in 8.9 min
+
+   run 22/30 on 2019 Honda Accord Sport 1.5T  seed=20862441
+      R 1  buy $ 18,045.11   sel     $25,499.99   [strat=friendly_rapport_builder] *
+      R 2  buy $  4,375.51   sel     $24,999.99   [strat=friendly_rapport_builder]
+      R 3  buy $ 11,609.99   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  9,869.23   sel     $22,995.00   [strat=friendly_rapport_builder]
+      R 5  buy $  9,162.05   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 10,494.42   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 14,329.89   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,028.52   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $  2,150.09   sel     $18,900.00   [strat=patient_value_defender] *
+      R10  buy $ 11,126.41   sel     $18,500.00   [strat=patient_value_defender]
+      R11  buy $ 10,709.91   sel     $18,200.00   [strat=patient_value_defender]
+      R12  buy $  2,424.42   sel     $18,000.00   [strat=patient_value_defender]
+      R13  buy $ 11,988.05   sel     $17,500.00   [strat=patient_value_defender]
+      R14  buy $ 16,961.74   sel     $17,300.00   [strat=patient_value_defender]
+      R15  buy $  2,320.22   sel     $16,900.00   [strat=patient_value_defender]
+      R16  buy $ 10,716.33   sel     $16,500.00   [strat=patient_value_defender]
+   run 22 done in 8.3 min
+
+   run 23/30 on 2019 Honda Accord Sport 1.5T  seed=20862442
+      R 1  buy $  8,148.13   sel     $18,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  1,687.91   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 12,241.47   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  6,647.61   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 14,615.08   sel     $15,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $    128.12   sel     $15,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $  6,344.92   sel     $14,900.00   [strat=friendly_rapport_builder]
+      R 8  buy $  9,945.01   sel     $14,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 10,331.47   sel     $14,300.00   [strat=patient_value_defender] *
+      R10  buy $    793.46   sel     $14,200.00   [strat=patient_value_defender]
+      R11  buy $  2,412.60   sel     $14,200.00   [strat=patient_value_defender]
+      R12  buy $ 10,697.90   sel     $14,200.00   [strat=patient_value_defender]
+      R13  buy $     30.46   sel     $14,200.00   [strat=patient_value_defender]
+      R14  buy $ 12,408.08   sel     $14,100.00   [strat=patient_value_defender]
+      R15  buy $    144.09   sel     $14,000.00   [strat=patient_value_defender]
+      R16  buy $ 11,378.70   sel     $14,000.00   [strat=patient_value_defender]
+   run 23 done in 8.1 min
+
+   run 24/30 on 2019 Honda Accord Sport 1.5T  seed=20862443
+      R 1  buy $ 26,801.96   sel     $27,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 22,581.64   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,114.32   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 19,042.63   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 17,027.74   sel     $25,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 23,318.42   sel     $24,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $    966.38   sel     $24,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 15,664.26   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 12,821.13   sel     $22,500.00   [strat=patient_value_defender] *
+      R10  buy $  1,716.35   sel     $21,500.00   [strat=patient_value_defender]
+      R11  buy $  6,827.38   sel     $21,000.00   [strat=patient_value_defender]
+      R12  buy $  2,602.38   sel     $20,500.00   [strat=patient_value_defender]
+      R13  buy $ 15,616.30   sel     $19,000.00   [strat=patient_value_defender]
+      R14  buy $ 14,683.53   sel     $18,000.00   [strat=patient_value_defender]
+      R15  buy $ 11,538.44   sel     $17,500.00   [strat=patient_value_defender]
+      R16  buy $ 13,876.17   sel     $17,000.00   [strat=patient_value_defender]
+   run 24 done in 8.7 min
+
+   run 25/30 on 2019 Honda Accord Sport 1.5T  seed=20862444
+      R 1  buy $ 22,613.18   sel     $26,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 12,598.92   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 21,345.48   sel     $24,250.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 21,503.80   sel     $23,750.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 12,361.13   sel     $23,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $  5,226.26   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 20,016.02   sel     $22,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 11,393.59   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 18,210.41   sel     $21,000.00   [strat=patient_value_defender] *
+      R10  buy $ 11,913.70   sel     $20,500.00   [strat=patient_value_defender]
+      R11  buy $  7,306.53   sel     $20,000.00   [strat=patient_value_defender]
+      R12  buy $ 17,222.73   sel     $19,000.00   [strat=patient_value_defender]
+      R13  buy $ 11,644.42   sel     $18,500.00   [strat=patient_value_defender]
+      R14  buy $  1,545.58   sel     $18,500.00   [strat=patient_value_defender]
+      R15  buy $ 17,915.20   sel     $18,500.00   [strat=patient_value_defender]
+      R16  buy $ 13,602.97   sel     $18,500.00   [strat=patient_value_defender]
+   run 25 done in 9.9 min
+
+   run 26/30 on 2019 Honda Accord Sport 1.5T  seed=20862445
+      R 1  buy $  9,328.20   sel     $24,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  8,474.50   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,850.11   sel     $21,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  2,696.51   sel     $20,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $ 15,596.13   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  5,839.94   sel     $18,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 11,362.69   sel     $17,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $  3,340.31   sel     $17,000.00   [strat=friendly_rapport_builder]
+      R 9  buy $  1,463.16   sel     $16,500.00   [strat=patient_value_defender] *
+      R10  buy $  8,887.31   sel     $15,999.00   [strat=patient_value_defender]
+      R11  buy $  4,125.12   sel     $15,750.00   [strat=patient_value_defender]
+      R12  buy $ 14,813.51   sel     $15,250.00   [strat=patient_value_defender]
+      R13  buy $ 13,924.58   sel     $15,000.00   [strat=patient_value_defender]
+      R14  buy $ 11,778.85   sel     $14,750.00   [strat=patient_value_defender]
+      R15  buy $ 12,378.42   sel     $14,500.00   [strat=patient_value_defender]
+      R16  buy $ 13,431.85   sel     $14,250.00   [strat=patient_value_defender]
+   run 26 done in 6.9 min
+
+   run 27/30 on 2019 Honda Accord Sport 1.5T  seed=20862446
+      R 1  buy $ 15,248.31   sel     $17,995.99   [strat=friendly_rapport_builder] *
+      R 2  buy $ 15,945.54   sel     $17,495.99   [strat=friendly_rapport_builder]
+      R 3  buy $  7,853.55   sel     $16,995.99   [strat=friendly_rapport_builder]
+      R 4  buy $  6,493.15   sel     $16,495.99   [strat=friendly_rapport_builder]
+      R 5  buy $  9,345.19   sel     $15,995.99   [strat=friendly_rapport_builder]
+      R 6  buy $  6,483.38   sel     $15,495.99   [strat=friendly_rapport_builder]
+      R 7  buy $ 11,851.99   sel     $15,199.99   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,153.57   sel     $14,999.99   [strat=friendly_rapport_builder]
+      R 9  buy $ 11,181.53   sel     $14,599.99   [strat=patient_value_defender] *
+      R10  buy $  2,416.35   sel     $14,499.99   [strat=patient_value_defender]
+      R11  buy $ 10,009.92   sel     $14,399.99   [strat=patient_value_defender]
+      R12  buy $  8,076.17   sel     $14,399.99   [strat=patient_value_defender]
+      R13  buy $  3,415.96   sel     $14,399.99   [strat=patient_value_defender]
+      R14  buy $ 14,263.81   sel     $14,399.99   [strat=patient_value_defender]
+      R15  buy $  6,992.38   sel     $14,399.99   [strat=patient_value_defender]
+      R16  buy $  3,131.82   sel     $14,399.99   [strat=patient_value_defender]
+   run 27 done in 9.0 min
+
+   run 28/30 on 2019 Honda Accord Sport 1.5T  seed=20862447
+      R 1  buy $ 25,825.64   sel     $27,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  2,427.61   sel     $26,900.00   [strat=friendly_rapport_builder]
+      R 3  buy $  1,936.70   sel     $25,800.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 11,335.70   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  7,091.69   sel     $25,000.00   [strat=friendly_rapport_builder]
+      R 6  buy $ 20,954.69   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $  8,810.59   sel     $23,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 11,661.26   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 21,093.44   sel     $21,800.00   [strat=patient_value_defender] *
+      R10  buy $  1,393.88   sel     $21,500.00   [strat=patient_value_defender]
+      R11  buy $ 14,342.82   sel     $21,000.00   [strat=patient_value_defender]
+      R12  buy $  2,320.21   sel     $20,500.00   [strat=patient_value_defender]
+      R13  buy $ 13,546.47   sel     $19,500.00   [strat=patient_value_defender]
+      R14  buy $  1,486.57   sel     $19,000.00   [strat=patient_value_defender]
+      R15  buy $  8,804.39   sel     $18,500.00   [strat=patient_value_defender]
+      R16  buy $ 10,868.18   sel     $18,000.00   [strat=patient_value_defender]
+   run 28 done in 7.1 min
+
+   run 29/30 on 2019 Honda Accord Sport 1.5T  seed=20862448
+      R 1  buy $ 11,659.97   sel     $20,000.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 14,288.76   sel     $15,999.99   [strat=friendly_rapport_builder]
+      R 3  buy $  1,140.23   sel     $15,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $  4,803.22   sel     $15,200.00   [strat=friendly_rapport_builder]
+      R 5  buy $    928.22   sel     $14,900.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,716.02   sel     $14,700.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 12,616.08   sel     $14,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 13,733.85   sel     $14,300.00   [strat=friendly_rapport_builder]
+      R 9  buy $  6,847.96   sel     $14,200.00   [strat=patient_value_defender] *
+      R10  buy $  6,114.69   sel     $14,100.00   [strat=patient_value_defender]
+      R11  buy $ 13,708.26   sel     $14,099.00   [strat=patient_value_defender]
+      R12  buy $  5,131.42   sel     $14,099.00   [strat=patient_value_defender]
+      R13  buy $  7,679.05   sel     $14,099.00   [strat=patient_value_defender]
+      R14  buy $ 11,517.40   sel     $14,099.00   [strat=patient_value_defender]
+      R15  buy $  9,235.74   sel     $14,099.00   [strat=patient_value_defender]
+      R16  buy $  3,511.24   sel     $14,099.00   [strat=patient_value_defender]
+   run 29 done in 7.8 min
+
+   run 30/30 on 2019 Honda Accord Sport 1.5T  seed=20862449
+      R 1  buy $ 12,516.42   sel     $22,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $     54.88   sel     $22,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 19,438.19   sel     $21,750.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 20,197.25   sel     $20,973.63   [strat=friendly_rapport_builder]
+      R 5  buy $ 18,122.95   sel     $19,548.29   [strat=friendly_rapport_builder]
+      R 6  buy $  5,752.86   sel     $19,500.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 11,284.72   sel     $18,000.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 10,778.88   sel     $16,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 14,550.16   sel     $16,000.00   [strat=patient_value_defender] *
+      R10  buy $  7,983.04   sel     $15,500.00   [strat=patient_value_defender]
+      R11  buy $ 13,825.58   sel     $14,662.79   [strat=patient_value_defender]
+      R12  buy $  2,787.17   sel     $14,500.00   [strat=patient_value_defender]
+      R13  buy $  5,544.88   sel     $14,400.00   [strat=patient_value_defender]
+      R14  buy $  3,010.79   sel     $14,200.00   [strat=patient_value_defender]
+      R15  buy $  8,258.77   sel     $14,100.00   [strat=patient_value_defender]
+      R16  buy $  3,925.43   sel     $14,000.00   [strat=patient_value_defender]
+   run 30 done in 8.9 min
+
+   ---> checkpoint: car 3/5 done in 236.2 min; total so far 558.9 min; saved 90 runs to exp06_transitionA_rep1.json
+
+--- CAR 4/5: 2022 Toyota RAV4 XLE AWD  (M=$32,000.00  cost=$20,800.00  cost/M=65.00%) ---
+
+   run 1/30 on 2022 Toyota RAV4 XLE AWD  seed=20863420
+      R 1  buy $  4,848.30   sel     $30,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 10,134.70   sel     $29,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  9,428.02   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 17,737.01   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 5  buy $  3,539.18   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 6  buy $  6,053.65   sel     $26,000.00   [strat=friendly_rapport_builder]
+      R 7  buy $ 20,527.10   sel     $25,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 20,700.77   sel     $24,500.00   [strat=friendly_rapport_builder]
+      R 9  buy $    525.60   sel     $24,000.00   [strat=patient_value_defender] *
+      R10  buy $  8,524.60   sel     $23,500.00   [strat=patient_value_defender]
+      R11  buy $  4,593.83   sel     $23,000.00   [strat=patient_value_defender]
+      R12  buy $ 12,201.98   sel     $22,500.00   [strat=patient_value_defender]
+      R13  buy $  4,523.90   sel     $22,000.00   [strat=patient_value_defender]
+      R14  buy $ 19,938.66   sel     $21,500.00   [strat=patient_value_defender]
+      R15  buy $ 19,511.16   sel     $21,000.00   [strat=patient_value_defender]
+      R16  buy $    686.86   sel     $20,500.00   [strat=patient_value_defender]
+   run 1 done in 7.1 min
+
+   run 2/30 on 2022 Toyota RAV4 XLE AWD  seed=20863421
+      R 1  buy $ 21,341.19   sel     $29,500.00   [strat=friendly_rapport_builder] *
+      R 2  buy $ 17,362.97   sel     $28,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $  2,614.23   sel     $27,500.00   [strat=friendly_rapport_builder]
+      R 4  buy $ 26,966.23   sel     $26,966.23   [strat=friendly_rapport_builder]
+      R 5  buy $  6,591.16   sel     $26,966.23   [strat=friendly_rapport_builder]
+      R 6  buy $ 26,841.26   sel     $26,841.26   [strat=friendly_rapport_builder]
+      R 7  buy $ 18,308.02   sel     $26,500.00   [strat=friendly_rapport_builder]
+      R 8  buy $ 17,101.38   sel     $26,200.00   [strat=friendly_rapport_builder]
+      R 9  buy $ 20,594.09   sel     $25,900.00   [strat=patient_value_defender] *
+      R10  buy $  9,301.77   sel     $25,700.00   [strat=patient_value_defender]
+      R11  buy $  6,513.10   sel     $25,600.00   [strat=patient_value_defender]
+      R12  buy $ 11,787.85   sel     $25,500.00   [strat=patient_value_defender]
+      R13  buy $ 21,069.01   sel     $25,000.00   [strat=patient_value_defender]
+      R14  buy $ 18,244.03   sel     $24,500.00   [strat=patient_value_defender]
+      R15  buy $ 15,481.73   sel     $23,800.00   [strat=patient_value_defender]
+      R16  buy $ 19,209.53   sel     $23,500.00   [strat=patient_value_defender]
+   run 2 done in 7.1 min
+
+   run 3/30 on 2022 Toyota RAV4 XLE AWD  seed=20863422
+      R 1  buy $  2,492.51   sel     $29,995.00   [strat=friendly_rapport_builder] *
+      R 2  buy $  5,058.49   sel     $29,500.00   [strat=friendly_rapport_builder]
+      R 3  buy $ 27,580.01   sel     $27,580.01   [strat=friendly_rapport_builder]

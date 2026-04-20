@@ -1,0 +1,2442 @@
+{
+  "notebook_id": "nb10",
+  "model": "deepseek-reasoner",
+  "n_rounds": 15,
+  "base_seed": 15000,
+  "timestamp": "2026-04-17T23:04:32.860220",
+  "total_minutes": 1722.15,
+  "experiments": [
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "anchor_high@1..cooperative@6..conceder_seller@11",
+        "schedule": [
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "boulware_seller@1..tit_for_tat_matcher@6..conceder_seller@11",
+        "schedule": [
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "cooperative@1..anchor_high@6..boulware_seller@11",
+        "schedule": [
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "conceder_seller@1..cooperative@6..anchor_high@11",
+        "schedule": [
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "conceder_seller",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "relational@1..cooperative@6..boulware_seller@11",
+        "schedule": [
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "relational",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller",
+          "boulware_seller"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_random",
+      "buyer": {
+        "name": "random",
+        "description": "Uniform random price in [production_cost, market_price].",
+        "type": "RandomBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_budget",
+      "buyer": {
+        "name": "budget",
+        "description": "Uniform random price in [0.5*cost, 0.8*market]; cash-constrained buyer.",
+        "type": "BudgetBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_wild",
+      "buyer": {
+        "name": "wild",
+        "description": "Uniform random in [0, 1.2*market_price] — highly inconsistent.",
+        "type": "WildBuyer"
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_concession",
+      "buyer": {
+        "name": "concession",
+        "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+        "type": "ConcessionBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.6
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_anchor_drag",
+      "buyer": {
+        "name": "anchor_drag",
+        "description": "Anchors 5% above cost; upward step of 3% of [cost,market] per round.",
+        "type": "AnchorDragBuyer",
+        "anchor_frac": 0.05,
+        "step_frac": 0.03
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_boulware_buyer",
+      "buyer": {
+        "name": "boulware_buyer",
+        "description": "Convex concession curve (exponent=4); most concession concentrated late in the trajectory.",
+        "type": "BoulwareBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 4.0
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_conceder_buyer",
+      "buyer": {
+        "name": "conceder_buyer",
+        "description": "Concave concession curve (exponent=0.35); most concession concentrated early in the trajectory.",
+        "type": "ConcederBuyer",
+        "start_frac": 0.1,
+        "end_frac": 0.65,
+        "exponent": 0.35
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_tit_for_tat_buyer",
+      "buyer": {
+        "name": "tit_for_tat_buyer",
+        "description": "Mirrors the seller's last concession: if the seller drops by $X, the buyer raises by 0.7*$X.  Anchors at 10% of [cost,market] in round 1.",
+        "type": "TitForTatBuyer",
+        "anchor_frac": 0.1,
+        "match_frac": 0.7,
+        "cap_frac": 0.75
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_persistent_f0.30",
+      "buyer": {
+        "name": "persistent_f0.30",
+        "description": "Fixed target at 30% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.3
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_persistent_f0.55",
+      "buyer": {
+        "name": "persistent_f0.55",
+        "description": "Fixed target at 55% of market_price (±$0.02 noise).",
+        "type": "PersistentBuyer",
+        "price_frac": 0.55
+      },
+      "seller_schedule": {
+        "label": "tit_for_tat_matcher@1..anchor_high@6..cooperative@11",
+        "schedule": [
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "tit_for_tat_matcher",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "anchor_high",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative",
+          "cooperative"
+        ],
+        "is_adaptive": true
+      },
+      "n_runs": 4,
+      "category_filter": null
+    }
+  ],
+  "timings": [
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 1423.4,
+      "minutes": 23.72,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1635.5,
+      "minutes": 27.26,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 1552.5,
+      "minutes": 25.88,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 1602.6,
+      "minutes": 26.71,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 1779.3,
+      "minutes": 29.65,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 1358.8,
+      "minutes": 22.65,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 1533.0,
+      "minutes": 25.55,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1254.1,
+      "minutes": 20.9,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 1100.9,
+      "minutes": 18.35,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_anchor_high__cooperative__conceder_seller__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 1218.7,
+      "minutes": 20.31,
+      "n_runs": 4,
+      "n_transitions": 53
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 1948.6,
+      "minutes": 32.48,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1582.7,
+      "minutes": 26.38,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 1160.2,
+      "minutes": 19.34,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 1179.3,
+      "minutes": 19.65,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 1295.0,
+      "minutes": 21.58,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 1639.0,
+      "minutes": 27.32,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 1452.1,
+      "minutes": 24.2,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1021.0,
+      "minutes": 17.02,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 1290.4,
+      "minutes": 21.51,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_boulware_seller__tit_for_tat_matcher__conceder_seller__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 1420.9,
+      "minutes": 23.68,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 1766.6,
+      "minutes": 29.44,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1733.5,
+      "minutes": 28.89,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 1357.1,
+      "minutes": 22.62,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 1639.7,
+      "minutes": 27.33,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 1663.9,
+      "minutes": 27.73,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 1893.1,
+      "minutes": 31.55,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 1748.7,
+      "minutes": 29.14,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1644.4,
+      "minutes": 27.41,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 1337.5,
+      "minutes": 22.29,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_cooperative__anchor_high__boulware_seller__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 1870.5,
+      "minutes": 31.18,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 1933.4,
+      "minutes": 32.22,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1965.5,
+      "minutes": 32.76,
+      "n_runs": 4,
+      "n_transitions": 52
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 2795.2,
+      "minutes": 46.59,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 4424.8,
+      "minutes": 73.75,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 3851.9,
+      "minutes": 64.2,
+      "n_runs": 4,
+      "n_transitions": 53
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 2297.2,
+      "minutes": 38.29,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 2823.6,
+      "minutes": 47.06,
+      "n_runs": 4,
+      "n_transitions": 54
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1947.9,
+      "minutes": 32.46,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 2261.5,
+      "minutes": 37.69,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_conceder_seller__cooperative__anchor_high__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 2014.8,
+      "minutes": 33.58,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 1604.9,
+      "minutes": 26.75,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1865.3,
+      "minutes": 31.09,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 1518.4,
+      "minutes": 25.31,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 1605.4,
+      "minutes": 26.76,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 2005.0,
+      "minutes": 33.42,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 2591.7,
+      "minutes": 43.19,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 1790.5,
+      "minutes": 29.84,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1561.2,
+      "minutes": 26.02,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 1752.8,
+      "minutes": 29.21,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_relational__cooperative__boulware_seller__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 1384.6,
+      "minutes": 23.08,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_random",
+      "status": "ok",
+      "seconds": 2161.1,
+      "minutes": 36.02,
+      "n_runs": 4,
+      "n_transitions": 52
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_budget",
+      "status": "ok",
+      "seconds": 1706.9,
+      "minutes": 28.45,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_wild",
+      "status": "ok",
+      "seconds": 1347.8,
+      "minutes": 22.46,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_concession",
+      "status": "ok",
+      "seconds": 1191.7,
+      "minutes": 19.86,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_anchor_drag",
+      "status": "ok",
+      "seconds": 1372.0,
+      "minutes": 22.87,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_boulware_buyer",
+      "status": "ok",
+      "seconds": 1309.8,
+      "minutes": 21.83,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_conceder_buyer",
+      "status": "ok",
+      "seconds": 1381.1,
+      "minutes": 23.02,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_tit_for_tat_buyer",
+      "status": "ok",
+      "seconds": 1447.4,
+      "minutes": 24.12,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_persistent_f0.30",
+      "status": "ok",
+      "seconds": 1182.1,
+      "minutes": 19.7,
+      "n_runs": 4,
+      "n_transitions": 56
+    },
+    {
+      "tag": "sel3_tit_for_tat_matcher__anchor_high__cooperative__r6r11__buy_persistent_f0.55",
+      "status": "ok",
+      "seconds": 1129.8,
+      "minutes": 18.83,
+      "n_runs": 4,
+      "n_transitions": 56
+    }
+  ]
+}

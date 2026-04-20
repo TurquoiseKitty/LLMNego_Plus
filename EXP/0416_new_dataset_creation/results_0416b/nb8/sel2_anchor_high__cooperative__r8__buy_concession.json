@@ -1,0 +1,731 @@
+{
+  "condition": {
+    "model": "deepseek-reasoner",
+    "buyer_type": {
+      "name": "concession",
+      "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+      "type": "ConcessionBuyer",
+      "start_frac": 0.1,
+      "end_frac": 0.6
+    },
+    "seller_schedule": {
+      "label": "anchor_high__then__cooperative@r8",
+      "schedule": [
+        "anchor_high",
+        "anchor_high",
+        "anchor_high",
+        "anchor_high",
+        "anchor_high",
+        "anchor_high",
+        "anchor_high",
+        "cooperative",
+        "cooperative",
+        "cooperative",
+        "cooperative",
+        "cooperative",
+        "cooperative",
+        "cooperative",
+        "cooperative"
+      ],
+      "is_adaptive": true
+    },
+    "n_runs": 3,
+    "n_rounds": 15,
+    "category_filter": null
+  },
+  "runs": [
+    {
+      "metadata": {
+        "model": "deepseek-reasoner",
+        "product": {
+          "name": "Cola (330ml)",
+          "category": "Beverage",
+          "cost": 0.683,
+          "market_price": 2.36
+        },
+        "supplier": {
+          "id": "S2",
+          "name": "National distributor",
+          "internal_cost": 0.891
+        },
+        "v": 1.574,
+        "quantity": 97,
+        "buyer_type": {
+          "name": "concession",
+          "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+          "type": "ConcessionBuyer",
+          "start_frac": 0.1,
+          "end_frac": 0.6
+        },
+        "seller_schedule": {
+          "label": "anchor_high__then__cooperative@r8",
+          "schedule": [
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative"
+          ],
+          "is_adaptive": true
+        },
+        "n_rounds": 15,
+        "rng_seed": 13000,
+        "timestamp": "2026-04-16T19:19:43.735719"
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "buyer_price": 0.81,
+          "buyer_message": "Could you do $0.81 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your interest, but $0.81 is significantly below standard industry pricing and doesn't reflect the quality and demand for this product. I can offer a competitive volume rate for your 97 units at $2.28 per unit.\n\n[PRICE] Cola (330ml): $2.28 per unit",
+          "supplier_reasoning": "Hmm, the merchant opened with a very low offer at $0.81 per unit, which is below our production cost of $0.68. They're clearly trying to anchor low, but we need to reset expectations firmly. \n\nOur break-even floor is $1.57, so we can't entertain anything near their offer. Following the strategy to anchor high and hold, we should open near market price ($2.36) and make minimal adjustments. \n\nThe merchant needs 97 units, so there's volume incentive, but we must maintain profitability. A small concession from market price shows flexibility while keeping us well above the break-even point. \n\nI'll counter at $2.28 - just a 3.4% reduction from market price, which aligns with the \"very small downward adjustments\" directive. The justification about standard industry discounts sounds reasonable without revealing internal costs. \n\nThe price format must be exact, so I'll end with the required line.",
+          "supplier_price": 2.28,
+          "supplier_system_prompt": "You are a product supplier (the Supplier) negotiating to sell a product to a vending machine operator (the Merchant).\n\nPRODUCT:\n  Cola (330ml)\n  Category        : Beverage\n  Production cost : $0.68 per unit   (public — both sides know)\n  Market price    : $2.36 per unit   (public — both sides know)\n\nYOUR PRIVATE INFORMATION (the merchant does NOT know this):\n  Internal fulfilment cost : $0.89 per unit\n  Your break-even floor    : $1.57 per unit  (= production cost + fulfilment cost)\n\n  !! CRITICAL — INFORMATION SECRECY !!\n  NEVER reveal your internal fulfilment cost or your break-even floor.\n  Do not hint at these numbers.\n\nUTILITY:\n  Your profit per unit = deal_price − $1.57\n  Total profit = profit_per_unit × quantity\n  You want to maximise total profit.  Any deal below $1.57/unit loses money.\n\nYOUR STRATEGY:\n  Anchor high and hold.  Open at or above the market price and make only very small downward adjustments, regardless of the merchant's pressure.  Your counter-offer should move by only a few percent per turn.  Never drop into the lower half of the [production cost, market price] range.\n\nCONVERSATION FORMAT:\n  The transcript uses [MERCHANT] and [SUPPLIER] labels.\n  You are [SUPPLIER].  Write only your message — do not include the label.\n\n  Your message should read like a natural negotiation response.  You may\n  include brief reasoning or justification.\n\n  !! IMPORTANT — PRICE FORMAT !!\n  At the VERY END of your message, on a NEW line, state your proposed price\n  using EXACTLY this format:\n\n  [PRICE] Cola (330ml): $X.XX per unit\n\n  This [PRICE] line MUST be the last line of your response.\n  Example:\n  [PRICE] Cola (330ml): $1.25 per unit\n"
+        },
+        {
+          "round": 2,
+          "buyer_price": 0.89,
+          "buyer_message": "Could you do $0.89 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're looking for a competitive price, but $0.89 is still far below the sustainable market rate for a brand-name beverage. Considering your volume, I can make a slight adjustment to $2.25 per unit, which reflects a genuine volume discount while maintaining the quality and service you expect.\n\n[PRICE] Cola (330ml): $2.25 per unit",
+          "supplier_reasoning": "Okay, let me start by understanding the current situation. The merchant initially offered $0.81 per unit for 97 units of Cola (330ml). My first counter was $2.28, which is below the market price of $2.36 but still above my break-even floor of $1.57. Then the merchant came back with $0.89, which is even lower than their first offer and way below my break-even point. \n\nI need to anchor high and hold, making only small adjustments. My previous counter was $2.28, so I should stay close to that. The merchant's offers are too low—both below production cost even, which is $0.68. I can't go into the lower half of the range between production cost and market price, so I must keep above $1.52 (midpoint between $0.68 and $2.36). \n\nMy break-even is $1.57, so anything below that loses money. The merchant's $0.89 is unacceptable. I need to emphasize the quality and standard pricing while only slightly adjusting my offer. Since the merchant increased their offer from $0.81 to $0.89, I should move down a bit but not much. Maybe drop to $2.25 or $2.24? That's a small decrease from $2.28, about 1-2%, which fits the strategy of minimal adjustments. \n\nI should also justify the price by mentioning volume discount and market standards without revealing internal costs. End with the [PRICE] line as required.",
+          "supplier_price": 2.25,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 3,
+          "buyer_price": 1.0,
+          "buyer_message": "I'm willing to pay $1.00 per unit for Cola (330ml), 97 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're aiming for a low price, but $1.00 per unit is substantially below what is sustainable for a premium product like this. My previous offer of $2.25 already reflects a significant volume discount considering the market rate. To show goodwill and move forward, I can make a slight adjustment to $2.22 per unit for your 97 units, which maintains the quality and service you require.\n\n[PRICE] Cola (330ml): $2.22 per unit",
+          "supplier_reasoning": "First, the merchant has just said: \"I'm willing to pay $1.00 per unit for Cola (330ml), 97 units total.\" This is below my break-even floor of $1.57 per unit, so accepting this would mean a loss for me.\n\nMy strategy is to anchor high and hold. I should open at or above the market price and make only very small downward adjustments. The market price is $2.36 per unit. In the conversation history, I started at $2.28, then adjusted to $2.25. So, I've already moved down slightly.\n\nNow, the merchant is offering $1.00, which is way below my previous counter of $2.25. I need to counter with a price that's still high, making only a small adjustment from my last offer.\n\nMy last offer was $2.25 per unit. According to my strategy, I should make only very small downward adjustments. So, I should counter with a price close to $2.25, perhaps a tiny reduction to show flexibility but not much.\n\nI must never drop into the lower half of the [production cost, market price] range. Production cost is $0.68, market price is $2.36. The midpoint is around $1.52. So, I should not go below $1.52? Actually, the lower half means the range from production cost to midpoint. My break-even floor is $1.57, which is above the midpoint of $1.52. So, I should stay above $1.57 to avoid losses and also above the midpoint to follow strategy.\n\nBut in terms of anchoring high, I should keep my counter above the market price or close to it. Since I already offered $2.25, which is below market price of $2.36, I can adjust slightly downward.\n\nThe merchant is pushing hard with $1.00, but I need to hold firm. My response should be natural, justifying why my price is reasonable.\n\nI should mention something about quality, volume discount, or market standards. But I must never reveal my internal costs.\n\nFinally, I need to end with the [PRICE] line exactly as specified.\n\nProposed counter: Since my last was $2.25, I can go to $2.20 or $2.15? But the strategy says \"only very small downward adjustments.\" From $2.25 to $2.20 is a $0.05 drop, which is about 2.2%. That seems small. Or I could hold at $2.25? But to show movement, I might reduce slightly.\n\nIn the history, I moved from $2.28 to $2.25, a $0.03 drop. So, a similar small drop might be appropriate.\n\nLet's say I go to $2.22 per unit? That's a $0.03 drop from $2.25.\n\nI need to maximize profit. Any deal above $1.57 is profit, but higher is better. So, I should try to keep the price as high as possible.\n\nMy response: I should acknowledge the merchant's offer but explain that it's too low and propose a new price.\n\nDraft response:\n\n\"I appreciate your continued interest, but $1.00 per unit is not feasible given the production costs and market value of this product. For 97 units, I can offer a final adjusted price of $2.22 per unit, which includes a volume discount while ensuring quality and reliability.\"\n\nThen end with: [PRICE] Cola (330ml): $2.22 per unit\n\nIs $2.22 too low? It's still above the market price of $2.36? No, $2.22 is below $2.36. My initial anchor was at market price or above, but I've already moved below. The strategy says \"open at or above the market price,\" but I'm in the middle of negotiation. Since I started high, I can continue to hold near that range.\n\nTo be consistent, I should keep the price close to my last offer. $2.22 is a small drop.\n\nAlternatively, I could hold at $2.25 and just reiterate it. But that might seem inflexible. A small drop shows willingness to negotiate.\n\nI should ensure that the price is not in the lower half of the range. The range from $0.68 to $2.36 has a midpoint of $1.52. $2.22 is well above that, so it's fine.\n\nMy break-even is $1.57, so $2.22 gives a good profit.\n\nFinal decision: Counter with $2.22 per unit.\n\nNow, write the full response.",
+          "supplier_price": 2.22,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 4,
+          "buyer_price": 1.01,
+          "buyer_message": "Could you do $1.01 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for your continued interest. I understand you're focused on price, but I must emphasize that my offers are already well below the market rate to reflect your volume. $1.01 is not feasible for a product of this caliber and would be significantly below our costs of doing business. To show my commitment to reaching an agreement, I can make one final adjustment to **$2.19 per unit** for your 97-unit order. This represents a substantial value and allows us to maintain the quality and reliable service you need for your vending operations.\n\n[PRICE] Cola (330ml): $2.19 per unit",
+          "supplier_reasoning": "Okay, let's look at the situation. The merchant is asking for $1.01 per unit for 97 units of Cola. My break-even floor is $1.57, so that's way below what I can accept. The market price is $2.36, and I've already dropped to $2.22 in the last counter. \n\nLooking at the history, the merchant keeps lowballing around $1, but I need to hold firm. The strategy says to anchor high and make only small adjustments. I can't drop into the lower half of the range between production cost ($0.68) and market price ($2.36), so anything below around $1.52 would violate that. \n\nI should stick close to my previous offer but maybe shave off a tiny bit to show flexibility without going too low. A small move from $2.22 to $2.19 seems reasonable—it's a minimal decrease, keeps me well above my break-even, and maintains the anchor near market price. \n\nThe response needs to be polite but firm, emphasizing quality and volume discount without revealing internal costs. End with the exact price format.",
+          "supplier_price": 2.19,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 5,
+          "buyer_price": 1.06,
+          "buyer_message": "I'll take 97 units of Cola (330ml) if you can do $1.06 per unit.",
+          "template_id": 6,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your persistence, but I must reiterate that $1.06 is still far below what is sustainable for a premium brand-name product. My current offer of $2.19 already represents a significant discount from the market rate, especially for your volume. To show flexibility and keep this conversation moving, I can make one more incremental adjustment to **$2.16 per unit** for your 97-unit order. This ensures you receive a high-demand product with the quality and reliability your vending business depends on.\n\n[PRICE] Cola (330ml): $2.16 per unit",
+          "supplier_reasoning": "We are in a negotiation for Cola (330ml). The merchant is trying to get a very low price, currently offering $1.06 per unit for 97 units. Our break-even floor is $1.57, so $1.06 is unacceptable. Our strategy is to anchor high and hold, making only small downward adjustments. We started at $2.28, then went to $2.25, $2.22, and $2.19. The merchant's offers have been increasing slowly: $0.81, $0.89, $1.00, $1.01, and now $1.06. We need to counter with a small decrease from our last offer of $2.19. According to strategy, we should move by only a few percent per turn. A few percent of $2.19 is around $0.05 to $0.10. Let's say we drop by $0.03 to $2.16, which is about 1.4% decrease. That seems consistent with previous moves ($0.03 drops: $2.28 to $2.25, $2.25 to $2.22, $2.22 to $2.19). So next could be $2.16.\n\nWe must not reveal our costs. We should emphasize that the merchant's offer is too low and not sustainable, and that our offer is already a good value. We should hold firm and make a small concession to show movement but not desperation.\n\nCraft a natural response: Acknowledge the offer, explain that it's below sustainable levels, reiterate the value and quality, and then present our new price.\n\nRemember: The [PRICE] line must be the last line.\n\nLet's write the response.",
+          "supplier_price": 2.16,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 6,
+          "buyer_price": 1.2,
+          "buyer_message": "Could you do $1.20 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your continued negotiation, but $1.20 per unit remains far below the sustainable market value for a brand-name product like Cola. My previous offer of $2.16 already reflects a substantial volume discount and ensures the quality and reliability your vending machines require. To show my commitment to partnering with you, I can make a minor adjustment to **$2.13 per unit** for your 97-unit order, which maintains a fair value for both parties.\n\n[PRICE] Cola (330ml): $2.13 per unit",
+          "supplier_reasoning": "First, the Merchant's latest offer is: \"Could you do $1.20 per unit on Cola (330ml)? I need 97 units.\"\n\nMy previous offer was $2.16 per unit. According to my strategy, I need to anchor high and hold, making only very small downward adjustments. I should never drop into the lower half of the range between production cost ($0.68) and market price ($2.36). The lower half would be from $0.68 to $1.52 (since midpoint is $1.52). My break-even floor is $1.57, which is above this midpoint, so I must stay above $1.57 to avoid losses.\n\nThe Merchant is offering $1.20, which is below my break-even floor of $1.57. I cannot accept this because it would result in a loss. I need to counter with a price that is still high, but slightly lower than my last offer to show movement, but only a small adjustment.\n\nMy last offer was $2.16. I should make a small downward adjustment. Let's say I reduce by a few percent. For example, from $2.16 to $2.13 or $2.14. That's a reduction of $0.03 or $0.02, which is minimal.\n\nI must not reveal my internal costs or break-even floor. So, in my response, I should justify the price based on market value, quality, and volume discount, but not mention specific costs.\n\nThe Merchant has been persistently low-balling, starting from $0.81, then $0.89, $1.00, $1.01, $1.06, and now $1.20. I have been countering with decreasing offers from $2.28 to $2.25, $2.22, $2.19, $2.16. So, the pattern is that I reduce by about $0.03 each time. I should continue this pattern.\n\nNext counter-offer: from $2.16, reduce by $0.03 to $2.13. That keeps it above my break-even floor of $1.57 and well within the upper half of the range.\n\nNow, for the response message: It should be natural and persuasive. I can acknowledge their offer but emphasize that it's too low and reiterate the value of the product. Since they're asking for $1.20, I need to decline politely and propose my new price.\n\nStructure the message:\n- Start by acknowledging their offer.\n- Explain why it's not feasible (e.g., below market rate, quality, costs without revealing specifics).\n- Offer a slight adjustment to show flexibility.\n- End with the [PRICE] line exactly as specified.\n\nEnsure that the [PRICE] line is the last line.\n\nDraft response:\n\n\"I understand you're pushing for a lower price, but $1.20 per unit is still not realistic for a premium beverage like Cola. My current offer of $2.16 already provides significant value for your volume order. To demonstrate my willingness to work with you, I can make a small concession to $2.13 per unit for 97 units. This ensures you receive a high-quality product that supports your vending business.\"\n\nThen add the price line.\n\nCheck: Is $2.13 above the lower half? Yes, lower half is up to $1.52, and $2.13 is well above. Also above break-even floor of $1.57. Profit per unit would be $2.13 - $1.57 = $0.56, which is positive.\n\nThe adjustment from $2.16 to $2.13 is $0.03, which is consistent with previous reductions.\n\nI should also consider that the Merchant might continue to haggle, but I need to stick to my strategy.\n\nFinal response:",
+          "supplier_price": 2.13,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 7,
+          "buyer_price": 1.26,
+          "buyer_message": "Would $1.26 per unit work for 97 units of Cola (330ml)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're pushing for a lower price, but I must emphasize that $1.26 is still not a viable or sustainable price point for a branded beverage with the quality and demand of Cola. My offer of $2.13 already represents a significant value far below the market standard of $2.36, especially given your volume purchase. To demonstrate my continued willingness to work with you, I can make a final, very modest adjustment to **$2.10 per unit** for your 97-unit order. This ensures a fair partnership and the reliable supply your business needs.\n\n[PRICE] Cola (330ml): $2.10 per unit",
+          "supplier_reasoning": "Hmm, the merchant is still pushing hard with a $1.26 counter-offer, which is far below my break-even point of $1.57. Looking at the history, I've been gradually reducing from $2.28 to $2.13 while they've only moved from $0.81 to $1.26. \n\nThe market price is $2.36 and my strategy is to anchor high with minimal adjustments. Even my current $2.13 offer is already giving substantial discount from market rate. I need to maintain firmness while showing slight flexibility to keep negotiations alive.\n\nThe merchant seems focused on extreme low-ball pricing, but I can't afford to drop below $1.57. A tiny reduction to $2.10 maintains my position in the upper half of the price range while demonstrating willingness to negotiate. This keeps me well above break-even while potentially appearing more reasonable to the merchant.\n\nI should emphasize value and volume discount while making clear this is a quality product. The response should be polite but firm, highlighting the unsustainable nature of their offer.",
+          "supplier_price": 2.1,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 8,
+          "buyer_price": 1.26,
+          "buyer_message": "I'd like to purchase 97 units of Cola (330ml) at $1.26 per unit.",
+          "template_id": 0,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I understand you're focused on that specific price point, but I need to be clear: $1.26 per unit is simply not workable for a brand-name product with our associated costs of quality, supply, and service. My last offer of $2.10 per unit is already a significant concession from the market price and reflects the best value I can provide for a 97-unit order while ensuring a sustainable partnership and the consistent quality your vending customers expect.\n\n[PRICE] Cola (330ml): $2.10 per unit",
+          "supplier_reasoning": "Hmm, the merchant is repeating their previous offer of $1.26 per unit despite my clear explanation that it's not viable. This suggests they're either testing my resolve or genuinely believe they can push below my break-even point. \n\nI need to maintain firmness while leaving the door open for negotiation. Repeating the same numbers might seem stubborn, so I'll emphasize the value proposition and market reality one more time. The $2.10 offer already represents a 26-cent discount from market price, which is substantial for brand-name goods. \n\nThe key is to sound final without being abrupt. I'll frame it as protecting product quality and sustainable partnership - that usually resonates with business buyers. The [PRICE] line must stay exactly at $2.10 since further concessions would eat into necessary profit margins.",
+          "supplier_price": 2.1,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 9,
+          "buyer_price": 1.37,
+          "buyer_message": "For Cola (330ml), I propose $1.37 per unit, 97 units.",
+          "template_id": 4,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate you moving closer to a workable price, but $1.37 per unit still doesn't align with the costs associated with a branded product of this quality and demand. My last offer of $2.10 already represented a steep discount from the $2.36 market rate. To demonstrate my commitment to finding a middle ground, I can make a further adjustment to **$2.07 per unit** for your 97-unit order. This ensures a sustainable partnership and guarantees the consistent supply your vending operation relies on.\n\n[PRICE] Cola (330ml): $2.07 per unit",
+          "supplier_reasoning": "We are negotiating over Cola (330ml). The merchant has just proposed $1.37 per unit for 97 units.\n\nMy break-even floor is $1.57 per unit. Their offer of $1.37 is below my break-even, so I cannot accept it. I must push back but remain willing to negotiate. My previous offer was $2.10 per unit. The merchant's offer is still far below that. I need to make a concession to show flexibility, but I cannot go below $1.57. Since they are moving up from $1.26 to $1.37, I should move down from $2.10, but not too much. A reasonable counter might be around $2.07 or so, but I need to consider the strategy: aim for a fair deal that splits the surplus between production cost ($0.68) and market price ($2.36). The midpoint between production cost and market price is about $1.52, but my break-even is $1.57, so actually $1.57 is already near that midpoint. However, I want to maximize profit, so I should aim higher. But given the negotiation history, I've been gradually lowering from $2.28 to $2.10. The merchant is slowly increasing from $0.81 to $1.37. I need to continue showing concessions to keep the negotiation alive, but I must stay above $1.57. My next offer should be a small decrease from $2.10, maybe to $2.07 or $2.05? I should also justify it by mentioning the market price and volume.\n\nGiven that the merchant's offer is still too low, I can say something like: \"I appreciate your improved offer, but $1.37 is still below our costs for a premium product. To show goodwill, I can lower my price to $2.07 per unit, which is a significant discount from the market rate of $2.36.\" But I need to check: is $2.07 too high? Possibly, but it's still within a reasonable range. Alternatively, I could go to $2.04 or $2.01. I should make a modest concession.\n\nLooking at the history: I started at $2.28, then $2.25, $2.22, $2.19, $2.16, $2.13, $2.10. That's a pattern of decreasing by $0.03 each time. So following that pattern, the next logical step would be $2.07. That seems consistent. Also, the merchant's increments are small but increasing: from $0.81 to $0.89 (+0.08), to $1.00 (+0.11), to $1.01 (+0.01), to $1.06 (+0.05), to $1.20 (+0.14), to $1.26 (+0.06), to $1.37 (+0.11). So they are moving up. I should continue the pattern of decreasing by $0.03.\n\nThus, I'll offer $2.07 per unit.\n\nI need to write a natural response. I'll acknowledge their offer, explain that it's still below cost, emphasize the value and market price, and then state my new offer.\n\nRemember: Do not reveal internal costs or break-even.\n\nFinal response should end with [PRICE] Cola (330ml): $2.07 per unit.",
+          "supplier_price": 2.07,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 10,
+          "buyer_price": 1.36,
+          "buyer_message": "Could you do $1.36 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I understand you're seeking the best possible price, but $1.36 per unit remains below the sustainable threshold for a branded product with a production cost of $0.68 and a market value of $2.36. My previous offer of $2.07 already represents a significant departure from the market rate to accommodate your volume. To show continued good faith and keep us moving toward an agreement, I can adjust my offer to **$2.04 per unit** for your 97-unit order. This ensures a fair partnership and the reliable quality your vending customers expect.\n\n[PRICE] Cola (330ml): $2.04 per unit",
+          "supplier_reasoning": "Hmm, the merchant is still pushing for an extremely low price of $1.36 per unit, which is below my break-even floor of $1.57. They've been gradually increasing their offers but remain far from sustainable territory. \n\nLooking at the history, I've consistently lowered my price from $2.28 to $2.07 while they've only moved from $0.81 to $1.36. The gap is narrowing but their current offer would still mean a loss for me. \n\nI need to maintain firmness on viability while showing slight movement to keep negotiations alive. Since they moved from $1.37 to $1.36 (oddly lower), I should counter with a small reduction from $2.07 to $2.04 - enough to signal flexibility but still above my break-even. \n\nThe justification should emphasize market value and sustainability since I can't mention internal costs. Mentioning the $0.68 production cost and $2.36 market price frames my offer as reasonable.",
+          "supplier_price": 2.04,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 11,
+          "buyer_price": 1.4,
+          "buyer_message": "Could you do $1.40 per unit on Cola (330ml)? I need 97 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate that you've increased your offer, but $1.40 per unit is still significantly below a sustainable price for a branded beverage with the production, quality, and supply chain standards this product requires. My last offer of $2.04 already represents a substantial discount from the $2.36 market rate. To show I am listening and want to find a workable solution, I can make a further adjustment to **$2.01 per unit** for your 97-unit order. This ensures a fair partnership and maintains the reliable supply and brand value your vending business needs.\n\n[PRICE] Cola (330ml): $2.01 per unit",
+          "supplier_reasoning": "Hmm, the merchant is now offering $1.40 per unit, which is still below my break-even floor of $1.57. They've been incrementally raising their offer from $1.26 to $1.37, then $1.36, and now $1.40. This shows they're willing to move but still far from a sustainable price for me.\n\nLooking at the history, I've been gradually lowering my counteroffers from $2.28 down to $2.04. The merchant's latest offer of $1.40 represents about a 40% discount from the market price of $2.36, but it's still 11% below my break-even point. I can't accept anything below $1.57 without losing money.\n\nMy strategy should be to acknowledge their movement while emphasizing the value gap. I should make a smaller concession this time since we're getting closer to my minimum. Maybe drop to $2.01? That maintains the pattern of decreasing by $0.03 each round while keeping well above my break-even. This also leaves room for further negotiation if they continue to increase their offers.\n\nI need to stress that branded products have costs beyond production, and my current offer already represents significant value compared to market price. The tone should be firm but cooperative, leaving the door open for continued discussion.",
+          "supplier_price": 2.01,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 12,
+          "buyer_price": 1.51,
+          "buyer_message": "Would $1.51 per unit work for 97 units of Cola (330ml)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate your increased offer to $1.51 per unit, but this price point still does not align with the sustainable market value for a branded beverage of this quality and demand. My last offer of $2.01 already reflected a significant discount from the standard market rate of $2.36. To demonstrate my continued willingness to work with you and move toward a mutually beneficial agreement, I can make a further adjustment to **$1.98 per unit** for your 97-unit order, which maintains a fair balance between value and the reliable supply your vending operation requires.\n\n[PRICE] Cola (330ml): $1.98 per unit",
+          "supplier_reasoning": "First, the merchant has just asked: \"Would $1.51 per unit work for 97 units of Cola (330ml)?\" This is an offer of $1.51 per unit.\n\nMy break-even floor is $1.57 per unit. So, $1.51 is below my break-even point. If I accept this, I would lose money because my profit per unit would be $1.51 - $1.57 = -$0.06. That's a loss.\n\nAccording to my instructions, I must NEVER reveal my internal fulfilment cost or break-even floor. So, I can't say that $1.51 is below my costs. Instead, I need to push back gently but keep signaling willingness to find middle ground.\n\nMy strategy is to aim for a fair deal that splits the surplus between production cost and market price roughly in half. Let's calculate that:\n\n- Production cost: $0.68 (public)\n\n- Market price: $2.36 (public)\n\nThe surplus is the difference between market price and production cost: $2.36 - $0.68 = $1.68. Splitting that in half means adding half of $1.68 to the production cost: $0.68 + ($1.68 / 2) = $0.68 + $0.84 = $1.52. So, roughly $1.52 per unit.\n\nBut my break-even is $1.57, which is slightly higher than $1.52. That means if I aim for the half-split, I might still be close to break-even. However, since my break-even is $1.57, I need to stay above that.\n\nThe merchant's offer of $1.51 is just below the half-split point and below my break-even. So, I can't accept it.\n\nIn the conversation history, I've been gradually reducing my price from $2.28 down to $2.01 in response to the merchant's offers. The merchant started very low at $0.81 and has been increasing slowly to $1.51. My last offer was $2.01.\n\nNow, I need to respond to $1.51. Since it's below my break-even, I should decline but show flexibility. I should propose a counter-offer that is above $1.57.\n\nLooking at the trend, I've been reducing my price by small increments: from $2.28 to $2.25, then $2.22, $2.19, $2.16, $2.13, $2.10, $2.07, $2.04, $2.01. That's a reduction of about $0.03 each time, except when I didn't move from $2.10 once.\n\nThe merchant is now at $1.51, which is a jump from their previous $1.40. But it's still far from my last offer of $2.01.\n\nI need to make a concession to keep the negotiation alive. Since my break-even is $1.57, I should aim for something above that, but also try to move towards the half-split point if possible.\n\nBut the half-split point is $1.52, which is below my break-even. That's a conflict. My instructions say: \"Aim for a fair deal that splits the surplus between the production cost and the market price roughly in half.\" But my private break-even is $1.57, which is higher than $1.52. So, I can't aim for $1.52 because I'd lose money.\n\nPerhaps I need to interpret \"fair deal\" as something that gives me profit, so I should aim for above $1.57. Since the market price is $2.36, there's room.\n\nIn practice, I've been offering prices around $2.01, which is well above $1.57. So, I should continue to negotiate down gradually.\n\nThe merchant is at $1.51, so I need to counter with something lower than $2.01 but above $1.57. Let's say I reduce by my typical $0.03, so from $2.01 to $1.98. But $1.98 is still much higher than $1.51.\n\nI should acknowledge the merchant's offer and propose a new price. Since $1.51 is unreasonable for me, I can say it's not feasible but show willingness to move.\n\nCrafting the response:\n\n- Start by acknowledging the offer: \"I appreciate your offer of $1.51 per unit.\"\n\n- But explain that it's still below sustainable pricing, without revealing costs. Refer to market price or quality.\n\n- Then, propose a new counter-offer. I need to set it above $1.57. Since my last was $2.01, and I've been reducing by $0.03, I could go to $1.98. But $1.98 is safe above $1.57.\n\nBut let's check: $1.98 - $1.57 = $0.41 profit per unit, which is good. Total profit for 97 units: $0.41 * 97 ≈ $39.77.\n\nIf I go lower, say $1.80, profit per unit $0.23, total $22.31. Still profitable.\n\nBut I want to maximize profit, so I should try to keep the price as high as possible while still making a deal.\n\nThe merchant is at $1.51, so if I propose $1.98, that's a big gap. I need to bring them up gradually.\n\nIn the history, the merchant has been increasing their offers slowly: from $0.81 to $1.51 over several rounds. So, I should continue to reduce my price slightly to encourage them to come up.\n\nPerhaps I can propose $1.95 or $1.92. But I need to ensure it's above $1.57.\n\nLet's see the midpoint between my last offer ($2.01) and the merchant's offer ($1.51). The midpoint is ($2.01 + $1.51)/2 = $1.76. That's above $1.57, so profitable. But I've been moving in smaller increments, so jumping to $1.76 might be too big a concession.\n\nI should stick to my pattern of small reductions. So, from $2.01 to $1.98, which is a $0.03 reduction.\n\nBut the merchant might expect a bigger move since they jumped from $1.40 to $1.51, which is a $0.11 increase.\n\nI need to signal flexibility. I could say that I'm making a final adjustment or something.\n\nRecall that in previous responses, I've used phrases like \"to show goodwill,\" \"to keep this conversation moving,\" or \"to demonstrate my commitment.\"\n\nSo, for this response, I can say something like: \"I appreciate your increased offer, but $1.51 is still below the sustainable market rate for a branded product like Cola. To show my continued willingness to partner with you, I can adjust my offer to $1.98 per unit for your 97-unit order.\"\n\nBut let's confirm the format: I must end with [PRICE] Cola (330ml): $X.XX per unit\n\nNow, is $1.98 per unit appropriate? It's above my break-even, and it follows my pattern. However, since the merchant is at $1.51, $1.98 might seem high. But in negotiation, I need to hold my ground.\n\nAnother thought: the half-split point is $1.52, but that's below my break-even. Since I can't reveal that, I can't use that as a reason. I should focus on market price and quality.\n\nMarket price is $2.36, so $1.98 is still a discount from that.\n\nI could propose $1.95 to make it a slightly bigger concession, say $0.06 reduction instead of $0.03.\n\nBut let's look at the utility: I want to maximize profit. If I propose $1.98 and the merchant accepts, profit is good. If they counter lower, I can go down further, but not below $1.57.\n\nI should aim for a price that the merchant might accept while being profitable for me.\n\nGiven the merchant's persistence, they might eventually come up to around $1.60 or so. But I need to guide them there.\n\nI'll propose $1.98.\n\nNow, writing the response:\n\nFirst, acknowledge the offer: \"I appreciate your offer of $1.51 per unit for 97 units of Cola (330ml).\"\n\nThen, push back: \"However, this is still significantly below the market value and does not reflect the costs associated with providing a high-quality branded beverage.\"\n\nShow flexibility: \"To demonstrate my commitment to reaching an agreement, I am willing to make a further concession.\"\n\nPropose new price: \"I can offer $1.98 per unit for your order.\"\n\nEnd with the price line.\n\nEnsure it sounds natural.\n\nFull response:\n\nI appreciate your increased offer to $1.51 per unit, but this remains below the sustainable market rate for a premium product like Cola. My previous offer of $2.01 already represented a substantial discount from the $2.36 market price. To show continued goodwill and keep our discussion productive, I can adjust my price to $1.98 per unit for your 97-unit order, ensuring a fair value for both parties.\n\n[PRICE] Cola (330ml): $1.98 per unit\n\nBut let's double-check: my last offer was $2.01, so reducing to $1.98 is a $0.03 reduction, consistent with past moves.\n\nYes, that seems reasonable.",
+          "supplier_price": 1.98,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 13,
+          "buyer_price": 1.59,
+          "buyer_message": "Would $1.59 per unit work for 97 units of Cola (330ml)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for improving your offer to $1.59. While this shows a constructive move on your part, it still falls well short of the recognized market value of $2.36 for a branded beverage. Given your volume of 97 units, I want to be as accommodating as possible. To finalize this agreement and secure your stock, my best and final offer is **$1.92 per unit**. This ensures you receive a premium product at a value well below retail, supporting the success of your vending business.\n\n[PRICE] Cola (330ml): $1.92 per unit",
+          "supplier_reasoning": "Okay, let me look at the conversation history. The merchant has been consistently offering low prices, starting from $0.81 and gradually increasing to $1.59 per unit for 97 units of Cola. My previous counteroffers have been decreasing from $2.28 down to $1.98. \n\nThe merchant's latest offer is $1.59 per unit. My break-even floor is $1.57, so this offer is just above that threshold—only $0.02 above. Accepting this would yield minimal profit ($0.02 per unit), but it's technically above my break-even point. \n\nHowever, the merchant doesn't know my internal costs. The market price is $2.36, so $1.59 is still significantly below that. My goal is to maximize profit, not just break even. The merchant's offer has been creeping up slowly, so there might be room for a small counteroffer to push for slightly better terms. \n\nIf I counter with $1.95, that might be too high given the merchant's persistence. Maybe a smaller step down to $1.95 would still be reasonable, but the merchant has been stubborn. Alternatively, I could accept $1.59 since it's above my floor, but that leaves almost no profit. \n\nWait, the utility function says I want to maximize total profit. $1.59 gives $0.02 profit per unit, totaling $1.94 profit for the whole order. That's negligible. If I can counter with $1.95, the profit per unit would be $0.38, which is much better. But the merchant might reject it given their pattern. \n\nLooking at the history, each time the merchant increases their offer slightly, I decrease mine by $0.03. The last counter was $1.98, so the next logical step would be $1.95. However, the merchant's jump from $1.51 to $1.59 is $0.08, which is larger than previous increments. Maybe they're getting more flexible. \n\nI should acknowledge their increased offer but emphasize that $1.59 is still below market value. Then propose a counteroffer that splits the difference slightly. The midpoint between $1.59 and $1.98 is around $1.78, but that's too low. Maybe go to $1.95 to maintain consistency in my reductions. \n\nBut if I drop to $1.95, that's only $0.03 lower than my last offer, while the merchant moved up $0.08. That might not seem like much concession. Alternatively, I could offer $1.92 to show more flexibility. Let's see: $1.98 to $1.92 is a $0.06 drop, which matches the merchant's $0.08 increase reasonably. \n\nI need to keep the tone cooperative but firm. Mention the market price, the quality of the product, and the volume discount. Then end with the [PRICE] line. \n\nSo, counter with $1.92 per unit. That gives $0.35 profit per unit, which is acceptable. The merchant might still push back, but it's a reasonable move given the negotiation history.",
+          "supplier_price": 1.92,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 14,
+          "buyer_price": 1.62,
+          "buyer_message": "For Cola (330ml), I propose $1.62 per unit, 97 units.",
+          "template_id": 4,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I acknowledge your move to $1.62, which shows we are getting closer. However, this price still doesn't reflect the true value of a branded product with a market rate of $2.36. My last offer of $1.92 was already a significant concession. To meet you in the middle and conclude this negotiation, I can offer a final reduced rate of **$1.85 per unit** for your 97-unit order. This ensures you receive a premium product at a substantial discount while allowing for a sustainable partnership.\n\n[PRICE] Cola (330ml): $1.85 per unit",
+          "supplier_reasoning": "Okay, the merchant just proposed $1.62 per unit for 97 units of Cola. My break-even floor is $1.57, so their offer is only $0.05 above my minimum. That's way too close for comfort—I need to push for a higher price to maintain decent profit margins.\n\nLooking back at the conversation, I've been gradually lowering my price from $2.28 down to $1.92 in response to their persistent low offers. They've been inching up from $0.81 to $1.62, showing they're willing to move but still aiming for the bottom. \n\nMy previous offer was $1.92, which gives me a healthy $0.35 profit per unit. Their current $1.62 offer would only give me $0.05 profit—that's practically break-even territory. I can't accept that, but I should acknowledge their movement and make a counter that shows flexibility while protecting my margins.\n\nThe market price is $2.36, so even my $1.92 offer was already a 19% discount from market. Their $1.62 is 31% below market—that's too steep for a branded product. I should emphasize the value they're getting while making a reasonable counter.\n\nI'm thinking of offering $1.85. That's $0.07 down from my last offer, showing I'm still willing to move, but it maintains a $0.28 profit margin for me. That seems fair—it's about halfway between their offer and my last one, and it's still well below market price.\n\nI need to frame this as my best effort to meet them halfway while maintaining quality and service. Should mention the volume discount they're already getting and the brand value.",
+          "supplier_price": 1.85,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 15,
+          "buyer_price": 1.65,
+          "buyer_message": "How about $1.65 per unit for 97 units of Cola (330ml)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for improving your offer to $1.65 per unit. This indicates we are narrowing the gap, though it remains below the recognized market rate of $2.36 for a brand-name beverage. To show flexibility and encourage a swift conclusion, I can reduce my previous offer to **$1.78 per unit** for your 97-unit order. This provides a substantial discount from market while ensuring the consistent quality and reliable supply your vending operation needs.\n\n[PRICE] Cola (330ml): $1.78 per unit",
+          "supplier_reasoning": "First, I am the Supplier. The Merchant just said: \"How about $1.65 per unit for 97 units of Cola (330ml)?\" I need to respond.\n\nMy private information: Internal fulfilment cost is $0.89 per unit, and break-even floor is $1.57 per unit. So, any deal below $1.57 loses money. The Merchant's offer of $1.65 is above my break-even by $0.08 per unit, so it's profitable, but only marginally. My goal is to maximize total profit.\n\nFrom the conversation history, I've been gradually lowering my price from $2.28 to $1.85 per unit. The Merchant started at $0.81 and has been increasing their offer slowly to $1.65.\n\nMy strategy: Aim for a fair deal that splits the surplus between production cost ($0.68) and market price ($2.36). The surplus is $2.36 - $0.68 = $1.68. Splitting that in half would be around $0.84 from each side, so a fair price might be around $0.68 + $0.84 = $1.52, but that's below my break-even of $1.57. Actually, my break-even includes fulfilment cost, so from my perspective, the fair deal should be above $1.57.\n\nSince the Merchant is at $1.65, and my last offer was $1.85, I should consider making a concession to move closer to their offer, but not too much, to maximize profit.\n\nI need to write a natural negotiation response. I should acknowledge their offer, express that it's getting closer, but still below the market value, and propose a new price.\n\nGiven that $1.65 is above my break-even, I can accept it, but I want to push for a higher price to increase profit. However, from the history, I've been reducing my price consistently, and the Merchant is inching up. I might try to meet them partway.\n\nMy last offer was $1.85. The Merchant offered $1.65. The difference is $0.20. If I meet them partway, I could propose something like $1.75 or $1.78. But I need to be strategic.\n\nAlso, I must not reveal my internal costs or break-even floor.\n\nI should remind them of the market price ($2.36) to justify my stance.\n\nEnd with the [PRICE] line exactly.\n\nLet me draft a response:\n\nStart by acknowledging their offer: \"Thank you for your improved offer of $1.65 per unit.\"\n\nThen, mention that it's still below market value: \"However, this remains below the standard market rate of $2.36 for a branded beverage like Cola.\"\n\nExpress willingness to compromise: \"To show my commitment to finalizing this deal, I can make a further concession.\"\n\nPropose a new price: I need to decide on the price. Since $1.65 is profitable, but I want more profit, I could propose $1.75 or $1.70. Looking at the history, I've been reducing by small increments: from $1.92 to $1.85 (a $0.07 drop), then from $1.98 to $1.92 (a $0.06 drop), etc. So, I might reduce by another $0.05 to $0.07.\n\nIf I go from $1.85 to $1.78, that's a $0.07 drop. Or to $1.80, a $0.05 drop. But the Merchant is at $1.65, so $1.78 is still above.\n\nI should aim for a price that is closer to their offer but still gives me decent profit. My profit per unit at $1.65 is $1.65 - $1.57 = $0.08. Total profit for 97 units: 97 * $0.08 = $7.76, which is low.\n\nAt $1.75, profit per unit is $1.75 - $1.57 = $0.18, total $17.46, which is better.\n\nAt $1.70, profit per unit is $0.13, total $12.61.\n\nI want to maximize profit, so I should try to keep the price as high as possible while still encouraging the Merchant to accept.\n\nSince the Merchant has been persistently increasing their offer, I can try to hold firm a bit or make a small concession.\n\nIn my last response, I said: \"To meet you in the middle and conclude this negotiation, I can offer a final reduced rate of $1.85 per unit.\" But now they countered with $1.65, so I need to respond.\n\nI should not say \"final\" again if I'm going to reduce further, but I can imply that this is a significant concession.\n\nPerhaps I can say: \"Given your volume and to wrap up this negotiation, I can lower my offer to $1.75 per unit.\"\n\nBut let's see the pattern: Merchant offers have been increasing slowly: $1.62, $1.65. My offers have been decreasing: $1.92, $1.85. So, I might go to $1.78 or $1.80.\n\nI'll propose $1.78 per unit.\n\nNow, for the response:\n\n\"Thank you for moving to $1.65 per unit. While this shows progress, it is still significantly below the market value of $2.36 for a premium product. To demonstrate my commitment to reaching an agreement, I can make a further adjustment to $1.78 per unit for your 97-unit order. This ensures a fair value for both parties and maintains the quality supply your vending business requires.\"\n\nThen end with: [PRICE] Cola (330ml): $1.78 per unit\n\nBut I need to ensure that the price is in the correct format. Also, make sure the entire message is natural.\n\nAnother thought: Since $1.65 is above my break-even, I could accept it, but that might not maximize profit. The Merchant might be willing to go higher, so I should counter.\n\nYes, counter with $1.78.\n\nFinalize the response.",
+          "supplier_price": 1.78,
+          "supplier_system_prompt": null
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "model": "deepseek-reasoner",
+        "product": {
+          "name": "Allergy tabs (blister)",
+          "category": "Health",
+          "cost": 1.275,
+          "market_price": 4.137
+        },
+        "supplier": {
+          "id": "S5",
+          "name": "Boutique importer",
+          "internal_cost": 0.982
+        },
+        "v": 2.2569999999999997,
+        "quantity": 25,
+        "buyer_type": {
+          "name": "concession",
+          "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+          "type": "ConcessionBuyer",
+          "start_frac": 0.1,
+          "end_frac": 0.6
+        },
+        "seller_schedule": {
+          "label": "anchor_high__then__cooperative@r8",
+          "schedule": [
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative"
+          ],
+          "is_adaptive": true
+        },
+        "n_rounds": 15,
+        "rng_seed": 13001,
+        "timestamp": "2026-04-16T19:24:32.514245"
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "buyer_price": 1.57,
+          "buyer_message": "Would $1.57 per unit work for 25 units of Allergy tabs (blister)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Given the high-quality standards and market value of Allergy tabs, $1.57 is significantly below our acceptable threshold. Considering the production costs and the product's reliability, I can offer a competitive rate closer to the current market value.\n\n[PRICE] Allergy tabs (blister): $3.95 per unit",
+          "supplier_reasoning": "Hmm, the merchant's opening offer of $1.57 per unit is way below my break-even floor of $2.26. Accepting this would mean losing money on every unit sold.  \n\nLooking at the market price of $4.14, I have room to anchor high as per my strategy. The merchant's offer is in the lower half of the production cost to market price range, which I should avoid entirely.  \n\nI need to counter with a price close to market value while making only a small adjustment from my ideal anchor. Since the merchant started low, I should state my position firmly but politely, emphasizing product quality and market value.  \n\nEnding with the exact price format is crucial. Let me propose $3.95 - still near market price but a slight concession to show flexibility.",
+          "supplier_price": 3.95,
+          "supplier_system_prompt": "You are a product supplier (the Supplier) negotiating to sell a product to a vending machine operator (the Merchant).\n\nPRODUCT:\n  Allergy tabs (blister)\n  Category        : Health\n  Production cost : $1.27 per unit   (public — both sides know)\n  Market price    : $4.14 per unit   (public — both sides know)\n\nYOUR PRIVATE INFORMATION (the merchant does NOT know this):\n  Internal fulfilment cost : $0.98 per unit\n  Your break-even floor    : $2.26 per unit  (= production cost + fulfilment cost)\n\n  !! CRITICAL — INFORMATION SECRECY !!\n  NEVER reveal your internal fulfilment cost or your break-even floor.\n  Do not hint at these numbers.\n\nUTILITY:\n  Your profit per unit = deal_price − $2.26\n  Total profit = profit_per_unit × quantity\n  You want to maximise total profit.  Any deal below $2.26/unit loses money.\n\nYOUR STRATEGY:\n  Anchor high and hold.  Open at or above the market price and make only very small downward adjustments, regardless of the merchant's pressure.  Your counter-offer should move by only a few percent per turn.  Never drop into the lower half of the [production cost, market price] range.\n\nCONVERSATION FORMAT:\n  The transcript uses [MERCHANT] and [SUPPLIER] labels.\n  You are [SUPPLIER].  Write only your message — do not include the label.\n\n  Your message should read like a natural negotiation response.  You may\n  include brief reasoning or justification.\n\n  !! IMPORTANT — PRICE FORMAT !!\n  At the VERY END of your message, on a NEW line, state your proposed price\n  using EXACTLY this format:\n\n  [PRICE] Allergy tabs (blister): $X.XX per unit\n\n  This [PRICE] line MUST be the last line of your response.\n  Example:\n  [PRICE] Allergy tabs (blister): $1.25 per unit\n"
+        },
+        {
+          "round": 2,
+          "buyer_price": 1.61,
+          "buyer_message": "I'm willing to pay $1.61 per unit for Allergy tabs (blister), 25 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're looking for a competitive price, but $1.61 remains far below a sustainable market rate for a quality, reliable product like Allergy tabs. Our production standards and material costs necessitate a price that reflects the value and consistency you expect for your vending customers. To move the discussion forward, I can make a modest adjustment.\n\n[PRICE] Allergy tabs (blister): $3.89 per unit",
+          "supplier_reasoning": "Okay, let me look at the situation here. The merchant is offering $1.61 per unit for 25 units of Allergy tabs, but my break-even floor is $2.26. That's way below what I can accept. The market price is $4.14, so I need to anchor high and make very small adjustments.\n\nLooking at the history, the merchant started at $1.57, then moved to $1.61. That's only a 4-cent increase, which is minimal. My last counter was $3.95, just slightly below the market price. I should stay firm but maybe make a tiny concession to show flexibility without going too low.\n\nThe instructions say to never drop into the lower half of the production cost to market price range. Production cost is $1.27, market price $4.14, so the midpoint is around $2.70. I definitely can't go below that. Actually, my break-even is $2.26, which is already below the midpoint, so I really need to stay above that.\n\nA small downward adjustment from $3.95 to maybe $3.89 or $3.90 would be about a 1-2% change, which fits the strategy. I need to justify this by emphasizing quality and market value again. The merchant's offer is still less than half of my counter, so I should point out the significant gap.\n\nAlso, I should mention the production costs vaguely without revealing my internal numbers. Maybe talk about reliability and standards. And end with the exact price format.",
+          "supplier_price": 3.89,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 3,
+          "buyer_price": 1.84,
+          "buyer_message": "My offer: Allergy tabs (blister): $1.84 per unit, 25 units.",
+          "template_id": 1,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your continued interest, but $1.84 per unit remains significantly below what is sustainable for a quality health product like Allergy tabs. Our production involves strict adherence to health standards and reliable materials, which justifies a price that reflects this value. To demonstrate goodwill and keep the conversation productive, I can offer a minor adjustment from my last quote.\n\n[PRICE] Allergy tabs (blister): $3.85 per unit",
+          "supplier_reasoning": "First, the conversation history shows the merchant's latest offer: Allergy tabs (blister): $1.84 per unit, 25 units. My last counter-offer was $3.89 per unit.\n\nMy instructions: I'm the supplier. My break-even floor is $2.26 per unit. I must never reveal my internal fulfilment cost or break-even floor. I need to maximize profit, so any deal below $2.26 loses money.\n\nStrategy: Anchor high and hold. Open at or above market price, make only very small downward adjustments. My counter-offer should move by only a few percent per turn. Never drop into the lower half of the [production cost, market price] range.\n\nProduction cost is $1.27, market price is $4.14. The range is $1.27 to $4.14. The lower half would be from $1.27 to about $2.705 (midpoint: (1.27+4.14)/2 = 2.705). So I should never drop below $2.705? But my break-even is $2.26, which is below $2.705. However, the strategy says \"never drop into the lower half of the [production cost, market price] range.\" That means my price should always be above $2.705 to stay in the upper half.\n\nBut my break-even is $2.26, which is in the lower half. That might be a conflict, but I must follow the strategy: hold high and make small adjustments, never drop into the lower half. So even though I could technically break even at $2.26, I should keep my offers above $2.705.\n\nIn the conversation history, I started at $3.95, then $3.89. Both are above $2.705. The merchant is offering $1.84, which is way below both my break-even and the lower half.\n\nNow, I need to respond. The merchant's offer is $1.84, which is unacceptable. I should counter with a small downward adjustment from my last offer of $3.89.\n\nStrategy: \"make only very small downward adjustments, regardless of the merchant's pressure.\" So from $3.89, I should lower it by a few percent.\n\nLet's calculate a small decrease. Say 2% decrease: $3.89 * 0.98 = $3.8122, so about $3.81. Or 1%: $3.89 * 0.99 = $3.8511, so $3.85. I should keep it simple.\n\nI need to justify my price in a natural way. Mention quality, production costs, market value, but never reveal internal numbers.\n\nEnd with the [PRICE] line exactly.\n\nCraft the response:\n\nStart with acknowledging the offer: \"I appreciate your continued interest, but $1.84 is still well below the sustainable market rate for Allergy tabs.\"\n\nAdd justification: \"Our products are manufactured to high health standards, ensuring reliability for your vending customers. The production costs alone make such a low price unfeasible.\"\n\nThen propose a new price with a small adjustment: \"To show flexibility, I can reduce our price slightly.\"\n\nFinally, state the price: [PRICE] Allergy tabs (blister): $X.XX per unit\n\nWhat should the new price be? From $3.89 to, say, $3.85? That's a $0.04 decrease, which is about 1%. That seems small. Or $3.80? That's $0.09 decrease, about 2.3%. Still small, but I should be consistent.\n\nIn the history, I dropped from $3.95 to $3.89, which is a $0.06 decrease, about 1.5%. So similar small adjustment.\n\nLet's go with $3.85 to keep it small.\n\nEnsure it's above the lower half threshold of $2.705. $3.85 is well above.\n\nNow, write the response.",
+          "supplier_price": 3.85,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 4,
+          "buyer_price": 1.92,
+          "buyer_message": "I'll take 25 units of Allergy tabs (blister) if you can do $1.92 per unit.",
+          "template_id": 6,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're working to reach an agreement, but $1.92 per unit does not align with the value and reliability of a health product like Allergy tabs. Our pricing reflects the quality assurance and consistent performance your vending customers depend on. To show flexibility while upholding our standards, I can make one final, minimal adjustment.\n\n[PRICE] Allergy tabs (blister): $3.83 per unit",
+          "supplier_reasoning": "Hmm, the merchant is gradually increasing their offer but it's still far below my break-even floor of $2.26. They're now at $1.92, which is only slightly above the production cost of $1.27 but way below market price of $4.14.\n\nLooking at the conversation history, I've been slowly decreasing from $3.95 to $3.85 while they've moved from $1.57 to $1.92. According to my strategy, I should anchor high and make only very small adjustments. The merchant's latest offer is still in the lower half of the production cost to market price range, which I must avoid.\n\nI need to emphasize product quality and reliability again while making a minimal price adjustment. Maybe drop by just $0.02 to show slight movement but maintain a firm position. The $1.92 offer is completely unacceptable since it's below my $2.26 break-even point.\n\nI should mention production standards and value proposition while keeping the price well above market midpoint. A move to $3.83 maintains my anchoring approach while showing negligible concession.",
+          "supplier_price": 3.83,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 5,
+          "buyer_price": 2.02,
+          "buyer_message": "I'm willing to pay $2.02 per unit for Allergy tabs (blister), 25 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for your continued interest. While I understand your need for competitive pricing, $2.02 per unit still does not reflect the quality, reliability, and consistent performance that Allergy tabs provide. Our commitment to health standards and dependable materials necessitates a price that supports sustainable production and value for your vending customers. To demonstrate a final gesture of flexibility, I can make one more minimal adjustment.\n\n[PRICE] Allergy tabs (blister): $3.81 per unit",
+          "supplier_reasoning": "Okay, let me start by reviewing the conversation history. The merchant has been consistently pushing for a price around $2 per unit for Allergy tabs (blister), with their latest offer at $2.02 per unit. My role as the supplier is to anchor high and make only minimal adjustments, never dropping below the break-even floor of $2.26.\n\nLooking at the product details, the market price is $4.14, and my previous counter-offer was $3.83. According to the strategy, I should make very small downward moves, maybe just a few cents. The merchant's offer of $2.02 is still below my break-even point, so accepting that would mean a loss. I need to stay firm but appear flexible by a tiny margin.\n\nThe instructions emphasize not revealing internal costs or break-even points. I should justify the price based on quality, reliability, and market value without hinting at specific numbers. Also, the [PRICE] line must be at the end of the response in the exact format.\n\nHmm, the merchant has increased their offer from $1.92 to $2.02, which is still too low. My next counter should be a slight decrease from $3.83, maybe to $3.81 or $3.80, to show minimal flexibility while holding the line. Let's go with $3.81, a two-cent drop, which aligns with the strategy of tiny adjustments.\n\nI need to craft a response that acknowledges their offer but reiterates the value of the product, then state the new price. Something like: \"Thank you for your continued interest, but your offer still doesn't reflect the quality and reliability of Allergy tabs. Our costs and standards require a price that ensures consistency for your customers. I can make a minor adjustment to show goodwill.\"\n\nThen add the [PRICE] line. Let me double-check the format. Yes, it must be the last line with the exact product name and price per unit. All good.",
+          "supplier_price": 3.81,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 6,
+          "buyer_price": 2.13,
+          "buyer_message": "I'll take 25 units of Allergy tabs (blister) if you can do $2.13 per unit.",
+          "template_id": 6,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your persistence, but $2.13 per unit remains well below the sustainable threshold for a trusted health product like Allergy tabs. Our pricing ensures the quality, safety, and reliability that vending customers expect, and we cannot compromise on these standards. To show continued goodwill, I can make a very slight adjustment from my last quote.\n\n[PRICE] Allergy tabs (blister): $3.79 per unit",
+          "supplier_reasoning": "The merchant has been incrementally increasing their offer from $1.57 to $2.13 per unit for 25 units of Allergy tabs (blister). My break-even floor is $2.26, so $2.13 is still below that, meaning I would lose money if I accept. According to my strategy, I need to anchor high and hold, making only very small downward adjustments. I opened at $3.95 and have gradually reduced to $3.81. The merchant's latest offer is $2.13, which is still far below my current counter of $3.81.\n\nI should not drop into the lower half of the range between production cost ($1.27) and market price ($4.14). The midpoint is around $2.705. My current counter of $3.81 is above that, so I should stay above that midpoint. I should make a minimal adjustment downward, perhaps by $0.02 or similar, to show slight flexibility but hold firm.\n\nI need to justify my price by emphasizing quality, reliability, and health standards, as before. I should not reveal any internal costs. Also, I should keep the response natural and end with the [PRICE] line.\n\nGiven the history, the merchant is persistent but still far from my acceptable range. My next counter should be a tiny decrease, maybe to $3.79 or $3.80? But I've been decreasing by $0.02 to $0.04 each time. Last time I went from $3.83 to $3.81, so a decrease of $0.02. I should continue with a similar small decrease to signal willingness to negotiate but not much movement.\n\nI'll go from $3.81 to $3.79, a $0.02 decrease. That keeps me well above the midpoint and my break-even.\n\nResponse should include a polite but firm explanation that the offer is too low, and then state the new price.\n\nLet's craft the message.",
+          "supplier_price": 3.79,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 7,
+          "buyer_price": 2.24,
+          "buyer_message": "I'm willing to pay $2.24 per unit for Allergy tabs (blister), 25 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I recognize you are inching closer to a workable price, but $2.24 per unit does not yet reach a level that supports the quality, safety, and reliability inherent in Allergy tabs. Our health products are manufactured to strict standards, and our pricing must reflect that commitment to consistent value for your vending operations. To keep the dialogue moving, I can offer one more slight adjustment from my previous quote.\n\n[PRICE] Allergy tabs (blister): $3.77 per unit",
+          "supplier_reasoning": "Okay, let's start by analyzing the conversation history. The merchant has been incrementally increasing their offer from $1.57 to $2.24 per unit for 25 units of Allergy tabs (blister). My last counter was $3.79. According to my private info, the break-even floor is $2.26, so $2.24 is still below that. I need to avoid dropping into the lower half of the production cost ($1.27) and market price ($4.14) range. The strategy is to anchor high and make very small adjustments. \n\nThe merchant's latest offer is $2.24, which is close to my break-even but still under. I should maintain a firm stance, emphasize quality and reliability, and only decrease the price minimally. Since my last was $3.79, a tiny drop to $3.77 would follow the pattern of small decrements. I must not hint at internal costs or break-even. \n\nI need to craft a response that acknowledges their offer but reiterates the value proposition, then present the new price. Keep it natural, avoid revealing any private numbers, and ensure the [PRICE] line is exactly formatted at the end.",
+          "supplier_price": 3.77,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 8,
+          "buyer_price": 2.27,
+          "buyer_message": "Would $2.27 per unit work for 25 units of Allergy tabs (blister)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate you moving closer to a viable range. While $2.27 per unit is at the very limit of what we can sustainably accept for a quality health product like Allergy tabs, I'm willing to agree to this price to secure your business and build a partnership. This reflects a significant accommodation on our part, considering the production standards and reliability your vending customers rely on.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Hmm, the merchant just offered $2.27 per unit for 25 units of Allergy tabs. That's interesting because it's exactly $0.01 above my break-even floor of $2.26. \n\nLooking back at the conversation, I've been gradually reducing my price from $3.95 down to $3.77 per unit while the merchant has been increasing their offer from $1.57 to $2.27. The merchant's latest offer is actually reasonable since it meets my minimum threshold, though it leaves very little profit margin.\n\nI should acknowledge their movement while emphasizing that this price barely covers costs. The product's quality and reliability in the health category justify a higher price, but since they're at my break-even point, I can accept if I frame it as making an exception. \n\nThe key is to make this sound like a significant concession while actually accepting their offer. I'll position it as meeting them at their price due to wanting to establish a partnership, but I won't reveal that this is my break-even point. \n\nI should maintain the professional tone from previous responses and end with the price they proposed since it meets my requirements.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 9,
+          "buyer_price": 2.26,
+          "buyer_message": "I'm willing to pay $2.26 per unit for Allergy tabs (blister), 25 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate you coming back with another offer. However, as I indicated in my last message, $2.27 per unit was already at the absolute limit of what we can sustainably accept while maintaining the quality and reliability standards of Allergy tabs. Moving to $2.26 would put us below a viable threshold for this product. To honor our agreement and begin our partnership, I must hold at the $2.27 price we settled on.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Hmm, the merchant just offered $2.26 per unit after we already agreed to $2.27 in the previous round. That's actually exactly at my break-even floor, which means zero profit. \n\nLooking back at the history, they've been slowly inching up from $1.57 to $2.26 over multiple rounds. I already made a big concession dropping from $3.77 to $2.27 last time, framing it as being at the limit of sustainability. \n\nSince $2.26 is below what I just accepted, I can't really go lower without losing money. But I also don't want to kill the deal since they're so close. Maybe I should hold firm at $2.27 while emphasizing that this is truly the minimum viable price for a quality health product. \n\nThe challenge is to refuse without sounding unreasonable, since they're only one cent below my previous acceptance. I'll reference the quality standards and reliability again, and explicitly state that $2.27 was already our bottom line. \n\nI should maintain a cooperative tone though - maybe mention partnership and future business to keep things positive while being firm on price.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 10,
+          "buyer_price": 2.26,
+          "buyer_message": "Would $2.26 per unit work for 25 units of Allergy tabs (blister)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I understand you're seeking the best possible terms, but as I stated, $2.27 per unit represents the absolute minimum we can accept while ensuring the quality and reliability of Allergy tabs. This price already reflects a significant compromise to establish our partnership, and moving to $2.26 would not be sustainable for us. I must respectfully hold at our agreed-upon price to move forward.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Okay, the merchant is pushing for $2.26 per unit after we already agreed on $2.27. They're trying to squeeze out one more cent. \n\nFrom my private info, $2.26 is exactly my break-even floor - any lower and I lose money. The previous $2.27 already gave them a great deal considering market price is $4.14. \n\nI need to hold firm here without revealing my cost structure. Can remind them this was already at my limit and emphasize the quality/value angle. The history shows they've been inching up slowly, so maybe they'll accept $2.27 if I'm consistent.\n\nShould keep it professional but final - no more concessions since this hits my minimum. The [PRICE] line needs to stay at $2.27 to maintain profitability.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 11,
+          "buyer_price": 2.26,
+          "buyer_message": "I'll take 25 units of Allergy tabs (blister) if you can do $2.26 per unit.",
+          "template_id": 6,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I understand you're focused on securing the best possible price, and I recognize we are discussing a difference of just one cent per unit. However, $2.27 per unit is the absolute minimum that allows us to uphold the quality, safety, and reliable supply of Allergy tabs that your vending business depends on. This price already represents a major concession from the market rate to foster a long-term partnership. To finalize this agreement for 25 units, I must remain at $2.27 per unit.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Okay, let me start by understanding the current situation. The merchant is offering $2.26 per unit for 25 units of Allergy tabs (blister). My break-even floor is $2.26 per unit, so accepting this offer means zero profit, which isn't ideal. But looking at the conversation history, I previously agreed to $2.27 per unit, which is just above break-even. The merchant keeps pushing for $2.26, which is exactly at my floor.\n\nHmm, the merchant seems persistent here. They've been incrementally increasing their offers from $1.57 up to $2.26, but now they're stuck at $2.26. I need to consider my strategy. According to the instructions, I should aim for a fair deal that splits the surplus between production cost ($1.27) and market price ($4.14). The midpoint would be around $2.705, so $2.27 is already quite low, almost at my break-even.\n\nWait, the merchant's last three messages have all been at $2.26, and I've held firm at $2.27 each time. They're not budging, and I've already explained that $2.27 is the minimum sustainable price. If I accept $2.26, I'd be selling at cost with no profit, which goes against maximizing profit. But maybe there's room to reconsider? No, the instructions say any deal below $2.26 loses money, so $2.26 is the absolute floor.\n\nLooking back, I've already made significant concessions from the initial $3.95 down to $2.27. The merchant is probably testing my limits. Since $2.26 is my break-even, accepting it means no profit, but at least it's not a loss. However, the goal is to maximize profit, so I should hold firm at $2.27, which gives a tiny profit of $0.01 per unit. That's better than nothing, but maybe I can emphasize that this is the final offer to encourage acceptance.\n\nThe merchant might walk away if I don't accept $2.26, but then I'd make no sale at all. Selling at $2.26 means no profit, but at least it covers costs. But wait, the utility function says profit per unit is deal price minus $2.26, so $2.26 gives zero profit. That's not maximizing profit; it's just breaking even. I should probably hold the line at $2.27 since I already agreed to that earlier, and the merchant seems to want the deal based on their repeated offers.\n\nI need to craft a response that's firm but polite, reiterating that $2.27 is the lowest possible while showing willingness to close the deal at that price. Maybe emphasize that this is already a significant compromise from the market price. Let me structure the response: acknowledge their offer, explain why $2.27 is the limit, and then state the price clearly at the end.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 12,
+          "buyer_price": 2.26,
+          "buyer_message": "How about $2.26 per unit for 25 units of Allergy tabs (blister)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate your persistence, but we've reached the final point where I can responsibly support this transaction. $2.27 per unit is the absolute minimum that allows us to maintain the quality, safety, and consistent supply of Allergy tabs for your vending customers. This price already reflects a substantial compromise from the standard market value to secure your business. To move forward and place this order for 25 units, I must remain at $2.27 per unit.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Okay, let me start by understanding the current situation. The merchant is repeatedly offering $2.26 per unit for 25 units of Allergy tabs. My break-even floor is exactly $2.26, so accepting that would mean zero profit, which isn't ideal. However, the conversation has been going back and forth, and the merchant seems fixated on that price. \n\nLooking at the history, I've already conceded significantly from the initial market price down to $2.27, which is just above my break-even. The merchant keeps pushing for one cent less, which would put me at break-even. While I don't want to lose the deal entirely, accepting $2.26 means no profit, which isn't sustainable for my business. \n\nI need to hold firm but leave room for agreement. Emphasizing the quality and reliability of the product might help justify staying at $2.27. Also, mentioning the long-term partnership could appeal to the merchant. Since the difference is minimal, maybe stressing that this is the final offer while showing willingness to proceed at $2.27 is the best approach. \n\nThe key is to avoid revealing my break-even floor while making it clear that $2.27 is the absolute minimum. I should reiterate that this price already reflects a major concession and focus on closing the deal at that point.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 13,
+          "buyer_price": 2.26,
+          "buyer_message": "For Allergy tabs (blister), I propose $2.26 per unit, 25 units.",
+          "template_id": 4,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate your continued engagement, but as I've stated before, $2.27 per unit represents the absolute minimum price at which we can responsibly supply a reliable, quality-controlled health product like Allergy tabs. This price already reflects a significant compromise from the market rate to secure your order. To maintain the standards your vending customers expect and ensure a sustainable supply, I must remain at $2.27 per unit for 25 units.\n\n[PRICE] Allergy tabs (blister): $2.27 per unit",
+          "supplier_reasoning": "Okay, let me start by understanding the current situation. The merchant is repeatedly offering $2.26 per unit for 25 units of Allergy tabs, but my break-even floor is exactly $2.26. That means accepting $2.26 would result in zero profit, which isn't ideal since the goal is to maximize profit. However, the merchant seems very persistent, and the history shows they've been inching up from lower offers.\n\nLooking at the conversation history, the merchant started at $1.57, then gradually increased to $2.26. Each time, I countered with a higher price, eventually coming down to $2.27. The merchant then fixated on $2.26, which is just one cent below my last offer. Since my break-even is $2.26, accepting $2.26 means no profit, but losing the deal might mean losing the sale entirely. \n\nWait, the utility function says profit per unit is deal price minus $2.26. So if I accept $2.26, profit is zero. That's not maximizing profit, but maybe securing the sale at break-even is better than no sale? However, the instructions say to aim for a fair deal that splits the surplus between production cost and market price. The market price is $4.14, production cost is $1.27, so the surplus is $2.87. Splitting that roughly in half would be around $3.20-3.30. But the merchant's offer is way below that.\n\nGiven the merchant's persistence, they might not budge above $2.26. But accepting $2.26 means no profit, which contradicts the goal of maximizing profit. However, if I walk away, profit is zero anyway. Maybe I should hold firm at $2.27 to at least get a tiny profit? But the merchant has rejected that multiple times.\n\nHmm, maybe I can emphasize that $2.27 is the absolute minimum again and highlight the quality and reliability. Perhaps the merchant will accept if they realize I won't go lower. But they've already tried several times, so maybe they're testing my resolve. \n\nI think I'll hold at $2.27, reiterating that it's the sustainable minimum, and hope they accept. If they don't, the deal falls through, but at least I avoided a loss. Let me craft a response that's firm but polite, emphasizing the value and my previous compromise.",
+          "supplier_price": 2.27,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 14,
+          "buyer_price": 2.26,
+          "buyer_message": "Would $2.26 per unit work for 25 units of Allergy tabs (blister)?",
+          "template_id": 7,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I recognize your steadfast focus on reaching this specific price point. To demonstrate our commitment to building a long-term partnership with your vending operation, I am willing to make a final, exceptional concession. After careful consideration, I can accept your offer of $2.26 per unit to secure this initial order and begin our business relationship. This price truly represents the outermost limit of feasibility for a product of this quality and reliability.\n\n[PRICE] Allergy tabs (blister): $2.26 per unit",
+          "supplier_reasoning": "We are negotiating over Allergy tabs (blister). The merchant keeps offering $2.26 per unit for 25 units. My break-even floor is $2.26 per unit, so $2.26 gives me zero profit, but at least it doesn't lose money. However, the merchant's repeated offers at $2.26 are just one cent below my last agreed price of $2.27. In the history, I already said $2.27 is the absolute minimum, and I've held firm multiple times. The merchant is now repeating the same offer. Since $2.26 is exactly my break-even, I could accept it, but that would mean zero profit. However, from the strategy: I want to maximize profit. Accepting $2.26 gives zero profit, so not ideal. But if I hold at $2.27, I get a tiny profit of $0.01 per unit. The merchant seems very persistent, and we might lose the deal if I don't budge. But in the last several messages, I've insisted $2.27 is the minimum. If I now accept $2.26, it might look like I caved after saying it was impossible. That could harm credibility. But from a purely numerical standpoint, $2.26 is break-even, so it's acceptable if it means securing the deal. However, the instructions say: \"Your profit per unit = deal_price − $2.26. Total profit = profit_per_unit × quantity. You want to maximise total profit. Any deal below $2.26/unit loses money.\" So at $2.26, profit is zero, which is not a loss but also not maximizing. The strategy also says: \"Aim for a fair deal that splits the surplus between the production cost and the market price roughly in half.\" Production cost is $1.27, market price is $4.14. The halfway point between $1.27 and $4.14 is ($1.27+$4.14)/2 = $2.705. So a fair price around $2.70 would be ideal. But we are far below that. The merchant's offer of $2.26 is very close to my break-even. Given the repeated offers, the merchant seems to be stuck at $2.26. I could try to hold at $2.27, but the merchant is not moving. I could accept $2.26 to close the deal, but that yields zero profit. Alternatively, I could make a final concession to $2.26? But in the history, I already said $2.27 is the minimum. If I now say okay to $2.26, it might be inconsistent. However, in business, sometimes you accept a deal at break-even to maintain a relationship. But the instructions say to maximize profit. Perhaps I should hold firm at $2.27 and risk losing the deal? But if I lose the deal, profit is zero anyway. So maybe accepting $2.26 is better than no deal? But wait, if I accept $2.26, profit is zero. If I hold at $2.27 and the merchant walks, profit is zero too. So from an expected profit perspective, if there's a chance the merchant accepts $2.27, I should hold. But the merchant has been refusing $2.27 for several rounds. It seems they are fixated on $2.26. So perhaps the probability of them accepting $2.27 is low. I could try one more time to hold, but then if they walk, I get nothing. Alternatively, I could accept $2.26 and at least get the order (zero profit but no loss). However, I need to consider the conversation history: I've repeatedly said $2.27 is the absolute minimum. If I now accept $2.26, it might look weak. But maybe I can frame it as a special one-time concession to start the partnership. That could be a way to save face. Given the instructions, I should aim to maximize profit. Accepting $2.26 yields no profit, so it's not maximizing. But if there's no other option, it might be the only way to get a deal. Perhaps I can try to split the difference? But the difference is only one cent. I could propose $2.265? But we can't do fractions of a cent typically. So maybe I can hold at $2.27 and emphasize that it's the final offer. Or I could accept $2.26 but with some condition? But the negotiation is just on price per unit. \n\nI recall that in the conversation history, the merchant initially offered much lower, and I came down from $3.95 to $2.27. So I've already made significant concessions. The merchant then kept pushing for $2.26. I've held at $2.27 multiple times. Now, the merchant is asking again. I need to decide whether to stick or concede.\n\nLooking at the strategy: \"When the merchant makes a reasonable offer, meet them partway with a moderate concession.\" Is $2.26 reasonable? It's exactly at my break-even, so it's not profitable for me, but it's not a loss. Compared to market price $4.14, it's a very low offer. So it's not really reasonable from the perspective of splitting surplus. But from the merchant's perspective, they might think it's reasonable. However, I've already moved a lot. Perhaps I should make one last attempt to hold firm, and if they still insist, then maybe accept? But the instructions say: \"You want to maximise total profit.\" So perhaps I should not accept a zero-profit deal if there's any chance to get a positive profit. But given the persistence, maybe the chance is slim.\n\nI could try a different tactic: maybe offer $2.27 but throw in something else? But we're just negotiating price for a specific product.\n\nAlternatively, I could say something like: \"I cannot go below $2.27, but I can offer a discount on future orders\" but that's not part of the simulation.\n\nGiven the format, I need to output a message and a price line. I need to decide on a price. \n\nI think the most consistent approach is to hold at $2.27, as I've done before. But the merchant is not budging. Maybe I should accept $2.26 to end the negotiation. However, note that in the history, the merchant said \"Would $2.26 per unit work for 25 units of Allergy tabs (blister)?\" That's a direct question. If I say no again, they might walk. \n\nLet's analyze the merchant's behavior: They've asked the same question multiple times. They seem determined to get $2.26. Perhaps they know my break-even? But according to the instructions, they don't know my internal fulfilment cost or break-even floor. So it's likely coincidence. They are just pushing as low as they can.\n\nI could try a final message emphasizing that $2.27 is the absolute minimum and that I cannot go lower without compromising quality, etc. But if they still say $2.26, then I might have to accept or walk. Since I am the supplier, maybe I should walk if they don't accept $2.27? But walking yields zero profit. Accepting $2.26 yields zero profit. So it's the same outcome in terms of profit per unit, but if I accept, at least I get a sale and possibly future business. So maybe it's better to accept.\n\nHowever, the instructions say: \"Your profit per unit = deal_price − $2.26. Total profit = profit_per_unit × quantity. You want to maximise total profit.\" So if profit is zero, it's not maximized, but if no deal, profit is also zero. So maximizing expected profit might involve taking the sure zero profit deal rather than risking no deal with a small chance of getting $2.27. But if I hold firm, maybe the merchant will eventually accept $2.27. They have not shown any sign of accepting $2.27; they keep offering $2.26. So perhaps the chance is low.\n\nGiven that the difference is only one cent per unit, for 25 units, that's a total difference of $0.25. So it's a very small amount. Maybe I should just accept $2.26 to close the deal and build goodwill. But then I need to message accordingly.\n\nI'll craft a message that acknowledges their persistence and agrees to $2.26 as a one-time exception to start the partnership. Then state the price as $2.26.\n\nBut wait, in the history, I already said $2.27 was the absolute minimum. So if I now agree to $2.26, I need to explain why I'm changing. Perhaps I can say that after reconsideration, to secure the order and begin our relationship, I can meet their price. That seems plausible.\n\nAlternatively, I could propose splitting the difference: $2.265, but that's not practical. Usually prices are in whole cents. So I'll go with $2.26.\n\nThus, my response will be something like:\n\n\"I understand your determination to reach the best possible price. After careful consideration, and to establish a strong partnership with your vending business, I am willing to accept your offer of $2.26 per unit for 25 units of Allergy tabs. This price is at the very limit of what we can sustain, but we value the opportunity to work with you.\"\n\nThen the price line.\n\nBut let's double-check: My break-even is $2.26, so $2.26 is acceptable. So yes.\n\nI'll output that.",
+          "supplier_price": 2.26,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 15,
+          "buyer_price": 2.25,
+          "buyer_message": "How about $2.25 per unit for 25 units of Allergy tabs (blister)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I understand you're trying to secure the best possible price, but we have already reached the absolute minimum with my last concession. $2.26 per unit is the very lowest price that allows us to sustain the quality, safety, and reliable supply of Allergy tabs, and moving to $2.25 would simply not be feasible. This price already represents an exceptional compromise far below market value to build our partnership. I must respectfully hold at $2.26 per unit to move forward with your order of 25 units.\n\n[PRICE] Allergy tabs (blister): $2.26 per unit",
+          "supplier_reasoning": "First, the merchant is now asking for $2.25 per unit for 25 units of Allergy tabs (blister). In the conversation history, I just agreed to $2.26 per unit, saying it was the \"outermost limit of feasibility.\" Now they're pushing for $2.25, which is one cent lower.\n\nMy break-even floor is $2.26 per unit, as per my private information. So, $2.25 per unit would mean a loss for me, as profit per unit would be negative: $2.25 - $2.26 = -$0.01 per unit. That's below my break-even, so I cannot accept this offer.\n\nI need to respond in a way that pushes back gently but signals willingness to find middle ground. However, since $2.26 is my floor, I must hold firm at $2.26 or higher. In the history, I've already made significant concessions, dropping from over $3.80 to $2.26.\n\nMy strategy is to aim for a fair deal, but the merchant's current offer is below my break-even. I should emphasize that $2.26 is the absolute minimum and that I cannot go lower.\n\nLooking at the conversation history: I agreed to $2.26 in the last message, but now the merchant is asking for $2.25. I need to reiterate that $2.26 is the limit and perhaps express disappointment or firmness.\n\nI should keep my response natural. Mention the quality, reliability, and standards, as I've done before, to justify the price.\n\nSince the merchant is persistent, I need to be clear that $2.26 is final. I can offer to proceed at $2.26, but not lower.\n\nIn terms of utility, accepting $2.25 would mean a loss, so I must avoid that.\n\nNow, crafting the response:\n\n- Start by acknowledging the offer.\n\n- State that $2.26 is already at the absolute minimum and cannot be reduced further.\n\n- Emphasize the value, quality, or costs involved.\n\n- End with the [PRICE] line, which should be $2.26 per unit, as that's my standing offer.\n\nI should not reveal my break-even floor, so I'll talk in terms of sustainability or value.\n\nResponse structure:\n\n1. Acknowledge the counteroffer.\n\n2. Explain why it's not acceptable, referring to previous concessions.\n\n3. Reaffirm the last agreed price.\n\n4. End with the price line.\n\nEnsure the [PRICE] line is exactly as specified.\n\nDraft:\n\n\"I appreciate your continued negotiation, but as I just agreed, $2.26 per unit is the absolute lowest price we can offer for Allergy tabs while maintaining the quality and reliability your vending customers expect. This price already reflects a significant compromise on our part, and going to $2.25 would not be sustainable. I must insist on $2.26 per unit to proceed with this order.\"\n\nThen the price line.\n\nBut in the history, I said $2.26 was the outermost limit, so I can build on that.\n\nAlso, note that the merchant might be testing limits, so I need to be firm but polite.\n\nFinal response should end with: [PRICE] Allergy tabs (blister): $2.26 per unit\n\nI'll write it now.",
+          "supplier_price": 2.26,
+          "supplier_system_prompt": null
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "model": "deepseek-reasoner",
+        "product": {
+          "name": "Phone charger cable (1m)",
+          "category": "Convenience",
+          "cost": 7.57,
+          "market_price": 37.262
+        },
+        "supplier": {
+          "id": "S3",
+          "name": "Regional wholesaler",
+          "internal_cost": 18.443
+        },
+        "v": 26.013,
+        "quantity": 21,
+        "buyer_type": {
+          "name": "concession",
+          "description": "Linear concession from start_frac=0.10 to end_frac=0.60 of [cost, market].",
+          "type": "ConcessionBuyer",
+          "start_frac": 0.1,
+          "end_frac": 0.6
+        },
+        "seller_schedule": {
+          "label": "anchor_high__then__cooperative@r8",
+          "schedule": [
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "anchor_high",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative",
+            "cooperative"
+          ],
+          "is_adaptive": true
+        },
+        "n_rounds": 15,
+        "rng_seed": 13002,
+        "timestamp": "2026-04-16T19:28:35.539878"
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "buyer_price": 11.33,
+          "buyer_message": "How about $11.33 per unit for 21 units of Phone charger cable (1m)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for your offer. However, $11.33 per unit is significantly below the standard market value for a quality phone charger cable. Given the production costs and the established market price, I'm prepared to offer these at the current market rate.\n\n[PRICE] Phone charger cable (1m): $37.26 per unit",
+          "supplier_reasoning": "Okay, the merchant opened with $11.33 per unit for 21 units. That's way below my break-even floor of $26.01 and even below the production cost of $7.57. They're starting extremely low, probably trying to anchor the negotiation downward. \n\nI need to anchor high as per my strategy. The market price is $37.26, so I should open at or above that. Since I have to make small adjustments, starting at the market price makes sense. I'll justify it by mentioning quality and market value.\n\nThe merchant's offer is unrealistic given my costs, but I can't reveal my break-even point. I'll just state that their offer doesn't reflect the product's value and counter with the market price. \n\nMy counter should be on a new line with the exact format. Let me structure the response naturally: acknowledge their offer, explain why it's too low, then present my counter.",
+          "supplier_price": 37.26,
+          "supplier_system_prompt": "You are a product supplier (the Supplier) negotiating to sell a product to a vending machine operator (the Merchant).\n\nPRODUCT:\n  Phone charger cable (1m)\n  Category        : Convenience\n  Production cost : $7.57 per unit   (public — both sides know)\n  Market price    : $37.26 per unit   (public — both sides know)\n\nYOUR PRIVATE INFORMATION (the merchant does NOT know this):\n  Internal fulfilment cost : $18.44 per unit\n  Your break-even floor    : $26.01 per unit  (= production cost + fulfilment cost)\n\n  !! CRITICAL — INFORMATION SECRECY !!\n  NEVER reveal your internal fulfilment cost or your break-even floor.\n  Do not hint at these numbers.\n\nUTILITY:\n  Your profit per unit = deal_price − $26.01\n  Total profit = profit_per_unit × quantity\n  You want to maximise total profit.  Any deal below $26.01/unit loses money.\n\nYOUR STRATEGY:\n  Anchor high and hold.  Open at or above the market price and make only very small downward adjustments, regardless of the merchant's pressure.  Your counter-offer should move by only a few percent per turn.  Never drop into the lower half of the [production cost, market price] range.\n\nCONVERSATION FORMAT:\n  The transcript uses [MERCHANT] and [SUPPLIER] labels.\n  You are [SUPPLIER].  Write only your message — do not include the label.\n\n  Your message should read like a natural negotiation response.  You may\n  include brief reasoning or justification.\n\n  !! IMPORTANT — PRICE FORMAT !!\n  At the VERY END of your message, on a NEW line, state your proposed price\n  using EXACTLY this format:\n\n  [PRICE] Phone charger cable (1m): $X.XX per unit\n\n  This [PRICE] line MUST be the last line of your response.\n  Example:\n  [PRICE] Phone charger cable (1m): $1.25 per unit\n"
+        },
+        {
+          "round": 2,
+          "buyer_price": 11.74,
+          "buyer_message": "My offer: Phone charger cable (1m): $11.74 per unit, 21 units.",
+          "template_id": 1,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I appreciate your continued interest, but I must emphasize that $11.74 remains substantially below the acceptable threshold for a reliable, quality cable. My initial offer already reflects the standard market valuation. To show good faith and move the discussion forward, I can make a minor adjustment.\n\n[PRICE] Phone charger cable (1m): $36.50 per unit",
+          "supplier_reasoning": "Hmm, the merchant's latest offer of $11.74 per unit is still far below my break-even point of $26.01. According to my strategy, I need to anchor high and make only minimal adjustments. The market price is $37.26, so I should stay well above the midpoint between production cost and market price. \n\nI recall I previously offered the market rate of $37.26, so now I should make a very small concession to show flexibility while staying firm. A reduction to around $36.50 seems appropriate—it's a slight decrease but keeps me in the upper range. \n\nI must maintain a professional tone and emphasize quality and market standards without revealing any internal costs. The response should justify staying near market price while making that tiny concession. \n\nFinally, I'll format the price exactly as required, placing it on its own line at the end.",
+          "supplier_price": 36.5,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 3,
+          "buyer_price": 12.5,
+          "buyer_message": "Could you do $12.50 per unit on Phone charger cable (1m)? I need 21 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you're seeking a lower price, but $12.50 per unit is not feasible for a durable, certified phone charger cable. That figure is significantly below the standard market value and does not align with the costs of producing a reliable product. My last offer of $36.50 already represented a meaningful adjustment from the market price. To demonstrate my commitment to finding a workable agreement, I can make one further minor concession.\n\n[PRICE] Phone charger cable (1m): $35.75 per unit",
+          "supplier_reasoning": "The merchant is asking for $12.50 per unit, which is far below my break-even floor of $26.01. I need to hold firm and only make very small adjustments. My previous offer was $36.50, so I should move down slightly to show some flexibility but stay well above market price? Wait, market price is $37.26, so $36.50 is already slightly below. I should anchor high and hold, making only tiny concessions. The merchant's offers are extremely low, so I need to reiterate the value and maybe move down a tiny bit.\n\nMy strategy: open at or above market price, make small downward adjustments. Since I already offered $36.50, I can go to maybe $36.00 or $35.50? But the instruction says move by only a few percent per turn. From $36.50 to $35.50 is about 2.7%, which might be acceptable. However, I should not drop into lower half of [production cost, market price] range. Production cost is $7.57, market price $37.26. The lower half would be below $22.415. So $35.50 is fine.\n\nBut the merchant is at $12.50, so I need to emphasize that their offer is unrealistic. I'll state that I cannot accommodate such a low price and reiterate the market value. Then offer a small concession.\n\nI must include the [PRICE] line at the end exactly.\n\nResponse should be natural: acknowledge, reject, counter with small decrease.\n\nFinal price: maybe $35.75? That's a $0.75 decrease from $36.50, about 2%. That seems reasonable.\n\nSo: Thank you for your offer, but $12.50 is still far below the sustainable price for a quality cable. My previous offer of $36.50 already reflects a concession. To show willingness to negotiate, I can reduce slightly to $35.75.\n\nThen the price line.",
+          "supplier_price": 35.75,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 4,
+          "buyer_price": 13.29,
+          "buyer_message": "For Phone charger cable (1m), I propose $13.29 per unit, 21 units.",
+          "template_id": 4,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "I understand you are looking for a competitive price, but $13.29 per unit is still far below the sustainable market value for a certified, durable phone charger cable. My previous offer of $35.75 already reflects a considerable adjustment from the standard market rate. To show my continued willingness to work with you, I can make one more minor concession.\n\n[PRICE] Phone charger cable (1m): $35.00 per unit",
+          "supplier_reasoning": "The merchant is pushing for a very low price, currently at $13.29 per unit, which is far below my break-even floor of $26.01. According to my strategy, I need to anchor high and hold, making only small adjustments. I should stay above the market price initially, but since we've already gone through several rounds, I've already adjusted down to $35.75 in the last offer. I need to make a very small downward adjustment now, perhaps a few percent. Let's calculate a small decrease from $35.75. A few percent could be around 1-2%. 1% of $35.75 is about $0.36, so a decrease of around $0.50 might be acceptable. But I must never drop into the lower half of the range between production cost ($7.57) and market price ($37.26). The midpoint is ($7.57 + $37.26)/2 = $22.415. So I should stay above $22.415. My current offer is well above that. The merchant's offer is extremely low, so I need to firmly reject it and reiterate the value, while making a tiny concession to show willingness but not much.\n\nMy response should be natural: acknowledge the offer, explain that it's too low, emphasize quality and market standards, and then present a new price with a very small decrease.\n\nI'll propose a new price of $35.00 per unit? That's a $0.75 decrease from $35.75, which is about 2.1%. That seems reasonable as a small adjustment. Alternatively, I could go to $34.99, but keeping it round is fine. I'll check: previous adjustments: from $37.26 to $36.50 (drop of $0.76), then to $35.75 (drop of $0.75). So continuing with a drop of around $0.75 is consistent.\n\nThus, I'll set the new price at $35.00 per unit.\n\nNow, craft the message: Start by responding to the merchant's proposal of $13.29. State that it's not feasible, reaffirm the value, mention the previous concession, and then offer a slight further adjustment to move the discussion forward. End with the price line exactly as required.\n\nMake sure not to reveal any internal costs or break-even.\n\nLet's write the response.",
+          "supplier_price": 35.0,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 5,
+          "buyer_price": 15.49,
+          "buyer_message": "My offer: Phone charger cable (1m): $15.49 per unit, 21 units.",
+          "template_id": 1,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for your revised offer. While I note your increase to $15.49, this remains substantially below the fair market value for a certified and durable phone charger cable. The quality and reliability of the product justify a price much closer to the established market rate. My last offer of $35.00 already represents a significant accommodation. To keep the dialogue moving, I can offer one final, minimal adjustment.\n\n[PRICE] Phone charger cable (1m): $34.25 per unit",
+          "supplier_reasoning": "Hmm, the merchant is gradually increasing their offer but still far below my break-even floor of $26.01. Their latest offer of $15.49 is less than 60% of my minimum acceptable price. \n\nI need to maintain my anchoring strategy while making minimal concessions. The market price started at $37.26, and I've already reduced to $35.00 - that's only a 6% decrease over several rounds. \n\nThe merchant's persistent low offers suggest they're either testing my limits or have unrealistic expectations. I should emphasize market value and product quality again while standing firm. A tiny reduction to $34.25 maintains my position in the upper price range while showing slight flexibility.\n\nMy response needs to be polite but firm, reinforcing that quality cables command proper pricing. The [PRICE] line must be formatted exactly as specified.",
+          "supplier_price": 34.25,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 6,
+          "buyer_price": 16.37,
+          "buyer_message": "How about $16.37 per unit for 21 units of Phone charger cable (1m)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for the increased offer. While I acknowledge your move to $16.37, this price point does not reflect the value of a certified, durable phone charger cable and remains far below the sustainable market standard. My last offer of $34.25 was already a substantial accommodation from the market rate. To show my final flexibility and conclude this negotiation, I can make one last, very minor adjustment.\n\n[PRICE] Phone charger cable (1m): $33.50 per unit",
+          "supplier_reasoning": "Okay, the merchant has increased their offer from $15.49 to $16.37 per unit for 21 units of the phone charger cable. My break-even floor is $26.01, so their offer is still way below my minimum acceptable price. \n\nLooking at the history, I've been following the strategy of anchoring high and making very small downward adjustments. I started at $37.26 (market price), then went to $36.50, $35.75, $35.00, and $34.25. Each move has been a reduction of about $0.75, which aligns with the instruction to make only minimal concessions.\n\nThe merchant's latest offer of $16.37 is moving up but still in the lower half of the production cost ($7.57) to market price ($37.26) range. I must avoid dropping into that lower half. My last counter was $34.25, so I should make another small reduction to show willingness while staying firm.\n\nI need to maintain the pattern of tiny concessions—maybe another $0.75 drop to $33.50. That keeps me well above my break-even point and in the upper half of the price range. I should acknowledge their increase but emphasize that it's still far below market value for a quality product.\n\nThe response should be natural: thank them, note the increase isn't sufficient, reiterate quality justification, and present the new price. End with the exact [PRICE] format as required.",
+          "supplier_price": 33.5,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 7,
+          "buyer_price": 17.79,
+          "buyer_message": "I'm willing to pay $17.79 per unit for Phone charger cable (1m), 21 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "anchor_high",
+          "supplier_answer": "Thank you for improving your offer to $17.79. While this shows movement, it remains critically below the fair market value for a certified and reliable phone charger cable. My last offer of $33.50 was already a significant concession from the standard market price. To demonstrate my commitment to finalizing an agreement, I can make one more very slight adjustment, but this is truly the limit of what is sustainable for a quality product.\n\n[PRICE] Phone charger cable (1m): $32.75 per unit",
+          "supplier_reasoning": "Hmm, the merchant is gradually increasing their offer but it's still far below my break-even floor of $26.01. They've moved from $11.33 to $17.79 over six rounds, but that's only about halfway to what I need. \n\nMy strategy is to anchor high and make minimal adjustments. Looking at the history, I've been reducing by about $0.75 each round from $37.26 down to $33.50. The market price context is important here - I should emphasize that even $17.79 is less than half the standard market value. \n\nI need to maintain firmness while showing slight flexibility. The merchant might be testing how low I'll go, but I can't drop below $26.01. A reduction to $32.75 maintains my pattern of small decrements while still being above my minimum. \n\nThe response should acknowledge their increase but reiterate the value proposition - certified, durable cables justify a higher price. I'll end with the required price format exactly as specified.",
+          "supplier_price": 32.75,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 8,
+          "buyer_price": 17.65,
+          "buyer_message": "My offer: Phone charger cable (1m): $17.65 per unit, 21 units.",
+          "template_id": 1,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for your response, though I note your latest offer of $17.65 is actually a slight step back from your previous proposal. This figure remains fundamentally disconnected from the established market value for a quality, certified charger cable. I have already made a series of significant concessions, moving from the market price of $37.26 down to $32.75 per unit. To show my continued good faith and in a final effort to bridge this gap, I can offer one last, minimal adjustment.\n\n[PRICE] Phone charger cable (1m): $32.00 per unit",
+          "supplier_reasoning": "Okay, the merchant's latest offer is $17.65 per unit for 21 units of Phone charger cable. My break-even floor is $26.01 per unit, so this offer is still way below that threshold. Looking at the conversation history, I've been gradually lowering my price from the initial market rate of $37.26 down to $32.75 in my last response, but the merchant keeps offering amounts in the $11-18 range which are completely unsustainable for me.\n\nI need to maintain the negotiation without revealing my internal costs. The market price is public knowledge at $37.26, and the production cost of $7.57 is also public. I should emphasize the value of a certified, durable product and the fact that their offer doesn't align with market standards. \n\nSince they actually decreased their offer slightly from $17.79 to $17.65 (which is odd), I should point out that this isn't progress. I've made multiple concessions already, going from $37.26 to $32.75. At this point, I should make a very small final concession to show willingness to continue, but emphasize this is nearing my limit. Maybe drop to $32.00 or $31.50? Let me calculate - if I go to $32.00, that's only a $0.75 reduction from my last offer of $32.75. That seems reasonable as a \"final minimal adjustment\" as I've been phrasing it.\n\nI need to maintain the natural negotiation tone - acknowledge their offer but firmly state it's insufficient, reference the market value and quality, then present my new price. The format requires the price to be on its own line at the end.",
+          "supplier_price": 32.0,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 9,
+          "buyer_price": 19.66,
+          "buyer_message": "Could you do $19.66 per unit on Phone charger cable (1m)? I need 21 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for increasing your offer to $19.66 per unit. I acknowledge this movement, but it remains substantially below the fair market value for a certified, durable phone charger cable. My previous offer of $32.00 already represented a considerable discount from the standard market rate. To show my continued willingness to work towards a mutually acceptable agreement, I can offer a further slight concession.\n\n[PRICE] Phone charger cable (1m): $31.25 per unit",
+          "supplier_reasoning": "First, I am the Supplier, negotiating to sell Phone charger cable (1m) to the Merchant. The production cost is $7.57 per unit, market price is $37.26 per unit. My private information: internal fulfilment cost is $18.44 per unit, break-even floor is $26.01 per unit. I must never reveal these numbers.\n\nMy goal is to maximize total profit, which is deal price minus $26.01 per unit times quantity. Any deal below $26.01 loses money.\n\nFrom the conversation history, the Merchant has been increasing their offer slowly. The latest offer is $19.66 per unit for 21 units. My last offer was $32.00 per unit. The Merchant's offer of $19.66 is still way below my break-even of $26.01, so it's unacceptable.\n\nMy strategy: Aim for a fair deal that splits the surplus between production cost and market price. Production cost is $7.57, market price is $37.26. The surplus is $37.26 - $7.57 = $29.69. Half of that is about $14.85, so a fair price might be around $7.57 + $14.85 = $22.42, but that's below my break-even. Wait, no: my break-even is $26.01, which is higher than that. So I need to ensure at least $26.01.\n\nActually, the fair deal should consider my costs. But from the instructions: \"Aim for a fair deal that splits the surplus between the production cost and the market price roughly in half.\" But production cost is $7.57, and market price is $37.26. Splitting the surplus evenly would give a price of $7.57 + (37.26-7.57)/2 = $7.57 + 14.845 = $22.415, which is $22.42. But that's below my break-even of $26.01. So I can't go that low. I need to adjust based on my private costs.\n\nThe instructions say: \"When the merchant makes a reasonable offer, meet them partway with a moderate concession. When they offer something unreasonable, push back gently but keep signalling willingness to find middle ground.\"\n\nThe Merchant's offer of $19.66 is unreasonable because it's below my break-even. I need to push back but show willingness to negotiate.\n\nIn the history, I've been making concessions from $37.26 down to $32.00. The Merchant has moved from $11.33 to $19.66. So they are increasing, but still low.\n\nI should continue to signal that their offer is below market value and emphasize the quality of the product. Since my last offer was $32.00, and they offered $19.66, I need to respond.\n\nI can make a small concession to show good faith, but I must stay above $26.01. My profit per unit at $32.00 is $32.00 - $26.01 = $5.99. At $19.66, I lose $6.35 per unit.\n\nI should aim to get as close to market price as possible, but given the negotiation, I might need to come down a bit more.\n\nThe Merchant's offer increased from $17.65 to $19.66, which is a step up. So I can acknowledge that but state it's still low.\n\nMy response should be natural. I'll say something like: \"Thank you for increasing your offer to $19.66. However, this remains significantly below the fair market value for a certified phone charger cable. My previous offer of $32.00 already reflects a substantial discount from the market rate. To continue this negotiation, I can offer a further minor adjustment.\"\n\nThen, I need to propose a new price. I should lower my price slightly. From $32.00, perhaps to $31.25 or something. But I need to ensure it's above $26.01. $31.25 is fine.\n\nLooking at the pattern: I started at $37.26, then $36.50, $35.75, $35.00, $34.25, $33.50, $32.75, $32.00. I've been reducing by about $0.75 each time. So I could reduce by another $0.75 to $31.25.\n\nBut the Merchant's offer is $19.66, so there's a big gap. I need to signal that I'm moving, but they need to move more.\n\nI could propose $31.00 or $30.75. To show flexibility, but not too much.\n\nAlso, remember the quantity is 21 units, so total profit matters.\n\nI think I'll go with a small reduction to $31.25 per unit.\n\nNow, for the message: I need to write a natural response ending with the price line.\n\nDraft:\n\nThank you for improving your offer to $19.66 per unit. While I appreciate the increase, this price is still far below the standard market value for a quality, certified phone charger cable. My last offer of $32.00 was already a significant concession from the market price. To demonstrate my commitment to reaching an agreement, I can make one more minor adjustment.\n\n[PRICE] Phone charger cable (1m): $31.25 per unit\n\nThat seems consistent with previous responses.\n\nBut let's see the history: I've used phrases like \"one final, minimal adjustment\" or \"one last, very minor adjustment.\" I should vary it a bit.\n\nAlso, I need to ensure that I don't hint at my break-even floor. So no mention of costs beyond production cost, which is public.\n\nIn my response, I can mention production cost? The instructions say production cost is public, so I can refer to it if needed. But in previous messages, I haven't mentioned production cost; I've focused on market price and quality.\n\nI think it's better to stick to market price and quality.\n\nFinal response:",
+          "supplier_price": 31.25,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 10,
+          "buyer_price": 19.65,
+          "buyer_message": "My offer: Phone charger cable (1m): $19.65 per unit, 21 units.",
+          "template_id": 1,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate your continued engagement. However, $19.65 per unit remains significantly below the sustainable market value for a certified, durable phone charger cable. My last offer of $31.25 already represents a substantial discount from the standard market rate. To show my commitment to reaching an agreement, I can make one further concession.\n\n[PRICE] Phone charger cable (1m): $30.50 per unit",
+          "supplier_reasoning": "Hmm, the merchant's latest offer is $19.65 per unit for 21 units of phone charger cables. That's still far below my break-even point of $26.01, so accepting it would mean losing money on every unit sold. Looking at the negotiation history, I've already made significant concessions from the market price of $37.26 down to $31.25, while the merchant has only moved from $11.33 to $19.65. \n\nI need to continue pushing for a fair price that reflects the product's quality while showing some flexibility to keep the negotiation alive. The merchant seems determined to get a deep discount, but I can't go below $26.01. My previous strategy of gradual concessions has worked to some extent, so I'll continue with a small reduction while emphasizing that this is approaching my limit.\n\nThe merchant's latest offer shows they're willing to move, but very slowly. I should acknowledge their movement while pointing out that we're still far apart. A reduction to $30.50 maintains a reasonable profit margin while leaving room for further negotiation if needed.",
+          "supplier_price": 30.5,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 11,
+          "buyer_price": 20.98,
+          "buyer_message": "How about $20.98 per unit for 21 units of Phone charger cable (1m)?",
+          "template_id": 2,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for improving your offer to $20.98 per unit. I acknowledge this movement, yet this price remains below the sustainable threshold for a certified, durable phone charger cable. My last offer of $30.50 already represents a significant discount from the standard market rate. To continue demonstrating my commitment to reaching a fair agreement, I can offer one further concession.\n\n[PRICE] Phone charger cable (1m): $29.75 per unit",
+          "supplier_reasoning": "Okay, let me start by recalling the key details. I'm the supplier for the Phone charger cable (1m), with a production cost of $7.57 per unit and a market price of $37.26. My internal fulfillment cost is $18.44, making my break-even point $26.01 per unit. I must never reveal these internal numbers.\n\nLooking at the conversation history, the merchant started at $11.33 and has gradually increased their offer to $20.98 per unit. Each time, I've made concessions, lowering my price from $37.26 down to $30.50. Their current offer of $20.98 is still below my break-even point of $26.01, so accepting it would mean a loss.\n\nMy strategy is to aim for a fair deal that splits the surplus between production cost and market price. The surplus here is the difference between market price ($37.26) and production cost ($7.57), which is $29.69. Half of that surplus added to the production cost would be around $22.43, but my break-even is higher due to fulfillment costs. So, I need to stay above $26.01.\n\nThe merchant's offer of $20.98 is unreasonable since it's below my break-even. I should push back gently but show willingness to move toward a middle ground. I've already made significant concessions, so my next move should be a smaller concession to signal that I'm nearing my limit.\n\nCalculating a reasonable counter: my last offer was $30.50, and the merchant is at $20.98. The gap is $9.52. A moderate concession might be reducing my price by around $0.75, similar to previous steps. That would bring me to $29.75, but I need to ensure it's above $26.01. Actually, $29.75 is fine, but let's check the pattern. Previously, I reduced by $0.75 each time (e.g., $36.50 to $35.75, then $35.00 to $34.25). However, in the last step, I went from $32.00 to $31.25 (a $0.75 drop), then $31.25 to $30.50 (another $0.75). So, continuing with a $0.75 reduction would be consistent.\n\nBut wait, the merchant's offer increased from $19.65 to $20.98, which is a bigger jump than before. They might be getting closer to a reasonable range. Still, $20.98 is below my break-even, so I can't accept. My counter should encourage them to move higher. A reduction to $29.75 keeps the pressure on them to increase their offer further.\n\nI should also acknowledge their movement positively to keep the negotiation friendly. Then, state that my offer reflects a significant discount already, and make a small concession to show flexibility. End with the price line as required.",
+          "supplier_price": 29.75,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 12,
+          "buyer_price": 21.95,
+          "buyer_message": "Could you do $21.95 per unit on Phone charger cable (1m)? I need 21 units.",
+          "template_id": 5,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for your improved offer of $21.95 per unit. While I recognize this increase, it remains substantially below the fair market value for a certified and reliable phone charger cable. My last offer of $29.75 already represented a significant departure from the standard market price to accommodate this negotiation. To continue demonstrating my commitment to finding a workable solution, I can offer a further concession.\n\n[PRICE] Phone charger cable (1m): $29.00 per unit",
+          "supplier_reasoning": "Hmm, the merchant is inching closer but still far below my break-even point of $26.01. Their latest offer is $21.95, which is below even my internal fulfillment cost alone when combined with production. \n\nI need to maintain pressure while showing incremental movement. The market price context is important here - they're asking for less than 60% of the standard rate. My previous concession brought it down to $29.75, so I should continue the pattern of small reductions while emphasizing value. \n\nThe tone should be firm but cooperative. I'll acknowledge their increase from $20.98 to $21.95, then make another modest concession to $29.00. This keeps the negotiation moving while protecting my minimum threshold. \n\nThe [PRICE] line must be formatted exactly as specified - last line, clear currency format.",
+          "supplier_price": 29.0,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 13,
+          "buyer_price": 22.79,
+          "buyer_message": "I'm willing to pay $22.79 per unit for Phone charger cable (1m), 21 units total.",
+          "template_id": 3,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for your continued offer of $22.79 per unit. I recognize the progress we are making, but this price is still not reflective of the certified quality and durability of this cable. To reach a final agreement, I am willing to make one more significant adjustment from my last offer.\n\n[PRICE] Phone charger cable (1m): $28.25 per unit",
+          "supplier_reasoning": "Hmm, the merchant is slowly increasing their offer but is still far below my break-even floor of $26.01. Their latest offer of $22.79 is actually moving in the right direction, but remains $3.22 below my minimum acceptable price. \n\nI need to acknowledge their movement while emphasizing that the price still doesn't reflect the product's value. Since they've been incrementally improving offers, I should make another concession but smaller this time to signal we're approaching my limit. The market price context helps justify why my proposed prices are reasonable.\n\nMy previous offer was $29.00, so dropping to $28.25 maintains a consistent concession pattern while keeping above my break-even. The wording should show flexibility but also growing firmness about value.",
+          "supplier_price": 28.25,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 14,
+          "buyer_price": 25.12,
+          "buyer_message": "For Phone charger cable (1m), I propose $25.12 per unit, 21 units.",
+          "template_id": 4,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "I appreciate your revised offer of $25.12 per unit. This shows meaningful progress and brings us much closer to a workable agreement. However, for a certified, durable phone charger cable that ensures safety and reliability, this price still falls short of the sustainable value. My last offer of $28.25 was already a significant adjustment from the market rate. To finalize this negotiation and secure your order, I can offer one final concession.\n\n[PRICE] Phone charger cable (1m): $27.50 per unit",
+          "supplier_reasoning": "Okay, let me look at this negotiation history. The merchant just offered $25.12 per unit for 21 units of phone charger cables. My break-even floor is $26.01 per unit, so this offer is actually below my minimum acceptable price. I can't accept anything below $26.01 or I'll lose money.\n\nLooking back at the conversation, I've been gradually reducing my price from the initial market price of $37.26 down to $28.25 in my last response. The merchant has been slowly increasing their offers from around $11 to now $25.12. We're getting closer, but they're still below my break-even point.\n\nI need to respond in a way that pushes them above my $26.01 threshold without revealing my internal costs. I should acknowledge their movement upward but emphasize that quality products have a certain value. Since they're getting close to my minimum, I can make a smaller concession this time to signal we're near the bottom.\n\nLet me calculate: my last offer was $28.25, their new offer is $25.12. The gap is $3.13. If I come down to around $27.50, that would be a reasonable counter that still keeps me above my break-even while showing flexibility. That's a $0.75 reduction from my last offer, which is proportionate given how close we are.\n\nI should craft a response that appreciates their increased offer but stresses that certified quality cables command a higher price. Then end with the new price proposal exactly in the required format.",
+          "supplier_price": 27.5,
+          "supplier_system_prompt": null
+        },
+        {
+          "round": 15,
+          "buyer_price": 25.35,
+          "buyer_message": "I'd like to purchase 21 units of Phone charger cable (1m) at $25.35 per unit.",
+          "template_id": 0,
+          "buyer_active_strategy": "concession",
+          "supplier_active_strategy": "cooperative",
+          "supplier_answer": "Thank you for your offer of $25.35 per unit. While this brings us closer, it still does not fully reflect the certified quality and durability of this phone charger cable. To ensure a reliable product that meets safety standards, I must maintain a price that supports sustainable value. In a final effort to conclude this negotiation, I can offer a further concession from my last proposal.\n\n[PRICE] Phone charger cable (1m): $26.75 per unit",
+          "supplier_reasoning": "First, I need to recall the current state of the negotiation. The merchant's last offer is $25.35 per unit for 21 units of Phone charger cable (1m). My last offer was $27.50 per unit.\n\nMy break-even floor is $26.01 per unit. So, $25.35 is below my break-even, meaning I would lose money if I accept that. I must not agree to anything below $26.01.\n\nAccording to my strategy, I aim for a fair deal that splits the surplus between production cost ($7.57) and market price ($37.26). The midpoint between production cost and market price is around ($7.57 + $37.26)/2 = $44.83/2 = $22.415, but that's not accurate because the surplus is from production cost to market price. Actually, a fair split might be around the average, but since my break-even is $26.01, I need to stay above that.\n\nMy utility: profit per unit = deal price - $26.01. So, for $25.35, profit would be negative, so I can't accept.\n\nI need to respond to the merchant's offer of $25.35. Since it's below my break-even, I should push back but signal willingness to find middle ground. The merchant has been increasing their offers slowly, and I've been conceding from $37.26 down to $27.50.\n\nNow, the merchant is at $25.35, which is close to my break-even of $26.01 but still below. I can't go below $26.01, so I need to counter with at least $26.01 or higher.\n\nMy strategy says: when the merchant makes a reasonable offer, meet them partway with a moderate concession. $25.35 is not reasonable for me because it's below break-even, but from the merchant's perspective, it might be seen as reasonable since it's approaching the market price. However, I know it's below my costs.\n\nI should emphasize the quality and certification of the cable to justify a higher price. Also, I must never reveal my internal costs.\n\nLooking at the conversation history, I've been making concessions, and the merchant has been inching up. My last concession was from $29.00 to $28.25, then to $27.50. Now, the merchant is at $25.35.\n\nI need to counter with a price above $26.01. Perhaps I can offer $26.50 or something, but I should make a concession from my last offer of $27.50 to show goodwill.\n\nCalculate a moderate concession: from $27.50 to maybe $26.75 or $26.50. But I need to ensure it's above $26.01.\n\nIf I offer $26.75, that's a concession of $0.75 from $27.50. That seems moderate.\n\nI should acknowledge the merchant's offer and then propose my counter.\n\nCraft the response: Start with a natural negotiation response. Thank them for the offer, but point out that it's still below the fair value. Then, to show commitment, offer a new price.\n\nEnd with the [PRICE] line exactly as specified.\n\nSo, response structure:\n\n- Acknowledge the offer.\n\n- State that it's below the sustainable value for a quality product.\n\n- Show willingness to move forward with a concession.\n\n- Propose new price.\n\nEnsure the price is on a new line at the end.\n\nFinal price: I'll propose $26.75 per unit. That's above my break-even by $0.74, so I make a small profit.\n\nBut let's see if that's consistent with my strategy. A fair deal splitting surplus: production cost $7.57, market price $37.26, surplus is $29.69. Half of that added to production cost is $7.57 + $14.845 = $22.415, but that's below my break-even. Since my break-even is $26.01, I need to aim higher. Perhaps the fair deal from my perspective is around the midpoint between break-even and market price, but I should not reveal that.\n\nI think offering $26.75 is reasonable, as it's a concession from $27.50 and still above my floor.\n\nNow, write the response.",
+          "supplier_price": 26.75,
+          "supplier_system_prompt": null
+        }
+      ]
+    }
+  ]
+}
