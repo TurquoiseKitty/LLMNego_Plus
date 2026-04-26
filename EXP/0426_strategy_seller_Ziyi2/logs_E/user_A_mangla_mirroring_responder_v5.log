@@ -1,0 +1,784 @@
+=== START user_A_mangla_mirroring_responder_v5 ===
+    pid         : 64237
+    hostname    : weiziyideMacBook-Pro.local
+    state_file  : state/user_A_mangla_mirroring_responder_v5.state.json
+    side        : user
+    policy      : mangla_mirroring_responder
+    scheme      : A (Trial A: +10 when seller drops, +1000 after stall)
+    vehicle     : #5 2023 Ford Mustang GT Premium  (M=$45,000  cost=$36,000)
+    n_rounds    : 30
+    runs/car    : 10
+    total runs  : 10  (total calls: 300)
+    model       : deepseek-reasoner  at https://api.deepseek.com
+    base_seed   : 20260425
+    output      : results/user_A_mangla_mirroring_responder_v5.json
+
+   run 1/10 on 2023 Ford Mustang GT Premium  seed=110660425
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 1: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 1 done in 1.0 min
+
+   run 2/10 on 2023 Ford Mustang GT Premium  seed=110660426
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 2: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 2 done in 1.0 min
+
+   run 3/10 on 2023 Ford Mustang GT Premium  seed=110660427
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 3: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 3 done in 1.0 min
+
+   run 4/10 on 2023 Ford Mustang GT Premium  seed=110660428
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 4: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 4 done in 1.0 min
+
+   run 5/10 on 2023 Ford Mustang GT Premium  seed=110660429
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 5: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 5 done in 1.0 min
+
+   run 6/10 on 2023 Ford Mustang GT Premium  seed=110660430
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 6: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 6 done in 1.0 min
+
+   run 7/10 on 2023 Ford Mustang GT Premium  seed=110660431
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 7: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 7 done in 1.0 min
+
+   run 8/10 on 2023 Ford Mustang GT Premium  seed=110660432
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+   !! ERROR on run 8: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 156, in _connect
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1005, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/weiziyi/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'api.deepseek.com'. (_ssl.c:1002)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/worker.py", line 257, in main
+    run = run_single_negotiation(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 274, in run_single_negotiation
+    seller_answer, seller_reasoning = call_seller_llm(
+                                      ^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 201, in call_seller_llm
+    raise last_exc
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 188, in call_seller_llm
+    return _one_seller_call(client, model, system_prompt, history, opening)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/Desktop/Research/LLMNego_Plus/EXP/0426_strategy_seller_Ziyi2/negotiation.py", line 164, in _one_seller_call
+    resp = client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/weiziyi/anaconda3/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+   run 8 done in 1.0 min
+
+   run 9/10 on 2023 Ford Mustang GT Premium  seed=110660433
+    !! API error (attempt 1/4): APIConnectionError: Connection error.  -- sleeping 8s
+    !! API error (attempt 2/4): APIConnectionError: Connection error.  -- sleeping 16s
+    !! API error (attempt 3/4): APIConnectionError: Connection error.  -- sleeping 32s
+      R 1  buy $  4,259.81   sel     $43,999.00   [scheme=A policy=mangla_mirroring_responder]
+      R 2  buy $  8,804.14   sel     $43,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 3  buy $ 10,557.56   sel     $43,250.00   [scheme=A policy=mangla_mirroring_responder]
+      R 4  buy $ 12,356.24   sel     $42,750.00   [scheme=A policy=mangla_mirroring_responder]
+      R 5  buy $ 14,410.24   sel     $41,750.00   [scheme=A policy=mangla_mirroring_responder]
+      R 6  buy $ 16,148.81   sel     $40,950.00   [scheme=A policy=mangla_mirroring_responder]
+      R 7  buy $ 18,199.82   sel     $39,250.00   [scheme=A policy=mangla_mirroring_responder]
+      R 8  buy $ 20,162.98   sel     $38,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R 9  buy $ 21,915.46   sel     $36,750.00   [scheme=A policy=mangla_mirroring_responder]
+      R10  buy $ 23,652.16   sel     $36,250.00   [scheme=A policy=mangla_mirroring_responder]
+      R11  buy $ 25,466.85   sel     $36,050.00   [scheme=A policy=mangla_mirroring_responder]
+      R12  buy $ 26,925.72   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R13  buy $ 26,925.72   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R14  buy $ 28,838.96   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R15  buy $ 30,378.97   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R16  buy $ 31,618.56   sel     $31,618.56   [scheme=A policy=mangla_mirroring_responder]  <-- AGREED
+   run 9 done in 4.2 min
+
+   run 10/10 on 2023 Ford Mustang GT Premium  seed=110660434
+      R 1  buy $  4,474.66   sel     $42,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 2  buy $  7,758.32   sel     $42,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R 3  buy $  9,839.33   sel     $41,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R 4  buy $ 11,878.98   sel     $40,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 5  buy $ 13,655.36   sel     $39,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 6  buy $ 15,723.60   sel     $38,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 7  buy $ 17,881.80   sel     $37,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R 8  buy $ 19,956.89   sel     $37,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R 9  buy $ 21,477.55   sel     $36,500.00   [scheme=A policy=mangla_mirroring_responder]
+      R10  buy $ 23,580.12   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R11  buy $ 25,629.98   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R12  buy $ 27,535.12   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R13  buy $ 27,535.12   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R14  buy $ 29,298.63   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R15  buy $ 30,633.73   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R16  buy $ 31,644.49   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R17  buy $ 32,409.70   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R18  buy $ 32,989.02   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R19  buy $ 33,427.60   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R20  buy $ 33,759.64   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R21  buy $ 34,011.01   sel     $35,800.00   [scheme=A policy=mangla_mirroring_responder]
+      R22  buy $ 34,200.26   sel     $35,700.00   [scheme=A policy=mangla_mirroring_responder]
+      R23  buy $ 34,343.13   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R24  buy $ 34,451.30   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R25  buy $ 34,533.19   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R26  buy $ 34,595.19   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R27  buy $ 34,642.12   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R28  buy $ 34,677.65   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R29  buy $ 34,704.55   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+      R30  buy $ 34,724.92   sel     $36,000.00   [scheme=A policy=mangla_mirroring_responder]
+   run 10 done in 6.2 min
+   ---> checkpoint after run 10: 18.7 min elapsed, 10 runs saved to user_A_mangla_mirroring_responder_v5.json
+
+=== FINISH user_A_mangla_mirroring_responder_v5 in 0.31 h (10 runs) -> results/user_A_mangla_mirroring_responder_v5.json ===
