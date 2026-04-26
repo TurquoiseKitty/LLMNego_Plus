@@ -2,7 +2,7 @@
 config.py — API and runtime configuration for the buyer-scheme sweep.
 
 Changes from the 0421 version:
-  * N_ROUNDS = 20         (was 16)
+  * N_ROUNDS = 30         (was 16)
   * N_RUNS_PER_CAR = 10   (was 30)
   * BASE_SEED bumped      (fresh randomness for the new design)
 
@@ -51,19 +51,19 @@ RETRY_BASE_DELAY_SECONDS: float = 8.0 # 8, 16, 32 s between retries
 # ----------------------------------------------------------------------
 # Workload calibration
 # ----------------------------------------------------------------------
-# E-only design: 12 policies x 5 vehicles x 1 scheme x 10 runs x T=20 turns.
-# Total: 12,000 seller calls.
+# A/B/C design: 12 policies x 5 vehicles x 3 schemes x 10 runs x T=30 turns.
+# Total: 54,000 seller calls.
 #
 # At ~200 calls/hour/worker (DeepSeek reasoner, observed on 0421):
-#   per (policy, scheme, vehicle, 10 runs, 20 turns) = 200 calls
-#   per worker serving 2 cells = 400 calls ≈ 2.0 h wall clock
+#   per (policy, scheme, vehicle, 10 runs, 30 turns) = 300 calls
+#   per worker serving 2 cells = 600 calls ≈ 3.0 h wall clock
 #
-# For 60 worker cells (one side), 30-parallel finishes in ~2.0 h; lower
+# For 180 worker cells (one side), 30-parallel finishes in ~6.0 h; lower
 # parallelism scales roughly linearly. See launcher.py for mechanics.
 # ----------------------------------------------------------------------
 
 N_RUNS_PER_CAR: int = int(os.environ.get("NEGO_RUNS_PER_CAR", "10"))
-N_ROUNDS:      int = int(os.environ.get("NEGO_N_ROUNDS",     "20"))
+N_ROUNDS:      int = int(os.environ.get("NEGO_N_ROUNDS",     "30"))
 BASE_SEED:     int = int(os.environ.get("NEGO_BASE_SEED",    "20260425"))
 
 

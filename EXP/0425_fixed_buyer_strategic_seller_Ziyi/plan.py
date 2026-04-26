@@ -1,10 +1,10 @@
 """
-plan.py — the worker-cell grid for the buyer-scheme E sweep.
+plan.py — the worker-cell grid for the buyer-scheme A/B/C sweep.
 
 This run is a factorial over
-    POLICIES   (12) x SCHEMES  (1: E)  x  VEHICLES  (5)
-= 60 cells.  Each cell comprises N_RUNS_PER_CAR (= 10) independent negotiation
-cycles of length N_ROUNDS (= 20) turns.
+    POLICIES   (12) x SCHEMES  (3: A/B/C)  x  VEHICLES  (5)
+= 180 cells.  Each cell comprises N_RUNS_PER_CAR (= 10) independent negotiation
+cycles of length N_ROUNDS (= 30) turns.
 
 Seeding convention
 ------------------
@@ -20,8 +20,8 @@ The factor hierarchy guarantees no two (p, s, v, r) tuples ever share a seed.
 
 Partitioning
 ------------
-Scheme is fixed to E, so the user side carries the full grid and the cooperator
-side is intentionally empty to avoid duplicate runs.
+Schemes are fixed to A/B/C for this run, so the user side carries the full grid
+and the cooperator side is intentionally empty to avoid duplicate runs.
 """
 from __future__ import annotations
 
@@ -51,8 +51,8 @@ POLICY_KEYS: list[str] = [
 ]
 POLICY_IDX: dict[str, int] = {k: i for i, k in enumerate(POLICY_KEYS)}
 
-SchemeKey = Literal["E"]
-SCHEME_KEYS: list[SchemeKey] = ["E"]
+SchemeKey = Literal["A", "B", "C"]
+SCHEME_KEYS: list[SchemeKey] = ["A", "B", "C"]
 SCHEME_IDX: dict[str, int] = {k: i for i, k in enumerate(SCHEME_KEYS)}
 
 # Vehicle ordering matches fleet.py (Mercedes, Cadillac, Honda, Toyota, Ford).
@@ -66,10 +66,10 @@ VEHICLE_IDX: dict[str, int] = {
 
 
 # ----------------------------------------------------------------------
-# Partition of the E-only grid between user and cooperator
+# Partition of the A/B/C grid between user and cooperator
 # ----------------------------------------------------------------------
 
-USER_SCHEMES:        list[SchemeKey] = ["E"]
+USER_SCHEMES:        list[SchemeKey] = ["A", "B", "C"]
 COOPERATOR_SCHEMES:  list[SchemeKey] = []
 
 
@@ -77,8 +77,8 @@ def cells_for_side(side: Literal["user", "cooperator"]) -> list[tuple[str, Schem
     """Return the list of (policy, scheme) cells assigned to `side`.
 
     Each (policy, scheme) cell expands to 5 vehicles x N_RUNS_PER_CAR cycles,
-    run together by one worker.  With scheme fixed to E, the user side has
-    12 policies x 1 scheme = 12 (policy, scheme) cells; cooperator has none.
+    run together by one worker.  With schemes fixed to A/B/C, the user side has
+    12 policies x 3 schemes = 36 (policy, scheme) cells; cooperator has none.
     """
     schemes = USER_SCHEMES if side == "user" else COOPERATOR_SCHEMES
     return [(p, s) for p in POLICY_KEYS for s in schemes]
@@ -95,17 +95,17 @@ class WorkerCell:
     A worker processes ONE (policy, scheme, vehicle) combination.
     Rationale for this granularity:
 
-    * one cell = 10 runs * 20 rounds = 200 seller calls
+    * one cell = 10 runs * 30 rounds = 300 seller calls
     * at ~200 calls/hour = ~1.0 h wall clock per cell
-    * 60 cells in the E-only user sweep
-    * a single 30-parallel launcher finishes in roughly two 1.0 h waves
+    * 180 cells in the A/B/C user sweep
+    * a single 30-parallel launcher finishes in roughly six 1.0 h waves
     * if we pick a coarser unit (all 5 vehicles per cell) a single worker
       takes ~5 h, which can still be too slow for quick iteration
     * the finer unit also makes failure recovery cheap: if one cell
-      crashes, we only re-run 200 calls, not 1,000
+      crashes, we only re-run 300 calls, not 1,500
 
     Each cell writes one self-contained results/<tag>.json file, and the
-    final E-only dataset is the concatenation of all 60 such files.
+    final A/B/C dataset is the concatenation of all 180 such files.
     """
     policy:       str
     scheme:       SchemeKey
@@ -122,7 +122,7 @@ class WorkerCell:
 
 
 def worker_cells_for_side(side: Literal["user", "cooperator"]) -> list[WorkerCell]:
-    """All worker cells assigned to `side`. 60 user cells = 12 policies x 1 scheme x 5 vehicles."""
+    """All worker cells assigned to `side`. 180 user cells = 12 policies x 3 schemes x 5 vehicles."""
     return [
         WorkerCell(policy=p, scheme=s, vehicle_idx=v, side=side)
         for (p, s) in cells_for_side(side)

@@ -10,7 +10,7 @@ Usage:
 where --cell-index K is the index into plan.worker_cells_for_side(side).
 
 Each cell = one (policy, buyer_scheme, vehicle).  The worker runs N_RUNS_PER_CAR
-(= 10) independent negotiations of N_ROUNDS (= 20) turns each, and writes
+(= 10) independent negotiations of N_ROUNDS (= 30) turns each, and writes
 results/<tag>.json where <tag> = e.g. "user_E_fu_high_price_brief_anchor_v1".
 
 State tracking uses proc_state.py atomic writes identically to the 0421
