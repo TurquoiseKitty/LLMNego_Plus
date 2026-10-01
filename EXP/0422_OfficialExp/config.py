@@ -12,14 +12,14 @@ import os
 
 
 # ----------------------------------------------------------------------
-# DeepSeek API credentials  (copied from the 0416b notebooks in the rar)
+# DeepSeek API credentials
 # ----------------------------------------------------------------------
 
-# Hard default — same key that was committed in the rar's notebooks.
-# Override with the NEGO_API_KEY environment variable if you rotate it.
+# Override with the NEGO_API_KEY environment variable.
+# DO NOT hardcode API keys in this file.
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "sk-81e3e6eae33d4486ad4127e0cb3630a6",
+    "YOUR-DEEPSEEK-API-KEY",  # Replace with your API key or set via environment variable
 )
 
 # Override with NEGO_BASE_URL.

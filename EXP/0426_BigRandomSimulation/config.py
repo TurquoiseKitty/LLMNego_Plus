@@ -16,9 +16,11 @@ import os
 # ----------------------------------------------------------------------
 # DeepSeek API credentials
 # ----------------------------------------------------------------------
+# DO NOT hardcode API keys in this file.
+# Set your API key via the NEGO_API_KEY environment variable.
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "sk-81e3e6eae33d4486ad4127e0cb3630a6",
+    "YOUR-DEEPSEEK-API-KEY",  # Replace with your API key or set via environment variable
 )
 DEEPSEEK_BASE_URL: str = os.environ.get(
     "NEGO_BASE_URL",
