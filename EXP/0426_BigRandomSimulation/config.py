@@ -16,11 +16,9 @@ import os
 # ----------------------------------------------------------------------
 # DeepSeek API credentials
 # ----------------------------------------------------------------------
-# DO NOT hardcode API keys in this file.
-# Set your API key via the NEGO_API_KEY environment variable.
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "YOUR-DEEPSEEK-API-KEY",  # Replace with your API key or set via environment variable
+    "YOUR_DEEPSEEK_API_KEY",
 )
 DEEPSEEK_BASE_URL: str = os.environ.get(
     "NEGO_BASE_URL",
@@ -46,24 +44,13 @@ REQUEST_TIMEOUT_SECONDS: float = 300.0
 # ----------------------------------------------------------------------
 # Retry policy
 # ----------------------------------------------------------------------
-RETRY_MAX_ATTEMPTS: int = 4           # 1 initial + 3 retries
-RETRY_BASE_DELAY_SECONDS: float = 8.0 # 8, 16, 32 s between retries
+RETRY_MAX_ATTEMPTS: int = 4
+RETRY_BASE_DELAY_SECONDS: float = 8.0
 
 
 # ----------------------------------------------------------------------
 # Workload calibration
 # ----------------------------------------------------------------------
-# New design: 6 policies x 5 vehicles x 4 schemes x 50 runs x T=12 turns.
-# Total: 72,000 seller calls.
-#
-# At ~200 calls/hour/worker (DeepSeek reasoner, observed on 0421):
-#   per (policy, scheme, vehicle, 50 runs, 12 turns) = 600 calls
-#   per worker serving 2 cells = 1,200 calls ≈ 6 h wall clock
-#
-# So we partition the full 120-cell grid into 30+30 workers (half per user),
-# 2 cells per worker, each ~6 h.  See runner.py / launcher.py for mechanics.
-# ----------------------------------------------------------------------
-
 N_RUNS_PER_CAR: int = int(os.environ.get("NEGO_RUNS_PER_CAR", "50"))
 N_ROUNDS:      int = int(os.environ.get("NEGO_N_ROUNDS",     "12"))
 BASE_SEED:     int = int(os.environ.get("NEGO_BASE_SEED",    "20260425"))
@@ -72,8 +59,6 @@ BASE_SEED:     int = int(os.environ.get("NEGO_BASE_SEED",    "20260425"))
 # ----------------------------------------------------------------------
 # Parallelism hint for the launcher (not a hard cap)
 # ----------------------------------------------------------------------
-# Suggested number of parallel workers per half-of-sweep.  Can be overridden
-# with NEGO_PARALLELISM on the launcher command line.
 DEFAULT_PARALLELISM: int = int(os.environ.get("NEGO_PARALLELISM", "30"))
 
 

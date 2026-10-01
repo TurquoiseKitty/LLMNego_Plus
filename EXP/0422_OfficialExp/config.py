@@ -16,10 +16,9 @@ import os
 # ----------------------------------------------------------------------
 
 # Override with the NEGO_API_KEY environment variable.
-# DO NOT hardcode API keys in this file.
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "YOUR-DEEPSEEK-API-KEY",  # Replace with your API key or set via environment variable
+    "YOUR_DEEPSEEK_API_KEY",
 )
 
 # Override with NEGO_BASE_URL.
@@ -28,8 +27,7 @@ DEEPSEEK_BASE_URL: str = os.environ.get(
     "https://api.deepseek.com",
 )
 
-# Override with NEGO_MODEL.  Must be a reasoner-style model; the call path
-# expects a `reasoning_content` field to be present on the response message.
+# Override with NEGO_MODEL. Must be a reasoner-style model.
 DEEPSEEK_MODEL: str = os.environ.get(
     "NEGO_MODEL",
     "deepseek-reasoner",
@@ -37,47 +35,26 @@ DEEPSEEK_MODEL: str = os.environ.get(
 
 
 # ----------------------------------------------------------------------
-# Per-call API parameters  (matches the 0416b runner exactly)
+# Per-call API parameters
 # ----------------------------------------------------------------------
-
-# Budget for the final-answer tokens.
 MAX_TOKENS: int = 4096
-
-# Extra parameters forwarded to the API for reasoner-style models.
 THINKING_EXTRA_BODY: dict = {
     "enable_thinking": True,
     "thinking_budget": 8192,
 }
-
-# Per-request HTTP timeout (seconds).  Reasoner calls can be long; DeepSeek
-# typically finishes in ~15-25 s but we leave generous headroom.
 REQUEST_TIMEOUT_SECONDS: float = 300.0
 
 
 # ----------------------------------------------------------------------
 # Retry policy
 # ----------------------------------------------------------------------
-
-# Transient errors get exponential-backoff retries with these settings.
-RETRY_MAX_ATTEMPTS: int = 4          # 1 initial + 3 retries
-RETRY_BASE_DELAY_SECONDS: float = 8.0   # 8, 16, 32 s between retries
+RETRY_MAX_ATTEMPTS: int = 4
+RETRY_BASE_DELAY_SECONDS: float = 8.0
 
 
 # ----------------------------------------------------------------------
 # Workload calibration
 # ----------------------------------------------------------------------
-# Calibration source: results_0416b / README_0416b.md
-#   * nb1  : 220 runs * 15 rounds = 3,300 seller calls / 16.5 h ≈ 200 calls/h
-#   * nb11 : 252 runs * 15 rounds = 3,780 seller calls / 18.9 h ≈ 200 calls/h
-#
-# To target ~12 h per subprocess:
-#   calls_budget = 200 * 12      = 2,400 seller calls per experiment
-#   runs_per_car = 2,400 / (5 * 16) = 30
-#
-# So N_RUNS_PER_CAR = 30 gives 30 * 5 = 150 negotiations per experiment, and
-# 150 * 16 = 2,400 calls ≈ 12 h of wall-clock per worker at the 0416b rate.
-# ----------------------------------------------------------------------
-
 N_RUNS_PER_CAR: int = int(os.environ.get("NEGO_RUNS_PER_CAR", "30"))
 N_ROUNDS:      int = int(os.environ.get("NEGO_N_ROUNDS", "16"))
 BASE_SEED:     int = int(os.environ.get("NEGO_BASE_SEED", "20260420"))
