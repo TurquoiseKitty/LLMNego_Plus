@@ -19,7 +19,7 @@ import os
 # Override with the NEGO_API_KEY environment variable if you rotate it.
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "sk-81e3e6eae33d4486ad4127e0cb3630a6",
+    "",  # REDACTED: API key was leaked, replaced with empty string
 )
 
 # Override with NEGO_BASE_URL.
