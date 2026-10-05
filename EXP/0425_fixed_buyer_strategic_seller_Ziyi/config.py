@@ -18,7 +18,7 @@ import os
 # ----------------------------------------------------------------------
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "sk-95e8ac6d8f974cfd9becf82ec0294ca9",
+    "",  # REDACTED: API key was exposed, use env var NEGO_API_KEY instead
 )
 DEEPSEEK_BASE_URL: str = os.environ.get(
     "NEGO_BASE_URL",
