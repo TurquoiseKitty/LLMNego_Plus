@@ -1,2 +1,24 @@
 __pycache__
 .DS_Store
+
+# Local secrets: never commit real credentials.
+.env
+.env.*
+!.env.example
+*.env
+secrets/
+.secrets/
+credentials.json
+credentials.*.json
+*service-account*.json
+*.key
+*.pem
+
+# Notebook recovery copies can retain earlier source and outputs.
+.ipynb_checkpoints/
+
+# Local Python caches and environments.
+__pycache__/
+*.py[cod]
+.venv/
+venv/

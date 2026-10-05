@@ -1,8 +1,9 @@
 """
 config.py -- API and runtime configuration for the 0423 LLM-buyer sweep.
 
-Edit `DEEPSEEK_API_KEY` below if your key changes. All other fields can be
-overridden at runtime via environment variables (see the env var names below).
+Set NEGO_API_KEY (or DEEPSEEK_API_KEY) in your process environment.
+Never store real API keys in this file. Runtime fields can also be
+overridden via environment variables (see the env var names below).
 
 Differences vs. the 0421 config:
     * N_RUNS_PER_CAR default is 15 (was 30). With an LLM buyer added, each
@@ -26,7 +27,7 @@ import os
 
 DEEPSEEK_API_KEY: str = os.environ.get(
     "NEGO_API_KEY",
-    "sk-81e3e6eae33d4486ad4127e0cb3630a6",
+    os.environ.get("DEEPSEEK_API_KEY", ""),
 )
 
 DEEPSEEK_BASE_URL: str = os.environ.get(
